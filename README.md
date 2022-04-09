@@ -23,3 +23,5 @@ npm run dev
 [Rotating Skybox](https://codinhood.com/post/create-skybox-with-threejs)
 
 [Favicon generator](https://favicon.io/favicon-converter/)
+
+[Google Fonts](https://fonts.google.com/)
