@@ -7,9 +7,11 @@ const textureLoader = new THREE.TextureLoader();
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 30000);
 
 const renderer = new THREE.WebGLRenderer({
+	antialias: true,
+	alpha: true,
 	canvas: document.querySelector('#bg'),
 });
 
@@ -34,49 +36,48 @@ pointLight.position.set(5, 5, 5);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambientLight);
 
-function addStar() {
-	const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-	const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
-	const star = new THREE.Mesh(geometry, material);
+// function addStar() {
+// 	const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+// 	const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+// 	const star = new THREE.Mesh(geometry, material);
 
-	const [x, y, z] = Array(3)
-		.fill()
-		.map(() => THREE.MathUtils.randFloatSpread(100));
+// 	const [x, y, z] = Array(3)
+// 		.fill()
+// 		.map(() => THREE.MathUtils.randFloatSpread(100));
 
-	star.position.set(x, y, z);
-	scene.add(star);
-}
+// 	star.position.set(x, y, z);
+// 	scene.add(star);
+// }
 
-Array(200).fill().forEach(addStar);
+// Array(200).fill().forEach(addStar);
 
-// Background
+// Skybox
 
-new THREE.CubeTextureLoader().setPath('/images/SpaceboxCollection/Spacebox6/').load(
-	// urls of images used in the cube texture
-	[
-		'SkyBlue2_right1.png',
-		'SkyBlue2_left2.png',
-		'SkyBlue2_top3.png',
-		'SkyBlue2_bottom4.png',
-		'SkyBlue2_front5.png',
-		'SkyBlue2_back6.png'
-	],
-	// what to do when loading is over
-	function (cubeTexture) {
-		// CUBE TEXTURE is also an option for a background
-		scene.background = cubeTexture;
-		renderer.render(scene, camera);
-	}
-);
+const materialArray = ['images/skybox/right1.png', 'images/skybox/left2.png', 'images/skybox/top3.png', 'images/skybox/bottom4.png',
+	'images/skybox/front5.png', 'images/skybox/back6.png'].map(image => {
+	let texture = new THREE.TextureLoader().load(image);
+	return new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide });
+});
+
+const skybox = new THREE.Mesh(new THREE.BoxGeometry(10000, 10000, 10000), materialArray);
+
+scene.add(skybox);
+
 
 // Avatar
 
 const profileTexture = textureLoader.load('images/profile.jpg');
 
 const profile = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: profileTexture }));
-profile.position.z = -5;
-profile.position.x = 3;
-profile.rotation.y = -0.4;
+const profileStartPositionX = 3;
+const profileStartPositionY = 0;
+const profileStartPositionZ = -5;
+const profileStartRotationX = 0;
+const profileStartRotationY = -0.4;
+profile.position.x = profileStartPositionX;
+profile.position.y = profileStartPositionY;
+profile.position.z = profileStartPositionZ;
+profile.rotation.y = profileStartRotationY;
 
 scene.add(profile);
 
@@ -97,22 +98,15 @@ function scalePercent(start, end) {
 
 const animationScripts = []
 
-//add an animation that moves the camera backwards throughout the whole scroll progress
-animationScripts.push({
-	start: 0,
-	end: 101,
-	func: () => {
-			camera.position.z = lerp(0, 20, scalePercent(0, 100))
-	},
-});
-// END CAMERA
-
 //add an animation that rotates the profile cube throughout the whole scroll process
 animationScripts.push({
 	start: 0,
-	end: 101,
+	end: 10,
 	func: () => {
-			profile.rotation.y = lerp(-0.4, 5, scalePercent(0, 100))
+			profile.rotation.x = lerp(profileStartRotationX, 1.5, scalePercent(0, 10));
+			profile.rotation.y = lerp(profileStartRotationY, -1.5, scalePercent(0, 10));
+			profile.position.x = lerp(profileStartPositionX, 10, scalePercent(0, 10));
+			profile.position.y = lerp(profileStartPositionY, 10, scalePercent(0, 10));
 	},
 });
 
@@ -138,6 +132,8 @@ function playScrollAnimations() {
 
 function animate() {
 	requestAnimationFrame(animate);
+	skybox.rotation.x += 0.001;
+	skybox.rotation.y -= 0.0005;
 
 	playScrollAnimations();
 
