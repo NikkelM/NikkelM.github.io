@@ -21,3 +21,5 @@ npm run dev
 [Animation on scroll](https://sbcode.net/threejs/animate-on-scroll/)
 
 [Rotating Skybox](https://codinhood.com/post/create-skybox-with-threejs)
+
+[Favicon generator](https://favicon.io/favicon-converter/)
