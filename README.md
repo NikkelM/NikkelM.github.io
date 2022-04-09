@@ -25,3 +25,7 @@ npm run dev
 [Favicon generator](https://favicon.io/favicon-converter/)
 
 [Google Fonts](https://fonts.google.com/)
+
+## Interesting stuff I might look into
+
+[Point clouds](https://dev.to/maniflames/pointcloud-effect-in-three-js-3eic)

@@ -1,12 +1,12 @@
 import './style.css';
 import * as THREE from 'three';
-
 // Setup
 
 const textureLoader = new THREE.TextureLoader();
 
 const scene = new THREE.Scene();
 
+scene.fog = new THREE.FogExp2( 0x000000, 0.0002 );
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 30000);
 
 const renderer = new THREE.WebGLRenderer({
@@ -36,26 +36,41 @@ pointLight.position.set(5, 5, 5);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambientLight);
 
-// function addStar() {
-// 	const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-// 	const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
-// 	const star = new THREE.Mesh(geometry, material);
 
-// 	const [x, y, z] = Array(3)
-// 		.fill()
-// 		.map(() => THREE.MathUtils.randFloatSpread(100));
+// Stars
 
-// 	star.position.set(x, y, z);
-// 	scene.add(star);
-// }
+const numStars = 400
 
-// Array(200).fill().forEach(addStar);
+const starGeometryA = new THREE.SphereGeometry(0.1);
+const starGeometryB = new THREE.SphereGeometry(0.05);
+const starMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+function addStar(starGroup, starGeometry) {
+	const star = new THREE.Mesh(starGeometry, starMaterial);
+
+	const [x, y, z] = Array(3)
+		.fill()
+		.map(() => THREE.MathUtils.randFloatSpread(100));
+
+	star.position.set(x, y, z);
+	starGroup.add(star);
+}
+const starGroupA = new THREE.Group();
+const starGroupB = new THREE.Group();
+
+for(let i=0; i<numStars/2; i++) {
+	addStar(starGroupA, starGeometryA);
+	addStar(starGroupB, starGeometryB);
+}
+
+scene.add(starGroupA, starGroupB);
+
+// end stars
 
 // Skybox
 
 const materialArray = ['images/skybox/right1.png', 'images/skybox/left2.png', 'images/skybox/top3.png', 'images/skybox/bottom4.png',
 	'images/skybox/front5.png', 'images/skybox/back6.png'].map(image => {
-	let texture = new THREE.TextureLoader().load(image);
+	let texture = textureLoader.load(image);
 	return new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide });
 });
 
@@ -74,10 +89,10 @@ const profileStartPositionY = 0;
 const profileStartPositionZ = -5;
 const profileStartRotationX = 0;
 const profileStartRotationY = -0.4;
-profile.position.x = profileStartPositionX;
-profile.position.y = profileStartPositionY;
+// profile.position.x = profileStartPositionX;
+// profile.position.y = profileStartPositionY;
 profile.position.z = profileStartPositionZ;
-profile.rotation.y = profileStartRotationY;
+// profile.rotation.y = profileStartRotationY;
 
 scene.add(profile);
 
@@ -130,11 +145,18 @@ function playScrollAnimations() {
 	});
 };
 
-function animate() {
-	requestAnimationFrame(animate);
+function continouosAnimations() {
 	skybox.rotation.x += 0.001;
 	skybox.rotation.y -= 0.0005;
+	starGroupA.rotation.x += 0.001;
+	starGroupB.rotation.x += 0.001;
+	starGroupA.rotation.y -= 0.0005;
+	starGroupB.rotation.y -= 0.0005;
+}
 
+function animate() {
+	requestAnimationFrame(animate);
+	continouosAnimations();
 	playScrollAnimations();
 
 	renderer.render(scene, camera);
