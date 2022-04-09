@@ -1,6 +1,5 @@
 import './style.css';
 import * as THREE from 'three';
-// Setup
 
 const textureLoader = new THREE.TextureLoader();
 
@@ -39,30 +38,52 @@ scene.add(pointLight, ambientLight);
 
 // Stars
 
-const numStars = 400
+const numStars = 500
 
-const starGeometryA = new THREE.SphereGeometry(0.1);
-const starGeometryB = new THREE.SphereGeometry(0.05);
-const starMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-function addStar(starGroup, starGeometry) {
-	const star = new THREE.Mesh(starGeometry, starMaterial);
+const starGroup = new THREE.Group();
 
+for (let i = 0; i < numStars; i++) {
+  let geometry = new THREE.SphereGeometry(0.1);
+  let material = new THREE.MeshBasicMaterial();
+  let star = new THREE.Mesh( geometry, material );
 	const [x, y, z] = Array(3)
-		.fill()
-		.map(() => THREE.MathUtils.randFloatSpread(100));
-
-	star.position.set(x, y, z);
-	starGroup.add(star);
+			.fill()
+			.map(() => THREE.MathUtils.randFloatSpread(100));
+  star.position.set(x, y, z);
+  starGroup.add( star );
 }
-const starGroupA = new THREE.Group();
-const starGroupB = new THREE.Group();
+scene.add(starGroup);
 
-for(let i=0; i<numStars/2; i++) {
-	addStar(starGroupA, starGeometryA);
-	addStar(starGroupB, starGeometryB);
-}
+// old stars
 
-scene.add(starGroupA, starGroupB);
+// const starGeometry = new THREE.SphereGeometry(0.1);
+// const starMaterialA = new THREE.MeshBasicMaterial({ 
+// 	color: 0xffffff,
+// 	opacity: 1,
+// 	transparent: true, });
+// const starMaterialB = new THREE.MeshBasicMaterial({ 
+// 	color: 0xffffff,
+// 	opacity: 0,
+// 	transparent: true, });
+// function addStar(starGroup, starMaterial) {
+// 	const star = new THREE.Mesh(starGeometry, starMaterial);
+
+// 	const [x, y, z] = Array(3)
+// 		.fill()
+// 		.map(() => THREE.MathUtils.randFloatSpread(100));
+
+// 	star.position.set(x, y, z);
+// 	starGroup.add(star);
+// }
+// const starGroupA = new THREE.Group();
+// const starGroupB = new THREE.Group();
+
+// for(let i=0; i<numStars/2; i++) {
+// 	addStar(starGroupA, starMaterialA);
+// 	addStar(starGroupB, starMaterialB);
+// }
+
+// scene.add(starGroupA, starGroupB);
 
 // end stars
 
@@ -145,13 +166,19 @@ function playScrollAnimations() {
 	});
 };
 
+var lightness = 0;
+
 function continouosAnimations() {
 	skybox.rotation.x += 0.001;
 	skybox.rotation.y -= 0.0005;
-	starGroupA.rotation.x += 0.001;
-	starGroupB.rotation.x += 0.001;
-	starGroupA.rotation.y -= 0.0005;
-	starGroupB.rotation.y -= 0.0005;
+
+	// stars
+	starGroup.rotation.x += 0.001;
+	starGroup.rotation.y -= 0.0005;
+	starGroup.children.forEach((star) => {
+    lightness > 100 ? lightness = 0 : lightness++;
+    star.material.color = new THREE.Color("hsl(255, 100%, " + lightness + "%)");
+	});
 }
 
 function animate() {
