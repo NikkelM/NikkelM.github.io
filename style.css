@@ -24,7 +24,7 @@ main {
 }
 
 h1, h2, h3, blockquote {
-  font-family: elevon, sans-serif;
+  font-family: Helvetica, sans-serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -35,7 +35,10 @@ canvas {
   left: 0;
 }
 
-
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
 
   header {
     background: var(--dark-bg);
