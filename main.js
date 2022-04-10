@@ -99,10 +99,39 @@ function scalePercent(start, end) {
 	return (scrollPercent - start) / (end - start);
 }
 
+
+// How much has the user scrolled yet?
+let scrollPercent = 0;
+
+document.body.onscroll = () => {
+		//calculate the current scroll progress as a percentage
+		scrollPercent = ((document.documentElement.scrollTop || document.body.scrollTop) / 
+			((document.documentElement.scrollHeight || document.body.scrollHeight) - document.documentElement.clientHeight)) * 100;
+}
+
 /////////////////////////
 // Animation scripts that will each be run whenever the user scrolls
 
 const animationScripts = [];
+
+//these are the continuous animations which play no matter the scroll percentage, and independent of it
+animationScripts.push({
+	start: 0,
+	end: 101,
+	func: () => {
+		// skybox
+		skybox.rotation.x += 0.001;
+		skybox.rotation.y -= 0.0005;
+
+		// stars
+		starGroup.rotation.x += 0.001;
+		starGroup.rotation.y -= 0.0005;
+		starGroup.children.forEach((star) => {
+			lightness > 1 ? lightness = 0 : lightness += 0.005;
+			star.material.opacity = lightness;
+		});
+	}
+});
 
 //add an animation that rotates the profile cube throughout the whole scroll process
 animationScripts.push({
@@ -113,19 +142,10 @@ animationScripts.push({
 			profile.rotation.y = lerp(profileStartRotationY, -1.5, scalePercent(0, 10));
 			profile.position.x = lerp(profileStartPositionX, 10, scalePercent(0, 10));
 			profile.position.y = lerp(profileStartPositionY, 10, scalePercent(0, 10));
-	},
+	}
 });
 
 /////////////////////////
-
-// How far down the rabbit hole are we???
-let scrollPercent = 0;
-
-document.body.onscroll = () => {
-		//calculate the current scroll progress as a percentage
-		scrollPercent = ((document.documentElement.scrollTop || document.body.scrollTop) / 
-			((document.documentElement.scrollHeight || document.body.scrollHeight) - document.documentElement.clientHeight)) * 100;
-}
 
 // Animation Loop
 
@@ -140,23 +160,8 @@ function playScrollAnimations() {
 
 let lightness = 0;
 
-function playContinouosAnimations() {
-	// skybox
-	skybox.rotation.x += 0.001;
-	skybox.rotation.y -= 0.0005;
-
-	// stars
-	starGroup.rotation.x += 0.001;
-	starGroup.rotation.y -= 0.0005;
-	starGroup.children.forEach((star) => {
-		lightness > 1 ? lightness = 0 : lightness += 0.005;
-		star.material.opacity = lightness;
-	});
-}
-
 function animate() {
 	requestAnimationFrame(animate);
-	playContinouosAnimations();
 	playScrollAnimations();
 
 	renderer.render(scene, camera);
