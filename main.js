@@ -62,8 +62,6 @@ for (let i = 0; i < numStars; i++) {
 }
 scene.add(starGroup);
 
-// end stars
-
 // Skybox
 
 const materialArray = ['images/skybox/right1.png', 'images/skybox/left2.png', 'images/skybox/top3.png', 'images/skybox/bottom4.png',
@@ -76,8 +74,7 @@ const skybox = new THREE.Mesh(new THREE.BoxGeometry(10000, 10000, 10000), materi
 
 scene.add(skybox);
 
-
-// Avatar
+// Avatar Cube
 
 const profileTexture = textureLoader.load('images/profile.jpg');
 
@@ -88,12 +85,17 @@ const profileStartPositionZ = -5;
 const profileStartRotationX = 0;
 const profileStartRotationY = -0.4;
 const profileStartRotationZ = 0;
-// profile.position.x = profileStartPositionX;
-// profile.position.y = profileStartPositionY;
-profile.position.z = profileStartPositionZ;
-profile.rotation.y = profileStartRotationY;
+profile.position.set(profileStartPositionX, profileStartPositionY, profileStartPositionZ)
+profile.rotation.set(profileStartRotationX, profileStartRotationY, profileStartRotationZ)
 
 scene.add(profile);
+
+// Globe
+
+const globe = new THREE.Mesh(new THREE.SphereGeometry(2, 200, 200), new THREE.MeshBasicMaterial());
+globe.position.set(-4, 0, -5)
+
+scene.add(globe);
 
 // Animation template from https://sbcode.net/threejs/animate-on-scroll/
 
@@ -124,6 +126,7 @@ document.body.onscroll = () => {
 const animationScripts = [];
 
 // These are the continuous animations which play no matter the scroll percentage, and independent of
+let lightness = 0;
 animationScripts.push({
 	start: 0,
 	end: 101,
@@ -148,12 +151,12 @@ animationScripts.push({
 // Add an animation that rotates the profile cube throughout the whole scroll process
 animationScripts.push({
 	start: 0,
-	end: 30,
+	end: 20,
 	func: () => {
-			profile.rotation.x = lerp(profileStartRotationX, 2, scalePercent(0, 30));
-			profile.rotation.z = lerp(profileStartRotationZ, -2, scalePercent(0, 30));
-			profile.position.x = lerp(profileStartPositionX, 10, scalePercent(0, 30));
-			profile.position.y = lerp(profileStartPositionY, 10, scalePercent(0, 30));
+			profile.rotation.x = lerp(profileStartRotationX, 2, scalePercent(0, 20));
+			profile.rotation.z = lerp(profileStartRotationZ, -2, scalePercent(0, 20));
+			profile.position.x = lerp(profileStartPositionX, 10, scalePercent(0, 20));
+			profile.position.y = lerp(profileStartPositionY, 10, scalePercent(0, 20));
 	}
 });
 
@@ -170,7 +173,6 @@ function playScrollAnimations() {
 	});
 }
 
-let lightness = 0;
 
 function animate() {
 	requestAnimationFrame(animate);
