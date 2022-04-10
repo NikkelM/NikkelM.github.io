@@ -64,9 +64,9 @@ scene.add(starGroup);
 
 // Skybox
 
-const materialArray = ['images/skybox/right1.png', 'images/skybox/left2.png', 'images/skybox/top3.png', 'images/skybox/bottom4.png',
-	'images/skybox/front5.png', 'images/skybox/back6.png'].map(image => {
-	let texture = textureLoader.load(image);
+const materialArray = ['right1.png', 'left2.png', 'top3.png', 'bottom4.png',
+	'front5.png', 'back6.png'].map(image => {
+	let texture = textureLoader.load('images/textures/skybox/' + image);
 	return new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide });
 });
 
@@ -76,7 +76,7 @@ scene.add(skybox);
 
 // Avatar Cube
 
-const profileTexture = textureLoader.load('images/profile.jpg');
+const profileTexture = textureLoader.load('images/textures/profile.jpg');
 
 const profile = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: profileTexture }));
 const profileStartPositionX = 3;
@@ -92,8 +92,11 @@ scene.add(profile);
 
 // Globe
 
-const globe = new THREE.Mesh(new THREE.SphereGeometry(2, 200, 200), new THREE.MeshBasicMaterial());
-globe.position.set(-4, 0, -5)
+const globe = new THREE.Mesh(new THREE.SphereGeometry(1.75, 200, 200), new THREE.MeshBasicMaterial());
+const globeStartPositionX = -4;
+const globeStartPositionY = 0;
+const globeStartPositionZ = 0;
+globe.position.set(globeStartPositionX, globeStartPositionY, globeStartPositionZ)
 
 scene.add(globe);
 
@@ -160,6 +163,15 @@ animationScripts.push({
 	}
 });
 
+// Add an animation that moves the globe in after the profile is gone
+animationScripts.push({
+	start: 10,
+	end: 18,
+	func: () => {
+			globe.position.x = lerp(globeStartPositionX, -4, scalePercent(10, 18));
+			globe.position.z = lerp(globeStartPositionZ, -5, scalePercent(10, 18));
+	}
+});
 /////////////////////////
 
 // Animation Loop
