@@ -5,7 +5,7 @@ const textureLoader = new THREE.TextureLoader();
 
 const scene = new THREE.Scene();
 
-scene.fog = new THREE.FogExp2( 0x000000, 0.0002 );
+scene.fog = new THREE.FogExp2(0x000000, 0.0002);
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 30000);
 
 const renderer = new THREE.WebGLRenderer({
@@ -29,16 +29,16 @@ function onWindowResize() {
 
 // Lights
 
-const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(5, 5, 5);
+// const pointLight = new THREE.PointLight(0xffffff);
+// pointLight.position.set(5, 5, 5);
 
-const ambientLight = new THREE.AmbientLight(0xffffff);
-scene.add(pointLight, ambientLight);
+// const ambientLight = new THREE.AmbientLight(0xffffff);
+// scene.add(pointLight, ambientLight);
 
 
 // Stars
 
-const numStars = 500
+const numStars = 500;
 
 const starGroup = new THREE.Group();
 
@@ -96,12 +96,13 @@ function lerp(start, end, a) {
 
 // Used to fit the lerps to start and end at specific scrolling percentages
 function scalePercent(start, end) {
-	return (scrollPercent - start) / (end - start)
+	return (scrollPercent - start) / (end - start);
 }
 
+/////////////////////////
 // Animation scripts that will each be run whenever the user scrolls
 
-const animationScripts = []
+const animationScripts = [];
 
 //add an animation that rotates the profile cube throughout the whole scroll process
 animationScripts.push({
@@ -115,14 +116,16 @@ animationScripts.push({
 	},
 });
 
+/////////////////////////
+
 // How far down the rabbit hole are we???
-let scrollPercent = 0
+let scrollPercent = 0;
 
 document.body.onscroll = () => {
 		//calculate the current scroll progress as a percentage
 		scrollPercent = ((document.documentElement.scrollTop || document.body.scrollTop) / 
 			((document.documentElement.scrollHeight || document.body.scrollHeight) - document.documentElement.clientHeight)) * 100;
-};
+}
 
 // Animation Loop
 
@@ -133,11 +136,12 @@ function playScrollAnimations() {
 				animation.func();
 			}
 	});
-};
+}
 
 let lightness = 0;
 
-function continouosAnimations() {
+function playContinouosAnimations() {
+	// skybox
 	skybox.rotation.x += 0.001;
 	skybox.rotation.y -= 0.0005;
 
@@ -145,22 +149,30 @@ function continouosAnimations() {
 	starGroup.rotation.x += 0.001;
 	starGroup.rotation.y -= 0.0005;
 	starGroup.children.forEach((star) => {
-		if(lightness > 1) {
-			lightness = 0
-		} else {
-			lightness+=0.005;
-		}
-    // star.material.color = new THREE.Color("hsl(60, 100%, " + lightness + "%)");
-		star.material.opacity = lightness
+		lightness > 1 ? lightness = 0 : lightness += 0.005;
+		star.material.opacity = lightness;
 	});
 }
 
 function animate() {
 	requestAnimationFrame(animate);
-	continouosAnimations();
+	playContinouosAnimations();
 	playScrollAnimations();
 
 	renderer.render(scene, camera);
 }
 
-animate();
+function init() {
+	// reset the scroll when the page is reloaded to make sure our animations aren't getting messed up 
+	if (history.scrollRestoration) {
+		history.scrollRestoration = 'manual';
+	} else {
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+	}
+	// start the animation loop
+	animate()
+}
+
+init();
