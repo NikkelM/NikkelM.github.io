@@ -64,9 +64,9 @@ scene.add(starGroup);
 
 // Skybox
 
-const materialArray = ['images/skybox/right1.png', 'images/skybox/left2.png', 'images/skybox/top3.png', 'images/skybox/bottom4.png',
-	'images/skybox/front5.png', 'images/skybox/back6.png'].map(image => {
-	let texture = textureLoader.load(image);
+const materialArray = ['right1.png', 'left2.png', 'top3.png', 'bottom4.png',
+	'front5.png', 'back6.png'].map(image => {
+	let texture = textureLoader.load('images/textures/skybox/' + image);
 	return new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide });
 });
 
@@ -76,7 +76,7 @@ scene.add(skybox);
 
 // Avatar Cube
 
-const profileTexture = textureLoader.load('images/profile.jpg');
+const profileTexture = textureLoader.load('images/textures/profile.jpg');
 
 const profile = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: profileTexture }));
 const profileStartPositionX = 3;
@@ -92,10 +92,20 @@ scene.add(profile);
 
 // Globe
 
-const globe = new THREE.Mesh(new THREE.SphereGeometry(2, 200, 200), new THREE.MeshBasicMaterial());
-globe.position.set(-4, 0, -5)
+// const globeTexture = textureLoader.load('images/textures/earthmap.jpg');
+// const globe = new THREE.Mesh(new THREE.SphereGeometry(1.75, 200, 200), new THREE.MeshBasicMaterial( { map: globeTexture} ));
+// // const globeStartPositionX = -4;
+// // const globeStartPositionY = -3;
+// const globeStartPositionX = -2;
+// const globeStartPositionY = -1;
+// const globeStartPositionZ = -4;
+// const globeStartRotationX = 0.2;
+// const globeStartRotationY = -1.5;
+// const globeStartRotationZ = -0.3;
+// globe.position.set(globeStartPositionX, globeStartPositionY, globeStartPositionZ)
+// globe.rotation.set(globeStartRotationX, globeStartRotationY, globeStartRotationZ)
 
-scene.add(globe);
+// scene.add(globe);
 
 // Animation template from https://sbcode.net/threejs/animate-on-scroll/
 
@@ -138,6 +148,10 @@ animationScripts.push({
 		// profile
 		profile.rotation.y -= 0.005;
 
+		// globe
+		// const quaternion = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0).normalize(), 0.0001);
+    // globe.position.applyQuaternion(quaternion);
+
 		// stars
 		starGroup.rotation.x += 0.001;
 		starGroup.rotation.y -= 0.0005;
@@ -160,6 +174,16 @@ animationScripts.push({
 	}
 });
 
+// Add an animation that moves the globe in after the profile is gone
+// animationScripts.push({
+// 	start: 5,
+// 	end: 15,
+// 	func: () => {
+// 			globe.position.x = lerp(globeStartPositionX, -4, scalePercent(5, 15));
+// 			globe.position.y = lerp(globeStartPositionY, 0, scalePercent(5, 15));
+// 			globe.position.z = lerp(globeStartPositionZ, -5, scalePercent(5, 15));
+// 	}
+// });
 /////////////////////////
 
 // Animation Loop
