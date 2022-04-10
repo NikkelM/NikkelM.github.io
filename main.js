@@ -92,13 +92,20 @@ scene.add(profile);
 
 // Globe
 
-const globe = new THREE.Mesh(new THREE.SphereGeometry(1.75, 200, 200), new THREE.MeshBasicMaterial());
-const globeStartPositionX = -4;
-const globeStartPositionY = 0;
-const globeStartPositionZ = 0;
-globe.position.set(globeStartPositionX, globeStartPositionY, globeStartPositionZ)
+// const globeTexture = textureLoader.load('images/textures/earthmap.jpg');
+// const globe = new THREE.Mesh(new THREE.SphereGeometry(1.75, 200, 200), new THREE.MeshBasicMaterial( { map: globeTexture} ));
+// // const globeStartPositionX = -4;
+// // const globeStartPositionY = -3;
+// const globeStartPositionX = -2;
+// const globeStartPositionY = -1;
+// const globeStartPositionZ = -4;
+// const globeStartRotationX = 0.2;
+// const globeStartRotationY = -1.5;
+// const globeStartRotationZ = -0.3;
+// globe.position.set(globeStartPositionX, globeStartPositionY, globeStartPositionZ)
+// globe.rotation.set(globeStartRotationX, globeStartRotationY, globeStartRotationZ)
 
-scene.add(globe);
+// scene.add(globe);
 
 // Animation template from https://sbcode.net/threejs/animate-on-scroll/
 
@@ -141,6 +148,10 @@ animationScripts.push({
 		// profile
 		profile.rotation.y -= 0.005;
 
+		// globe
+		// const quaternion = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0).normalize(), 0.0001);
+    // globe.position.applyQuaternion(quaternion);
+
 		// stars
 		starGroup.rotation.x += 0.001;
 		starGroup.rotation.y -= 0.0005;
@@ -164,14 +175,15 @@ animationScripts.push({
 });
 
 // Add an animation that moves the globe in after the profile is gone
-animationScripts.push({
-	start: 10,
-	end: 18,
-	func: () => {
-			globe.position.x = lerp(globeStartPositionX, -4, scalePercent(10, 18));
-			globe.position.z = lerp(globeStartPositionZ, -5, scalePercent(10, 18));
-	}
-});
+// animationScripts.push({
+// 	start: 5,
+// 	end: 15,
+// 	func: () => {
+// 			globe.position.x = lerp(globeStartPositionX, -4, scalePercent(5, 15));
+// 			globe.position.y = lerp(globeStartPositionY, 0, scalePercent(5, 15));
+// 			globe.position.z = lerp(globeStartPositionZ, -5, scalePercent(5, 15));
+// 	}
+// });
 /////////////////////////
 
 // Animation Loop
