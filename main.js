@@ -43,7 +43,7 @@ let starGeometry = new THREE.SphereGeometry(0.05);
 
 const numStars = 500;
 // we need some variety of materials for the blinking to appear more random
-const numStarMaterials = numStars/10;
+const numStarMaterials = numStars/5;
 const starMaterials = [];
 
 for(let i=0; i<numStarMaterials; i++) {
@@ -53,9 +53,10 @@ for(let i=0; i<numStarMaterials; i++) {
 for (let i = 0; i < numStars; i++) {
   let star = new THREE.Mesh(starGeometry, starMaterials[i%numStarMaterials]);
 
-	let [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+	// Get a positional vector for the star, it should be between 30 and 40 units from the camera
+	let vec = new THREE.Vector3(THREE.MathUtils.randFloatSpread(70), THREE.MathUtils.randFloatSpread(70), THREE.MathUtils.randFloatSpread(70)).clampLength(30, 40)
+  star.position.set(vec.x, vec.y, vec.z);
 
-  star.position.set(x, y, z);
 	star.material.transparent = true;
   starGroup.add(star);
 }
@@ -86,10 +87,11 @@ const profileStartPositionY = 0;
 const profileStartPositionZ = -5;
 const profileStartRotationX = 0;
 const profileStartRotationY = -0.4;
+const profileStartRotationZ = 0;
 // profile.position.x = profileStartPositionX;
 // profile.position.y = profileStartPositionY;
 profile.position.z = profileStartPositionZ;
-// profile.rotation.y = profileStartRotationY;
+profile.rotation.y = profileStartRotationY;
 
 scene.add(profile);
 
@@ -130,6 +132,9 @@ animationScripts.push({
 		skybox.rotation.x += 0.001;
 		skybox.rotation.y -= 0.0005;
 
+		// profile
+		profile.rotation.y -= 0.005;
+
 		// stars
 		starGroup.rotation.x += 0.001;
 		starGroup.rotation.y -= 0.0005;
@@ -145,8 +150,8 @@ animationScripts.push({
 	start: 0,
 	end: 30,
 	func: () => {
-			profile.rotation.x = lerp(profileStartRotationX, 1.5, scalePercent(0, 30));
-			profile.rotation.y = lerp(profileStartRotationY, -1.5, scalePercent(0, 30));
+			profile.rotation.x = lerp(profileStartRotationX, 2, scalePercent(0, 30));
+			profile.rotation.z = lerp(profileStartRotationZ, -2, scalePercent(0, 30));
 			profile.position.x = lerp(profileStartPositionX, 10, scalePercent(0, 30));
 			profile.position.y = lerp(profileStartPositionY, 10, scalePercent(0, 30));
 	}
