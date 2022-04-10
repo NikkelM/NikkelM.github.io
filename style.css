@@ -48,16 +48,24 @@ header {
 /* The text blocks with dark background */
 section {
 	grid-column: 4 / span 6;
-	padding: 1rem;
+	padding: 1.75rem;
+	text-align: justify;
 	background: var(--dark-bg);
 	font-size: 1.25rem;
 	line-height: 1.5;
 	margin-bottom: var(--margin_bottom);
 }
 
-/* Justify alignment, used mostly in section-p */
-.justify {
-	text-align: justify;
+.left-align {
+	text-align: left;
+}
+
+.center-align {
+	text-align: center;
+}
+
+.right-align {
+	text-align: right;
 }
 
 blockquote {
@@ -75,9 +83,13 @@ blockquote p {
 	line-height: 0.9;
 }
 
-/* set alignment of sections. Default is middle of the screen */
+/* set alignment of sections */
 .left {
 	grid-column: 2 / span 6;
+}
+
+.center {
+	grid-column: 4 / span 8;
 }
 
 .right {
@@ -91,6 +103,13 @@ blockquote p {
 
 /* links */
 a:link {
+	color: white;
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+/* This hide class should be used if you want a link without underlining it by default */
+a.hide {
 	color: white;
 	background-color: transparent;
 	text-decoration: none;
@@ -107,18 +126,18 @@ a:hover {
 	background-color: transparent;
 	text-decoration: underline;
 }
-
-/* This whitespace class should be used if you want a whitespace between two items without underlining it */
-a.whitespace {
-	color: white;
-	background-color: transparent;
-	text-decoration: none;
-}
 	
 a:active {
 	color: white;
 	background-color: transparent;
 	text-decoration: underline;
+}
+
+/* This whitespace class should be used if you want a whitespace between two items without underlining it *ever* */
+a.whitespace {
+	color: white;
+	background-color: transparent;
+	text-decoration: none;
 }
 
 /* Google Icons */
