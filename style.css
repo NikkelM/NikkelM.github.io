@@ -4,7 +4,7 @@
 
 :root {
 	--dark-bg: rgba(15, 15, 15, 0.5);
-	--spacing: 350px;
+	--margin_bottom: 350px;
 
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
@@ -30,15 +30,11 @@ h1, h2, h3, blockquote {
 	font-style: normal;
 }
 
+/* This is where the 3D-stuff lives */
 canvas {
 	position: fixed;
 	top: 0;
 	left: 0;
-}
-
-/* Hide scrollbar */
-::-webkit-scrollbar {
-	display: none;
 }
 
 header {
@@ -46,23 +42,29 @@ header {
 	grid-column: 2 / span 5;
 	font-size: 2.5rem;
 	padding: 2rem;
-	margin-bottom: var(--spacing);
+	margin-bottom: var(--margin_bottom);
 }
 
+/* The text blocks with dark background */
 section {
 	grid-column: 4 / span 6;
 	padding: 1rem;
 	background: var(--dark-bg);
 	font-size: 1.25rem;
 	line-height: 1.5;
-	margin-bottom: var(--spacing);
+	margin-bottom: var(--margin_bottom);
+}
+
+/* Justify alignment, used mostly in section-p */
+.justify {
+	text-align: justify;
 }
 
 blockquote {
 	margin: 0;
 	padding: 0;
 	grid-column: 2 / span 9;
-	margin-bottom: var(--spacing);
+	margin-bottom: var(--margin_bottom);
 }
 
 blockquote p {
@@ -73,12 +75,18 @@ blockquote p {
 	line-height: 0.9;
 }
 
+/* set alignment of sections. Default is middle of the screen */
 .left {
 	grid-column: 2 / span 6;
 }
 
 .right {
 	grid-column: 6 / span 6;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+	display: none;
 }
 
 /* links */
@@ -99,6 +107,13 @@ a:hover {
 	background-color: transparent;
 	text-decoration: underline;
 }
+
+/* This whitespace class should be used if you want a whitespace between two items without underlining it */
+a.whitespace {
+	color: white;
+	background-color: transparent;
+	text-decoration: none;
+}
 	
 a:active {
 	color: white;
@@ -107,6 +122,8 @@ a:active {
 }
 
 /* Google Icons */
+.material-icons.locked { vertical-align: -4px; }
+.material-icons-outlined.download-48 { vertical-align: -9px; font-size: 48px; }
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }

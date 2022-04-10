@@ -136,12 +136,12 @@ animationScripts.push({
 // Add an animation that rotates the profile cube throughout the whole scroll process
 animationScripts.push({
 	start: 0,
-	end: 10,
+	end: 30,
 	func: () => {
-			profile.rotation.x = lerp(profileStartRotationX, 1.5, scalePercent(0, 10));
-			profile.rotation.y = lerp(profileStartRotationY, -1.5, scalePercent(0, 10));
-			profile.position.x = lerp(profileStartPositionX, 10, scalePercent(0, 10));
-			profile.position.y = lerp(profileStartPositionY, 10, scalePercent(0, 10));
+			profile.rotation.x = lerp(profileStartRotationX, 1.5, scalePercent(0, 30));
+			profile.rotation.y = lerp(profileStartRotationY, -1.5, scalePercent(0, 30));
+			profile.position.x = lerp(profileStartPositionX, 10, scalePercent(0, 30));
+			profile.position.y = lerp(profileStartPositionY, 10, scalePercent(0, 30));
 	}
 });
 
