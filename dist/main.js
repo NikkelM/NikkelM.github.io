@@ -66,7 +66,7 @@ scene.add(starGroup);
 
 const materialArray = ['right1.png', 'left2.png', 'top3.png', 'bottom4.png',
 	'front5.png', 'back6.png'].map(image => {
-	let texture = textureLoader.load('images/textures/skybox/' + image);
+	let texture = textureLoader.load('static/textures/skybox/' + image);
 	return new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide });
 });
 
@@ -76,7 +76,7 @@ scene.add(skybox);
 
 // Avatar Cube
 
-const profileTexture = textureLoader.load('images/textures/profile.jpg');
+const profileTexture = textureLoader.load('static/textures/profile.jpg');
 
 const profile = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: profileTexture }));
 const profileStartPositionX = 3;
@@ -92,7 +92,7 @@ scene.add(profile);
 
 // Globe
 
-// const globeTexture = textureLoader.load('images/textures/earthmap.jpg');
+// const globeTexture = textureLoader.load('static/textures/earthmap.jpg');
 // const globe = new THREE.Mesh(new THREE.SphereGeometry(1.75, 200, 200), new THREE.MeshBasicMaterial( { map: globeTexture} ));
 // // const globeStartPositionX = -4;
 // // const globeStartPositionY = -3;
