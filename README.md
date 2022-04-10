@@ -1,6 +1,6 @@
 # My portfolio Website
 
-This repository contains the source code for my portfolio website over at [localhost](http://localhost:3000/) :P
+This repository contains the source code for my portfolio website hosted right here at [Github pages](https://nikkelm.github.io/).
 
 ## Usage
 
