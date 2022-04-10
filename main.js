@@ -114,7 +114,7 @@ document.body.onscroll = () => {
 
 const animationScripts = [];
 
-//these are the continuous animations which play no matter the scroll percentage, and independent of it
+// These are the continuous animations which play no matter the scroll percentage, and independent of
 animationScripts.push({
 	start: 0,
 	end: 101,
@@ -133,7 +133,7 @@ animationScripts.push({
 	}
 });
 
-//add an animation that rotates the profile cube throughout the whole scroll process
+// Add an animation that rotates the profile cube throughout the whole scroll process
 animationScripts.push({
 	start: 0,
 	end: 10,
