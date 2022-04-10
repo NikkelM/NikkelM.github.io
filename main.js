@@ -43,47 +43,16 @@ const numStars = 500
 const starGroup = new THREE.Group();
 
 for (let i = 0; i < numStars; i++) {
-  let geometry = new THREE.SphereGeometry(0.1);
+  let geometry = new THREE.SphereGeometry(0.05);
   let material = new THREE.MeshBasicMaterial();
   let star = new THREE.Mesh( geometry, material );
-	const [x, y, z] = Array(3)
-			.fill()
-			.map(() => THREE.MathUtils.randFloatSpread(100));
+	let [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+
   star.position.set(x, y, z);
-  starGroup.add( star );
+	star.material.transparent = true;
+  starGroup.add(star);
 }
 scene.add(starGroup);
-
-// old stars
-
-// const starGeometry = new THREE.SphereGeometry(0.1);
-// const starMaterialA = new THREE.MeshBasicMaterial({ 
-// 	color: 0xffffff,
-// 	opacity: 1,
-// 	transparent: true, });
-// const starMaterialB = new THREE.MeshBasicMaterial({ 
-// 	color: 0xffffff,
-// 	opacity: 0,
-// 	transparent: true, });
-// function addStar(starGroup, starMaterial) {
-// 	const star = new THREE.Mesh(starGeometry, starMaterial);
-
-// 	const [x, y, z] = Array(3)
-// 		.fill()
-// 		.map(() => THREE.MathUtils.randFloatSpread(100));
-
-// 	star.position.set(x, y, z);
-// 	starGroup.add(star);
-// }
-// const starGroupA = new THREE.Group();
-// const starGroupB = new THREE.Group();
-
-// for(let i=0; i<numStars/2; i++) {
-// 	addStar(starGroupA, starMaterialA);
-// 	addStar(starGroupB, starMaterialB);
-// }
-
-// scene.add(starGroupA, starGroupB);
 
 // end stars
 
@@ -166,7 +135,7 @@ function playScrollAnimations() {
 	});
 };
 
-var lightness = 0;
+let lightness = 0;
 
 function continouosAnimations() {
 	skybox.rotation.x += 0.001;
@@ -176,8 +145,13 @@ function continouosAnimations() {
 	starGroup.rotation.x += 0.001;
 	starGroup.rotation.y -= 0.0005;
 	starGroup.children.forEach((star) => {
-    lightness > 100 ? lightness = 0 : lightness++;
-    star.material.color = new THREE.Color("hsl(255, 100%, " + lightness + "%)");
+		if(lightness > 1) {
+			lightness = 0
+		} else {
+			lightness+=0.005;
+		}
+    // star.material.color = new THREE.Color("hsl(60, 100%, " + lightness + "%)");
+		star.material.opacity = lightness
 	});
 }
 
