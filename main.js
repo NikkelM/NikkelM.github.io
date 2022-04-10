@@ -38,14 +38,21 @@ function onWindowResize() {
 
 // Stars
 
-const numStars = 500;
-
 const starGroup = new THREE.Group();
+let starGeometry = new THREE.SphereGeometry(0.05);
+
+const numStars = 500;
+// we need some variety of materials for the blinking to appear more random
+const numStarMaterials = numStars/10;
+const starMaterials = [];
+
+for(let i=0; i<numStarMaterials; i++) {
+	starMaterials.push(new THREE.MeshBasicMaterial());
+}
 
 for (let i = 0; i < numStars; i++) {
-  let geometry = new THREE.SphereGeometry(0.05);
-  let material = new THREE.MeshBasicMaterial();
-  let star = new THREE.Mesh( geometry, material );
+  let star = new THREE.Mesh(starGeometry, starMaterials[i%numStarMaterials]);
+
 	let [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
 
   star.position.set(x, y, z);
