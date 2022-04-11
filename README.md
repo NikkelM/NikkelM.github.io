@@ -28,7 +28,7 @@ npm run dev
 
 Earth/Planet maps can be found [here](http://www.celestiamotherlode.net/catalog/earthbumpspec.html) and [here](http://planetpixelemporium.com/planets.html)
 
-[Loading Screen](https://discourse.threejs.org/t/basic-loading-screen/2332)
+[Loading Screen](https://discourse.threejs.org/t/basic-loading-screen/2332), [Styles](https://freefrontend.com/css-loaders/)
 
 ## Interesting stuff I might look into
 
