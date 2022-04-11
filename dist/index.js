@@ -1,39 +1,68 @@
 import * as THREE from 'https://unpkg.com/three@0.139.2/build/three.module.js';
 
+let camera, scene, renderer, textureLoader, skybox;
 
-const textureLoader = new THREE.TextureLoader();
+init();
 
-const scene = new THREE.Scene();
+function init() {
+	// reset the scroll when the page is reloaded to make sure our animations aren't getting messed up 
+	if (history.scrollRestoration) {
+		history.scrollRestoration = 'manual';
+	} else {
+		window.onbeforeunload = function () {
+			window.scrollTo(0, 0);
+		}
+	}
 
-scene.fog = new THREE.FogExp2(0x000000, 0.0002);
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 30000);
+	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 30000);
 
-const renderer = new THREE.WebGLRenderer({
-	antialias: true,
-	alpha: true,
-	canvas: document.querySelector('#bg'),
-});
+	scene = new THREE.Scene();	
+	scene.fog = new THREE.FogExp2(0x000000, 0.02);
 
-renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight);
+	// loading screen init
+	const loadingManager = new THREE.LoadingManager(() => {
+		const loadingScreen = document.getElementById('loading-screen');
+		loadingScreen.classList.add('fade-out');
+		loadingScreen.addEventListener('transitionend', onTransitionEnd);
+	});
 
-renderer.render(scene, camera);
+	textureLoader = new THREE.TextureLoader(loadingManager);
 
-window.addEventListener('resize', onWindowResize, false)
-function onWindowResize() {
-		camera.aspect = window.innerWidth / window.innerHeight;
-		camera.updateProjectionMatrix();
-		renderer.setSize(window.innerWidth, window.innerHeight);
-		renderer.render(scene, camera);
+	// Skybox
+	const materialArray = ['right1', 'left2', 'top3', 'bottom4', 'front5', 'back6'].map(image => {
+		let texture = textureLoader.load('static/textures/skybox/' + image + '.jpg');
+		return new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide });
+	});
+
+	skybox = new THREE.Mesh(new THREE.BoxGeometry(100, 100, 100), materialArray);
+	scene.add(skybox);
+
+	// Lights
+
+	// const pointLight = new THREE.PointLight(0xffffff);
+	// pointLight.position.set(5, 5, 5);
+
+	// const ambientLight = new THREE.AmbientLight(0xffffff);
+	// scene.add(pointLight, ambientLight);
+
+	renderer = new THREE.WebGLRenderer({
+		antialias: true,
+		alpha: true,
+		canvas: document.querySelector('#bg'),
+	});
+	
+	renderer.setPixelRatio(window.devicePixelRatio);
+	renderer.setSize(window.innerWidth, window.innerHeight);
+
+	window.addEventListener('resize', onWindowResize, false);
 }
 
-// Lights
-
-// const pointLight = new THREE.PointLight(0xffffff);
-// pointLight.position.set(5, 5, 5);
-
-// const ambientLight = new THREE.AmbientLight(0xffffff);
-// scene.add(pointLight, ambientLight);
+function onWindowResize() {
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+	renderer.setSize(window.innerWidth, window.innerHeight);
+	renderer.render(scene, camera);
+}
 
 
 // Stars
@@ -55,24 +84,12 @@ for (let i = 0; i < numStars; i++) {
 
 	// Get a positional vector for the star, it should be between 30 and 40 units from the camera
 	let vec = new THREE.Vector3(THREE.MathUtils.randFloatSpread(70), THREE.MathUtils.randFloatSpread(70), THREE.MathUtils.randFloatSpread(70)).clampLength(30, 40)
-  star.position.set(vec.x, vec.y, vec.z);
+	star.position.set(vec.x, vec.y, vec.z);
 
 	star.material.transparent = true;
   starGroup.add(star);
 }
 scene.add(starGroup);
-
-// Skybox
-
-const materialArray = ['right1.jpg', 'left2.jpg', 'top3.jpg', 'bottom4.jpg',
-	'front5.jpg', 'back6.jpg'].map(image => {
-	let texture = textureLoader.load('static/textures/skybox/' + image);
-	return new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide });
-});
-
-const skybox = new THREE.Mesh(new THREE.BoxGeometry(10000, 10000, 10000), materialArray);
-
-scene.add(skybox);
 
 // Avatar Cube
 
@@ -197,25 +214,15 @@ function playScrollAnimations() {
 	});
 }
 
-
 function animate() {
 	requestAnimationFrame(animate);
 	playScrollAnimations();
-
 	renderer.render(scene, camera);
 }
 
-function init() {
-	// reset the scroll when the page is reloaded to make sure our animations aren't getting messed up 
-	if (history.scrollRestoration) {
-		history.scrollRestoration = 'manual';
-	} else {
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    }
-	}
-	// start the animation loop
-	animate()
+function onTransitionEnd( event ) {
+	document.body.style = "";
+	event.target.remove();
 }
 
-init();
+animate();
