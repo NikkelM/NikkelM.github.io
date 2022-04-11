@@ -1,24 +1,7 @@
-import * as THREE from 'three';
-
-const manager = new THREE.LoadingManager();
-manager.onStart = function ( url, itemsLoaded, itemsTotal ) {
-	console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
-};
-
-manager.onLoad = function ( ) {
-	console.log( 'Loading complete!');
-};
+import * as THREE from 'https://unpkg.com/three@0.139.2/build/three.module.js';
 
 
-manager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
-	console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
-};
-
-manager.onError = function ( url ) {
-	console.log( 'There was an error loading ' + url );
-};
-
-const textureLoader = new THREE.TextureLoader(manager);
+const textureLoader = new THREE.TextureLoader();
 
 const scene = new THREE.Scene();
 
@@ -81,8 +64,9 @@ scene.add(starGroup);
 
 // Skybox
 
-const materialArray = ['right1', 'left2', 'top3', 'bottom4', 'front5', 'back6'].map(image => {
-	let texture = textureLoader.load('static/textures/skybox_original_size/' + image + '.png');
+const materialArray = ['right1.jpg', 'left2.jpg', 'top3.jpg', 'bottom4.jpg',
+	'front5.jpg', 'back6.jpg'].map(image => {
+	let texture = textureLoader.load('static/textures/skybox/' + image);
 	return new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide });
 });
 
