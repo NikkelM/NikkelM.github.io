@@ -1,10 +1,10 @@
 # My portfolio Website
 
-This repository contains the source code for my portfolio website hosted right here at [Github pages](https://nikkelm.github.io/).
+This repository contains the source code for my portfolio website hosted by [Github pages](https://nikkelm.github.io/).
 
 ## Usage
 
-First install the dependencies defined in the `package.json` using
+First install the dependencies defined in the `package.json` by running
 
 ```terminal
 npm install
@@ -15,6 +15,14 @@ The you can start the server with
 ```terminal
 npm run dev
 ```
+
+This project is being deployed using Github pages, when on the `main` branch simply run
+
+```terminal
+npm run deploy
+```
+
+to deploy the branch to the `github-pages` environment.
  
 ## Used resources/Useful links
 
