@@ -18,11 +18,7 @@ manager.onError = function ( url ) {
 	console.log( 'There was an error loading ' + url );
 };
 
-const loader = new THREE.Loader( manager );
-loader.load( 'C:\\Users\\nikke\\OneDrive\\Privat\\Projects\\portfolio\\images\\unused\\skybox_original_size\\back6.png', function ( object ) {
-} );
-
-const textureLoader = new THREE.TextureLoader();
+const textureLoader = new THREE.TextureLoader(manager);
 
 const scene = new THREE.Scene();
 
@@ -85,9 +81,8 @@ scene.add(starGroup);
 
 // Skybox
 
-const materialArray = ['right1.jpg', 'left2.jpg', 'top3.jpg', 'bottom4.jpg',
-	'front5.jpg', 'back6.jpg'].map(image => {
-	let texture = textureLoader.load('static/textures/skybox/' + image);
+const materialArray = ['right1', 'left2', 'top3', 'bottom4', 'front5', 'back6'].map(image => {
+	let texture = textureLoader.load('static/textures/skybox_original_size/' + image + '.png');
 	return new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide });
 });
 
