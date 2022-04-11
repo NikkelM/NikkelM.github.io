@@ -26,7 +26,9 @@ npm run dev
 
 [Google Fonts](https://fonts.google.com/)
 
-Earth/Planet maps can be found [here](http://www.celestiamotherlode.net/catalog/earthbumpspec.html) and [here](http://planetpixelemporium.com/planets.html).
+Earth/Planet maps can be found [here](http://www.celestiamotherlode.net/catalog/earthbumpspec.html) and [here](http://planetpixelemporium.com/planets.html)
+
+[Loading Screen](https://discourse.threejs.org/t/basic-loading-screen/2332), [Styles](https://freefrontend.com/css-loaders/)
 
 ## Interesting stuff I might look into
 
