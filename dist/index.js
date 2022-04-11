@@ -20,7 +20,7 @@ function init() {
 		}
 	}
 
-	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 30000);
+	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
 
 	scene = new THREE.Scene();	
 	scene.fog = new THREE.FogExp2(0x000000, 0.02);
