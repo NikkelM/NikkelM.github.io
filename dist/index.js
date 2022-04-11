@@ -64,8 +64,8 @@ scene.add(starGroup);
 
 // Skybox
 
-const materialArray = ['right1.png', 'left2.png', 'top3.png', 'bottom4.png',
-	'front5.png', 'back6.png'].map(image => {
+const materialArray = ['right1.jpg', 'left2.jpg', 'top3.jpg', 'bottom4.jpg',
+	'front5.jpg', 'back6.jpg'].map(image => {
 	let texture = textureLoader.load('static/textures/skybox/' + image);
 	return new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide });
 });
