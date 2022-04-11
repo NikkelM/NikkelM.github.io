@@ -26,6 +26,8 @@ npm run dev
 
 [Google Fonts](https://fonts.google.com/)
 
+Earth/Planet maps can be found [here](http://www.celestiamotherlode.net/catalog/earthbumpspec.html) and [here](http://planetpixelemporium.com/planets.html).
+
 ## Interesting stuff I might look into
 
 [Point clouds](https://dev.to/maniflames/pointcloud-effect-in-three-js-3eic)
