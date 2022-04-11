@@ -29,7 +29,7 @@ function init() {
 	const loadingManager = new THREE.LoadingManager(() => {
 		const loadingScreen = document.getElementById('loading-screen');
 		loadingScreen.classList.add('fade-out');
-		loadingScreen.addEventListener('transitionend', onTransitionEnd);
+		loadingScreen.addEventListener('transitionend', onLoadingScreenTransitionEnd);
 	});
 
 	textureLoader = new THREE.TextureLoader(loadingManager);
@@ -133,10 +133,9 @@ function initAvatarCube() {
 
 // scene.add(globe);
 
+
 // Animation template from https://sbcode.net/threejs/animate-on-scroll/
-
 // Animation Helpers
-
 function lerp(start, end, a) {
 	return (1 - a) * start + a * end;
 }
@@ -146,9 +145,7 @@ function scalePercent(start, end) {
 	return (scrollPercent - start) / (end - start);
 }
 
-
 // How much has the user scrolled yet?
-
 document.body.onscroll = () => {
 	//calculate the current scroll progress as a percentage
 	scrollPercent = ((document.documentElement.scrollTop || document.body.scrollTop) / 
@@ -157,7 +154,6 @@ document.body.onscroll = () => {
 
 /////////////////////////
 // Animation scripts that will each be run whenever the user scrolls
-
 
 // These are the continuous animations which play no matter the scroll percentage
 animationScripts.push({
@@ -226,7 +222,8 @@ function animate() {
 	renderer.render(scene, camera);
 }
 
-function onTransitionEnd( event ) {
+// will be called when the loading screen has finished
+function onLoadingScreenTransitionEnd( event ) {
 	document.body.style = "";
 	event.target.remove();
 }
