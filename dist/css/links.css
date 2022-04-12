@@ -36,3 +36,10 @@ a.whitespace {
 	background-color: transparent;
 	text-decoration: none;
 }
+
+a.contact {
+	color: white;
+	background-color: transparent;
+	text-decoration: none;
+	cursor: pointer;
+}
