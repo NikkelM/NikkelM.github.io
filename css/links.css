@@ -4,13 +4,6 @@ a:link {
 	background-color: transparent;
 	text-decoration: underline;
 }
-
-/* This hide class should be used if you want a link without underlining it by default */
-a.hide {
-	color: white;
-	background-color: transparent;
-	text-decoration: none;
-}
 	
 a:visited {
 	color: white;
@@ -30,9 +23,25 @@ a:active {
 	text-decoration: underline;
 }
 
-/* This whitespace class should be used if you want a whitespace between two items without underlining it *ever* */
-a.whitespace {
+/* This hide class should be used if you want a link without underlining it by default */
+a.hide {
 	color: white;
 	background-color: transparent;
 	text-decoration: none;
+}
+
+/* This class should be used if you want a link without underlining it *ever* */
+a.hideAlways {
+	color: white;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+/* The opposite of hide, always underline */
+a.show {
+	text-decoration: underline;
+}
+
+.pointer {
+	cursor: pointer;
 }
