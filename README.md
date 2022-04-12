@@ -38,7 +38,7 @@ Earth/Planet maps can be found [here](http://www.celestiamotherlode.net/catalog/
 
 ## Interesting stuff I might look into
 
-[Show image on hover](https://linkpeek.com/blog/display-image-on-hover-using-html-javascript-and-css.html)
+[Show image on hover](https://linkpeek.com/blog/display-image-on-hover-using-html-javascript-and-css.html), e.g. for previewing locations or projects.
 
 [Point clouds](https://dev.to/maniflames/pointcloud-effect-in-three-js-3eic)
 
