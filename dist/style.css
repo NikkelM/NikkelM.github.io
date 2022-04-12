@@ -21,11 +21,11 @@ footer {
 }
 
 main {
-	width: 100vw;
 	color: white;
 	z-index: 2;
 	position: absolute;
-	width: 100%;
+	/* 100% somehow adds a tiny bit of horizontal space for scrolling */
+	width: 99%;
 	margin: 0px auto;
 	padding: 120px 0px;
 	

@@ -30,8 +30,6 @@ to deploy the branch to the `github-pages` environment.
 
 [Rotating Skybox](https://codinhood.com/post/create-skybox-with-threejs)
 
-[Favicon generator](https://favicon.io/favicon-converter/)
-
 [Google Fonts](https://fonts.google.com/)
 
 Earth/Planet maps can be found [here](http://www.celestiamotherlode.net/catalog/earthbumpspec.html) and [here](http://planetpixelemporium.com/planets.html)
