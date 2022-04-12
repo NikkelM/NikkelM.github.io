@@ -20,7 +20,7 @@ document.body.onscroll = () => {
 	//calculate the current scroll progress as a percentage
 	scrollPercent = ((document.documentElement.scrollTop || document.body.scrollTop) / 
 		((document.documentElement.scrollHeight || document.body.scrollHeight) - document.documentElement.clientHeight)) * 100;
-		if(scrollPercent >= 30 && scrollPercent <= 50) {
+		if((scrollPercent >= 30 && scrollPercent <= 50) || (scrollPercent >= 60 && scrollPercent <= 80)) {
 			globe.rotation.y -= 0.1;
 		}
 		console.log(scrollPercent);
@@ -70,14 +70,15 @@ animationScripts.push({
 	}
 });
 
+///////// Globe
 // Move the globe in after the avatarCube is gone
 animationScripts.push({
 	start: 5,
-	end: 15,
+	end: 20,
 	func: () => {
-			globe.position.x = lerp(-3, -4, scalePercent(5, 15));
-			globe.position.y = lerp(-2, 0, scalePercent(5, 15));
-			globe.position.z = lerp(1, -5, scalePercent(5, 15));
+		globe.position.x = lerp(-2, -4, scalePercent(5, 20));
+		globe.position.y = lerp(-2, 0, scalePercent(5, 20));
+		globe.position.z = lerp(1, -5, scalePercent(5, 20));
 	}
 });
 
@@ -86,7 +87,7 @@ animationScripts.push({
 	start: 30,
 	end: 40,
 	func: () => {
-			globe.position.z = lerp(-5, -15, scalePercent(30, 40));
+		globe.position.z = lerp(-5, -15, scalePercent(30, 40));
 	}
 });
 
@@ -95,7 +96,7 @@ animationScripts.push({
 	start: 40,
 	end: 50,
 	func: () => {
-			globe.position.z = lerp(-15, -5, scalePercent(40, 50));
+		globe.position.z = lerp(-15, -5, scalePercent(40, 50));
 	}
 });
 
@@ -104,10 +105,37 @@ animationScripts.push({
 	start: 30,
 	end: 50,
 	func: () => {
-			globe.position.x = lerp(-4, 4.5, scalePercent(30, 50));
-			globe.position.y = lerp(0, 0, scalePercent(30, 50));
+		globe.position.x = lerp(-4, 4.5, scalePercent(30, 50));
 	}
 });
+
+// Move the globe "backwards" a little during the transition
+animationScripts.push({
+	start: 60,
+	end: 70,
+	func: () => {
+		globe.position.z = lerp(-5, -15, scalePercent(60, 70));
+	}
+});
+
+// Move it back to the correct decision before ending the animation
+animationScripts.push({
+	start: 70,
+	end: 80,
+	func: () => {
+		globe.position.z = lerp(-15, -5, scalePercent(70, 80));
+	}
+});
+
+// Move the globe to the other side of the screen
+animationScripts.push({
+	start: 60,
+	end: 80,
+	func: () => {
+		globe.position.x = lerp(4.5, -4, scalePercent(60, 80));
+	}
+});
+///////// Globe
 /////////////// Animation Scripts that will be run whenever the user scrolls
 
 /////////////// Main Animation Loop
