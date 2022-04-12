@@ -1,10 +1,12 @@
 export function initContactForm() {
-	let contactFormLink = document.getElementById("contactLink");
+	let contactFormLinks = document.querySelectorAll(`[id^="contactLink"]`);
 
-	contactFormLink.onclick = function() {
-		overlayContactForm();
-		return false;
-	}
+	contactFormLinks.forEach(element => {
+		element.onclick = function() {
+			overlayContactForm();
+			return false;
+		}
+	});
 
 	let contactForm = document.getElementById("contactForm");
 	// stopPropagation to stop the whole contact form from disappearing if the form is clicked

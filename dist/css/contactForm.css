@@ -12,7 +12,7 @@
 }
 
 #contactFormDiv form {
-  background-color: rgba(15, 15, 15, 1);
+  background-color: rgba(15, 15, 15, 0.75);
 	z-index: 6;
 	line-height: 1.5;
   position: absolute;
