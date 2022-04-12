@@ -2,23 +2,22 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 		<link rel="manifest" href="/site.webmanifest">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
 
-		<link rel="stylesheet" type="text/css" href="/style.css" />
+		<link rel="stylesheet" type="text/css" href="/css/style.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>NikkelM - Portfolio</title>
 	</head>
 
 	<section id="loading-screen">
+		<link rel="stylesheet" type="text/css" href="/css/loadingScreen.css" />
 		<div id="loader"></div>
 	</section>
 
+	<!-- this style make it impossible for the user to scroll the page before the loading screen is done -->
 	<body style="overflow: hidden;">
 
 		<canvas id="bg"></canvas>
@@ -37,15 +36,21 @@
 
 			<section class="right">
 				<h2>📜 About me</h2>
+				<p><b>I am currently looking for an internship from 09/22 to 04/23!</b></p>
 				<p>
-					Hi, I'm Nikkel, currently studying in my sixth semester towards my Bachelor's Degree in IT-Systems Engineering at the Hasso-Plattner-Institute in Potsdam.
+					Hi, I'm Nikkel, currently studying in my sixth semester towards my Bachelor's Degree in IT-Systems Engineering at the Hasso-Plattner-Institute in Potsdam.<br>
+					I'm always open to learn and try out new things, but am especially interested in Machine Learning, CI/CD and everything that makes workflows more efficient!
+				</p>
+				<p>
+					In 2014 my family and I moved from my hometown of Kiel, Germany to Varese in northern Italy, where I lived until my graduation from the European
+					School of Varese in Summer 2019. In 2017 I had the opportunity to take an internship in San Francisco, California, where I learnt a lot about the 
+					"Silicon Valley Mindset" and a new way of working collaboratively. In 2019 I started studying for my Bachelor's degree in IT-Systems Engineering at the 
+					Hasso-Plattner-Institute in Potsdam, Germany, which I intend to finish in Summer 2023.
 				</p>
 				<p class="left-align">
-					I am currently working on my bachelor's thesis <br>
-					<b><i>"Monitoring Reliability and Robustness of Agents for Dynamic Pricing in different (Re-)Commerce Markets"</i></b>,<br>
-					which is based on my bachelor's project <br>
-					<b><i>"Online Marketplace Simulation: A Testbed for Self-Learning Agents"</i></b>,<br> 
-					which I am working on together with a small group of other students.
+					I am currently writing my bachelor's thesis	<i>"Monitoring Reliability and Robustness of Agents for Dynamic Pricing in different (Re-)Commerce Markets"</i>,
+					which is based on my bachelor's project run in cooperation with <a href="https://www.featherbysap.io/" target="_blank" class="hide">SAP Feather</a>,
+					<i>"Online Marketplace Simulation: A Testbed for Self-Learning Agents"</i>,	which I am working on together with a small group of other students.
 				</p>
 			</section>
 
@@ -62,7 +67,8 @@
 					I started this portfolio website in early April 2022, after I had gained some first Web-Development experience during my studies.
 					To challenge myself and to allow for as much creativity as possible, I decided to use <a href="https://threejs.org/" class="hide">three.js</a> for the project,
 					as this would allow me to revisit my knowledge of 3D-Computergraphics, which I had last involved myself with two years prior.
-					The source code for this website can be found on <a href="https://github.com/NikkelM/portfolio" target="_blank">Github</a>.
+					The website is hosted using <a href="https://pages.github.com/" target="_blank" class="hide">Github pages</a>,
+					and its source code can be found in <a href="https://github.com/NikkelM/NikkelM.github.io" target="_blank">this repository</a>.
 				</p>
 				<h3>🤐 Secrets</h3>
 				<p>
@@ -72,8 +78,8 @@
 				</p>
 			</section>
 
-			<blockquote class="right">
-				<p class="right-align">Connect with me <br> on 
+			<blockquote class="left">
+				<p class="left-align">Connect with me <br> on 
 					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"><img src="static/icons/linkedin_white.png" style="vertical-align: -5px;"/></a><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="whitespace"> </a>
 					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hide">LinkedIn</a></p>
 			</blockquote>
@@ -95,12 +101,12 @@
 					My main tasks were helping with the complete workflow of reports for the evening news, from planning over filming to editing, but I was also able to get to know
 					how different live-TV formats get produced.
 				</p>
-
 			</section>
 
-			<blockquote>
-				<p>Thanks for visiting!</p>
-			</blockquote>
+			<footer>
+				<p><span style="vertical-align: -6px;" class="material-icons-outlined">copyright</span> 2022 Nikkel Mollenhauer</p>
+				<p><a href="mailto:nikkel.mollenhauer@gmx.net">nikkel.mollenhauer(at)gmx.net</a></p>
+			</footer>
 		</main>
 		
 		<script type="module" src="/index.js"></script>
