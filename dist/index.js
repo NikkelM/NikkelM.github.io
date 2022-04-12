@@ -183,15 +183,15 @@ animationScripts.push({
 	}
 });
 
-// Add an animation that rotates the avatarCube cube throughout the whole scroll process
+// Animation that moves the avatarCube cube out of the way when the initial header moves out of view
 animationScripts.push({
 	start: 0,
-	end: 20,
+	end: 25,
 	func: () => {
-		avatarCube.rotation.x = lerp(0, 2, scalePercent(0, 20));
-		avatarCube.rotation.z = lerp(0, -2, scalePercent(0, 20));
-		avatarCube.position.x = lerp(3, 10, scalePercent(0, 20));
-		avatarCube.position.y = lerp(0, 10, scalePercent(0, 20));
+		avatarCube.rotation.x = lerp(0, 2, scalePercent(0, 25));
+		avatarCube.rotation.z = lerp(0, -2, scalePercent(0, 25));
+		avatarCube.position.x = lerp(3, 10, scalePercent(0, 25));
+		avatarCube.position.y = lerp(0, 10, scalePercent(0, 25));
 	}
 });
 
