@@ -1,6 +1,7 @@
 @import url("https://use.typekit.net/jmk3xov.css");
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import './links.css';
 
 :root {
 	--dark-bg: rgba(15, 15, 15, 0.5);
@@ -9,6 +10,11 @@
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
 	font-style: normal;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+	display: none;
 }
 
 footer {
@@ -65,18 +71,6 @@ section {
 	margin-bottom: var(--margin_bottom);
 }
 
-.left-align {
-	text-align: left;
-}
-
-.center-align {
-	text-align: center;
-}
-
-.right-align {
-	text-align: right;
-}
-
 blockquote {
 	margin: 0;
 	padding: 0;
@@ -105,48 +99,17 @@ blockquote p {
 	grid-column: 6 / span 6;
 }
 
-/* Hide scrollbar */
-::-webkit-scrollbar {
-	display: none;
+/* set alignment of text */
+.left-align {
+	text-align: left;
 }
 
-/* links */
-a:link {
-	color: white;
-	background-color: transparent;
-	text-decoration: underline;
+.center-align {
+	text-align: center;
 }
 
-/* This hide class should be used if you want a link without underlining it by default */
-a.hide {
-	color: white;
-	background-color: transparent;
-	text-decoration: none;
-}
-	
-a:visited {
-	color: white;
-	background-color: transparent;
-	text-decoration: none;
-}
-	
-a:hover {
-	color: white;
-	background-color: transparent;
-	text-decoration: underline;
-}
-	
-a:active {
-	color: white;
-	background-color: transparent;
-	text-decoration: underline;
-}
-
-/* This whitespace class should be used if you want a whitespace between two items without underlining it *ever* */
-a.whitespace {
-	color: white;
-	background-color: transparent;
-	text-decoration: none;
+.right-align {
+	text-align: right;
 }
 
 /* Google Icons */

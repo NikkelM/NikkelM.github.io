@@ -38,6 +38,8 @@ Earth/Planet maps can be found [here](http://www.celestiamotherlode.net/catalog/
 
 ## Interesting stuff I might look into
 
+[Contact Form](https://www.foolishdeveloper.com/2022/03/popup-contact-form-html.html)
+
 [Point clouds](https://dev.to/maniflames/pointcloud-effect-in-three-js-3eic)
 
 [Audio](https://stackoverflow.com/questions/47814060/how-to-play-audio-in-three-js)
