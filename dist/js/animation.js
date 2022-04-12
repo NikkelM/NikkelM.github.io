@@ -23,7 +23,6 @@ document.body.onscroll = () => {
 		if((scrollPercent >= 30 && scrollPercent <= 50) || (scrollPercent >= 60 && scrollPercent <= 80)) {
 			globe.rotation.y -= 0.1;
 		}
-		console.log(scrollPercent);
 }
 /////////////// Animation Helpers
 
