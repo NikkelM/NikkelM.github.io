@@ -55,6 +55,7 @@ header {
 }
 
 h1, h2, h3, h4, blockquote {
+	overflow-wrap: break-word;
   text-align: left;
 	/* margins at the top and bottom of the item */
 	margin-block-start: 0.4rem;
