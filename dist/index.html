@@ -17,26 +17,42 @@
 		<div id="loader"></div>
 	</section>
 
-	<!-- this style make it impossible for the user to scroll the page before the loading screen is done -->
 	<body style="overflow: hidden;">
 
 		<canvas id="bg"></canvas>
 
 		<main>
 
+			<div id="contactFormDiv">
+				<link rel="stylesheet" type="text/css" href="/css/contactForm.css" />
+				<span class="material-icons md-48 closeButton">close</span>
+				<form id="contactForm" action="https://getform.io/f/e0fd4ff8-5016-41ab-8846-59560b09c151" method="POST">
+						<label for="name">Name</label><br>
+						<input type="text" required="" name="name"><br>
+						<label for="email">Email</label><br>
+						<input type="email" required="" name="email"><br>
+						<label for="message">Message</label><br>
+						<textarea rows="5" required="" name="message"></textarea><br><br>
+						<button type="submit">Submit</button>
+					</form>
+			</div>
+
 			<header>
 				<h1>Nikkel Mollenhauer</h1>
 				<p>🎓 CS Student <a class="hide" href="https://hpi.de/" target="_blank">@HPI</a></p>
 				<p>
-					<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume_en_picture.pdf" target="_blank"><span class="material-icons-outlined download-48">file_download</span></a><a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume_en_picture.pdf" target="_blank" class="whitespace"> </a><a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume_en_picture.pdf" target="_blank" class="hide">CV</a>
+					<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume_en_picture.pdf" target="_blank"><span class="material-icons-outlined download-48">file_download</span></a><a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume_en_picture.pdf" target="_blank" class="hideAlways"> </a><a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume_en_picture.pdf" target="_blank" class="hide">CV</a>
 					<span style="vertical-align: 5px;">| </span><a href="https://github.com/NikkelM" target="_blank"><img src="static/icons/github_white.png" style="vertical-align: -4px;"/></a>
 					<span style="vertical-align: 5px;">| </span><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"><img src="static/icons/linkedin_white.png" style="vertical-align: -5px;"/></a>
+					<span style="vertical-align: 5px;">| </span><a id="contactLink" class="hideAlways pointer">Contact</a>
 				</p>
 			</header>
-
 			<section class="right">
 				<h2>📜 About me</h2>
-				<p><b>I am currently looking for an internship from 09/22 to 04/23!</b></p>
+				<p>
+					<b>I am currently looking for an internship from 09/22 to 04/23!</b><br>
+					<a id="contactLink" class="pointer show"><b>Contact me</b></a>
+				</p>
 				<p>
 					Hi, I'm Nikkel, currently studying in my sixth semester towards my Bachelor's Degree in IT-Systems Engineering at the Hasso-Plattner-Institute in Potsdam.<br>
 					I'm always open to learn and try out new things, but am especially interested in Machine Learning, CI/CD and everything that makes workflows more efficient!
@@ -56,7 +72,7 @@
 
 			<blockquote class="right">
 				<p class="right-align">Visit me on 
-					<a href="https://github.com/NikkelM" target="_blank"><img src="static/icons/github_white.png"/></a><a href="https://github.com/NikkelM" target="_blank" class="whitespace"> </a>
+					<a href="https://github.com/NikkelM" target="_blank"><img src="static/icons/github_white.png"/></a><a href="https://github.com/NikkelM" target="_blank" class="hideAlways"> </a>
 					<a href="https://github.com/NikkelM" target="_blank" class="hide">Github</a></p>
 			</blockquote>
 
@@ -80,7 +96,7 @@
 
 			<blockquote class="left">
 				<p class="left-align">Connect with me <br> on 
-					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"><img src="static/icons/linkedin_white.png" style="vertical-align: -5px;"/></a><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="whitespace"> </a>
+					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"><img src="static/icons/linkedin_white.png" style="vertical-align: -5px;"/></a><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hideAlways"> </a>
 					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hide">LinkedIn</a></p>
 			</blockquote>
 
@@ -105,7 +121,7 @@
 
 			<footer>
 				<p><span style="vertical-align: -6px;" class="material-icons-outlined">copyright</span> 2022 Nikkel Mollenhauer</p>
-				<p><a href="mailto:nikkel.mollenhauer@gmx.net">nikkel.mollenhauer(at)gmx.net</a></p>
+				<p><a id="contactLink" class="pointer show">Contact</a></p>
 			</footer>
 		</main>
 		
