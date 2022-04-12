@@ -5,10 +5,9 @@
 
 :root {
 	--dark-bg: rgba(15, 15, 15, 0.5);
-	--margin_bottom: 250px;
-
+	--margin_bottom: 150px;
 	font-family: 'Montserrat', sans-serif;
-	font-weight: 400;
+	font-weight: 200;
 	font-style: normal;
 }
 
@@ -17,11 +16,6 @@ canvas {
 	position: fixed;
 	top: 0;
 	left: 0;
-}
-
-/* Hide scrollbar */
-::-webkit-scrollbar {
-	display: none;
 }
 
 footer {
@@ -38,19 +32,14 @@ main {
 	color: white;
 	z-index: 2;
 	position: absolute;
-	/* 100% somehow adds a tiny bit of horizontal space for scrolling */
-	width: 99%;
+	width: 96%;
 	padding: 90px 0px;
-	
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
 }
 
 header {
 	background: var(--dark-bg);
-	grid-column: 2 / span 5;
-	font-size: 2.5rem;
-	padding: 2rem;
+	font-size: 1.5rem;
+	padding: 1rem;
 	margin-bottom: var(--margin_bottom);
 }
 
@@ -68,8 +57,7 @@ h1, h2, h3, h4, blockquote {
 /* The text blocks with dark background */
 section {
 	overflow-wrap: break-word;
-	grid-column: 4 / span 6;
-	padding: 1.75rem;
+	padding: 1rem;
 	text-align: justify;
 	background: var(--dark-bg);
 	font-size: 1.25rem;
@@ -78,31 +66,16 @@ section {
 }
 
 blockquote {
-	margin: 0;
-	padding: 0;
-	grid-column: 2 / span 9;
+	/* padding: 0; */
 	margin-bottom: var(--margin_bottom);
 }
 
 blockquote p {
 	color: white;
 	background-color: transparent;
-	font-size: 4rem;
+	font-size: 3rem;
 	display: block;
-	line-height: 0.9;
-}
-
-/* set alignment of sections */
-.left {
-	grid-column: 2 / span 6;
-}
-
-.center {
-	grid-column: 4 / span 8;
-}
-
-.right {
-	grid-column: 6 / span 6;
+	line-height: 1;
 }
 
 /* set alignment of text */
