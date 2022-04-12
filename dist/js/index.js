@@ -1,7 +1,6 @@
-import * as THREE from 'https://unpkg.com/three@0.139.2/build/three.module.js';
-
-let camera, scene, renderer, textureLoader;
-let skybox, starGroup, avatarCube;
+import { scene, camera, renderer } from './scene.js'
+import { skybox, starGroup, initSkybox} from './skybox.js'
+import { avatarCube, initAvatarCube} from './models.js'
 
 let scrollPercent = 0;
 const animationScripts = [];
@@ -20,21 +19,6 @@ function init() {
 		}
 	}
 
-	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
-
-	scene = new THREE.Scene();	
-	scene.fog = new THREE.FogExp2(0x000000, 0.02);
-
-	// loading screen init
-	const loadingManager = new THREE.LoadingManager(() => {
-		const loadingScreen = document.getElementById('loading-screen');
-		loadingScreen.classList.add('fade-out');
-		loadingScreen.addEventListener('transitionend', onLoadingScreenTransitionEnd);
-	});
-
-	textureLoader = new THREE.TextureLoader(loadingManager);
-
-
 	// Lights
 
 	// const pointLight = new THREE.PointLight(0xffffff);
@@ -45,17 +29,7 @@ function init() {
 
 	// add the various models
 	initSkybox();
-	initStars();
 	initAvatarCube();
-
-	renderer = new THREE.WebGLRenderer({
-		antialias: true,
-		alpha: true,
-		canvas: document.querySelector('#bg'),
-	});
-	
-	renderer.setPixelRatio(window.devicePixelRatio);
-	renderer.setSize(window.innerWidth, window.innerHeight);
 
 	window.addEventListener('resize', onWindowResize, false);
 }
@@ -66,73 +40,6 @@ function onWindowResize() {
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	renderer.render(scene, camera);
 }
-
-// Skybox
-function initSkybox() {
-	const materialArray = ['right1', 'left2', 'top3', 'bottom4', 'front5', 'back6'].map(image => {
-		let texture = textureLoader.load('static/textures/skybox/' + image + '.jpg');
-		return new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide });
-	});
-
-	skybox = new THREE.Mesh(new THREE.BoxGeometry(100, 100, 100), materialArray);
-	scene.add(skybox);
-}
-
-// Stars
-function initStars() {
-	starGroup = new THREE.Group();
-	let starGeometry = new THREE.SphereGeometry(0.05);
-
-	const numStars = 500;
-	// we need some variety of materials for the blinking to appear more random
-	const numStarMaterials = numStars/5;
-	const starMaterials = [];
-
-	for(let i=0; i<numStarMaterials; i++) {
-		starMaterials.push(new THREE.MeshBasicMaterial());
-	}
-
-	for (let i = 0; i < numStars; i++) {
-		let star = new THREE.Mesh(starGeometry, starMaterials[i%numStarMaterials]);
-
-		// Get a positional vector for the star, it should be between 30 and 40 units from the camera
-		let vec = new THREE.Vector3(THREE.MathUtils.randFloatSpread(70), THREE.MathUtils.randFloatSpread(70), THREE.MathUtils.randFloatSpread(70)).clampLength(30, 40)
-		star.position.set(vec.x, vec.y, vec.z);
-
-		star.material.transparent = true;
-		starGroup.add(star);
-	}
-	scene.add(starGroup);
-}
-
-// Avatar Cube
-function initAvatarCube() {
-	const avatarCubeTexture = textureLoader.load('static/textures/avatarCube.jpg');
-
-	avatarCube = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: avatarCubeTexture }));
-	avatarCube.position.set(3, 0, -5)
-	avatarCube.rotation.set(0, -0.4, 0)
-	
-	scene.add(avatarCube);
-}
-
-// Globe
-
-// const globeTexture = textureLoader.load('static/textures/earthmap.jpg');
-// const globe = new THREE.Mesh(new THREE.SphereGeometry(1.75, 200, 200), new THREE.MeshBasicMaterial( { map: globeTexture} ));
-// // const globeStartPositionX = -4;
-// // const globeStartPositionY = -3;
-// const globeStartPositionX = -2;
-// const globeStartPositionY = -1;
-// const globeStartPositionZ = -4;
-// const globeStartRotationX = 0.2;
-// const globeStartRotationY = -1.5;
-// const globeStartRotationZ = -0.3;
-// globe.position.set(globeStartPositionX, globeStartPositionY, globeStartPositionZ)
-// globe.rotation.set(globeStartRotationX, globeStartRotationY, globeStartRotationZ)
-
-// scene.add(globe);
-
 
 // Animation template from https://sbcode.net/threejs/animate-on-scroll/
 // Animation Helpers
@@ -222,10 +129,4 @@ function animate() {
 	requestAnimationFrame(animate);
 	playScrollAnimations();
 	renderer.render(scene, camera);
-}
-
-// will be called when the loading screen has finished
-function onLoadingScreenTransitionEnd( event ) {
-	document.body.style = "";
-	event.target.remove();
 }
