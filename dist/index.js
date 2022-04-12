@@ -20,7 +20,7 @@ function init() {
 		}
 	}
 
-	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 30000);
+	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
 
 	scene = new THREE.Scene();	
 	scene.fog = new THREE.FogExp2(0x000000, 0.02);
@@ -163,6 +163,7 @@ animationScripts.push({
 		// skybox
 		skybox.rotation.x += 0.001;
 		skybox.rotation.y -= 0.0005;
+		skybox.rotation.z += 0.001;
 
 		// avatarCube
 		avatarCube.rotation.y -= 0.005;
@@ -174,6 +175,7 @@ animationScripts.push({
 		// stars
 		starGroup.rotation.x += 0.001;
 		starGroup.rotation.y -= 0.0005;
+		starGroup.rotation.z += 0.001;
 		starGroup.children.forEach((star) => {
 			starLightness > 1 ? starLightness = 0 : starLightness += 0.005;
 			star.material.opacity = starLightness;
@@ -181,15 +183,15 @@ animationScripts.push({
 	}
 });
 
-// Add an animation that rotates the avatarCube cube throughout the whole scroll process
+// Animation that moves the avatarCube cube out of the way when the initial header moves out of view
 animationScripts.push({
 	start: 0,
-	end: 20,
+	end: 25,
 	func: () => {
-		avatarCube.rotation.x = lerp(0, 2, scalePercent(0, 20));
-		avatarCube.rotation.z = lerp(0, -2, scalePercent(0, 20));
-		avatarCube.position.x = lerp(3, 10, scalePercent(0, 20));
-		avatarCube.position.y = lerp(0, 10, scalePercent(0, 20));
+		avatarCube.rotation.x = lerp(0, 2, scalePercent(0, 25));
+		avatarCube.rotation.z = lerp(0, -2, scalePercent(0, 25));
+		avatarCube.position.x = lerp(3, 10, scalePercent(0, 25));
+		avatarCube.position.y = lerp(0, 10, scalePercent(0, 25));
 	}
 });
 
