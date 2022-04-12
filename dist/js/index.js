@@ -18,7 +18,16 @@ function init() {
 	initAvatarCube();
 
 	window.addEventListener('resize', onWindowResize, false);
+	// overlayContactForm();
+}
+function overlayContactForm() {
+  document.getElementById("contactForm").style.display = "block";
+	document.body.style = "overflow: hidden;";
 }
 
+function removeContactForm() {
+  document.getElementById("contactForm").style.display = "none";
+	document.body.style = "";
+}
 init();
 animate();

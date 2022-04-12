@@ -38,8 +38,6 @@ Earth/Planet maps can be found [here](http://www.celestiamotherlode.net/catalog/
 
 ## Interesting stuff I might look into
 
-[Contact Form](https://www.foolishdeveloper.com/2022/03/popup-contact-form-html.html)
-
 [Show image on hover](https://linkpeek.com/blog/display-image-on-hover-using-html-javascript-and-css.html)
 
 [Point clouds](https://dev.to/maniflames/pointcloud-effect-in-three-js-3eic)

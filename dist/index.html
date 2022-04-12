@@ -17,13 +17,24 @@
 		<div id="loader"></div>
 	</section>
 
-	<!-- this style make it impossible for the user to scroll the page before the loading screen is done -->
 	<body style="overflow: hidden;">
 
 		<canvas id="bg"></canvas>
 
 		<main>
-
+			<div id="contactForm">
+				<link rel="stylesheet" type="text/css" href="/css/contactForm.css" />
+				<!-- <form action="https://getform.io/f/e0fd4ff8-5016-41ab-8846-59560b09c151" method="POST"> -->
+					<form action="placeholder" method="POST">
+						<label for="name">Name</label>
+						<input type="text" required="" name="name"><br>
+						<label for="email">Email</label>
+						<input type="email" required="" name="email"><br>
+						<label for="message">Message</label>
+						<input type="text" required="" name="message">
+						<button type="submit">Send</button>
+					</form>
+			</div>
 			<header>
 				<h1>Nikkel Mollenhauer</h1>
 				<p>🎓 CS Student <a class="hide" href="https://hpi.de/" target="_blank">@HPI</a></p>
@@ -33,7 +44,6 @@
 					<span style="vertical-align: 5px;">| </span><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"><img src="static/icons/linkedin_white.png" style="vertical-align: -5px;"/></a>
 				</p>
 			</header>
-
 			<section class="right">
 				<h2>📜 About me</h2>
 				<p><b>I am currently looking for an internship from 09/22 to 04/23!</b></p>
