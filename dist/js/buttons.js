@@ -7,6 +7,7 @@ export function initContactForm() {
 	}
 
 	let contactForm = document.getElementById("contactForm");
+	// stopPropagation to stop the whole contact form from disappearing if the form is clicked
 	contactForm.addEventListener('click', function(e) {
 		e.stopPropagation();
 	})
