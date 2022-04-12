@@ -163,6 +163,7 @@ animationScripts.push({
 		// skybox
 		skybox.rotation.x += 0.001;
 		skybox.rotation.y -= 0.0005;
+		skybox.rotation.z += 0.001;
 
 		// avatarCube
 		avatarCube.rotation.y -= 0.005;
@@ -174,6 +175,7 @@ animationScripts.push({
 		// stars
 		starGroup.rotation.x += 0.001;
 		starGroup.rotation.y -= 0.0005;
+		starGroup.rotation.z += 0.001;
 		starGroup.children.forEach((star) => {
 			starLightness > 1 ? starLightness = 0 : starLightness += 0.005;
 			star.material.opacity = starLightness;
