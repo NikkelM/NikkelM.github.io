@@ -1,0 +1,5 @@
+@import '../contactForm.css';
+
+#contactFormDiv form {
+	width: 80%;
+}
