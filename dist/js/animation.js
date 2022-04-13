@@ -93,6 +93,7 @@ animationScripts.push({
 	end: 40,
 	func: () => {
 		globe.position.z = lerp(-5, -15, scalePercent(30, 40));
+		sunGroup.position.z = lerp(-3, -12, scalePercent(30, 40));
 	}
 });
 
@@ -102,6 +103,7 @@ animationScripts.push({
 	end: 50,
 	func: () => {
 		globe.position.z = lerp(-15, -5, scalePercent(40, 50));
+		sunGroup.position.z = lerp(-12, -3, scalePercent(40, 50));
 	}
 });
 
@@ -111,6 +113,7 @@ animationScripts.push({
 	end: 50,
 	func: () => {
 		globe.position.x = lerp(-4, 4.5, scalePercent(30, 50));
+		sunGroup.position.x = lerp(-4, 4.5, scalePercent(30, 50));
 	}
 });
 
@@ -120,15 +123,17 @@ animationScripts.push({
 	end: 70,
 	func: () => {
 		globe.position.z = lerp(-5, -15, scalePercent(60, 70));
+		sunGroup.position.z = lerp(-5, -15, scalePercent(60, 70));
 	}
 });
 
-// Move it back to the correct decision before ending the animation
+// Move it back to the correct distance before ending the animation
 animationScripts.push({
 	start: 70,
 	end: 80,
 	func: () => {
 		globe.position.z = lerp(-15, -5, scalePercent(70, 80));
+		sunGroup.position.z = lerp(-15, -5, scalePercent(70, 80));
 	}
 });
 
@@ -138,6 +143,7 @@ animationScripts.push({
 	end: 80,
 	func: () => {
 		globe.position.x = lerp(4.5, -4, scalePercent(60, 80));
+		sunGroup.position.x = lerp(4.5, -4, scalePercent(60, 80));
 	}
 });
 ///////// Globe
