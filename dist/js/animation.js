@@ -1,7 +1,7 @@
 // Animation template from https://sbcode.net/threejs/animate-on-scroll/
 import { scene, camera, renderer } from './scene.js'
 import { skybox, starGroup } from './skybox.js'
-import { avatarCube, globe } from './models.js'
+import { avatarCube, globe, sunGroup } from './models.js'
 
 
 /////////////// Animation Helpers
@@ -45,6 +45,9 @@ animationScripts.push({
 
 		// globe
 		globe.rotation.y -= 0.0025;
+		// sun
+		sunGroup.rotation.y += 0.005;
+		sunGroup.rotation.z -= 0.005;
 
 		// stars
 		starGroup.rotation.x += 0.001;
@@ -78,6 +81,9 @@ animationScripts.push({
 		globe.position.x = lerp(-2, -4, scalePercent(5, 20));
 		globe.position.y = lerp(-2, 0, scalePercent(5, 20));
 		globe.position.z = lerp(1, -5, scalePercent(5, 20));
+		sunGroup.position.x = lerp(-2, -4, scalePercent(5, 20));
+		sunGroup.position.y = lerp(-2, 2, scalePercent(5, 20));
+		sunGroup.position.z = lerp(1, -3, scalePercent(5, 20));
 	}
 });
 
