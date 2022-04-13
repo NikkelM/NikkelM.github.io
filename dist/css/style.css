@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import './links.css';
+@import './contactForm.css';
 
 :root {
 	--dark-bg: rgba(15, 15, 15, 0.5);
@@ -49,7 +50,7 @@ main {
 header {
 	background: var(--dark-bg);
 	grid-column: 2 / span 5;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	padding: 2rem;
 	margin-bottom: var(--margin_bottom);
 }

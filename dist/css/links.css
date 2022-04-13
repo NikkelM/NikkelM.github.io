@@ -30,6 +30,10 @@ a.hide {
 	text-decoration: none;
 }
 
+a.hide:hover {
+	text-decoration: underline;
+}
+
 /* This class should be used if you want a link without underlining it *ever* */
 a.hideAlways {
 	color: white;
