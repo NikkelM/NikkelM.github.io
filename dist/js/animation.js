@@ -1,7 +1,7 @@
 // Animation template from https://sbcode.net/threejs/animate-on-scroll/
 import { scene, camera, renderer } from './scene.js'
 import { skybox, starGroup } from './skybox.js'
-import { avatarCube, globe, sunGroup } from './models.js'
+import { avatarCube, globe, sun, sunPivot } from './models.js'
 
 
 /////////////// Animation Helpers
@@ -29,7 +29,6 @@ document.body.onscroll = () => {
 /////////////// Animation Scripts that will be run whenever the user scrolls
 const animationScripts = [];
 let starLightness = 0;
-
 // These are the continuous animations which play no matter the scroll percentage
 animationScripts.push({
 	start: 0,
@@ -44,10 +43,12 @@ animationScripts.push({
 		avatarCube.rotation.y -= 0.005;
 
 		// globe
-		globe.rotation.y -= 0.0025;
+		// globe.rotation.y -= 0.0025;
 		// sun
-		sunGroup.rotation.y += 0.005;
-		sunGroup.rotation.z -= 0.005;
+		sun.rotation.y += 0.005;
+		sunPivot.rotation.y += 0.005;
+		sunPivot.rotation.x += 0.00075;
+		// sun.rotation.z -= 0.005;
 
 		// stars
 		starGroup.rotation.x += 0.001;
@@ -78,12 +79,12 @@ animationScripts.push({
 	start: 5,
 	end: 20,
 	func: () => {
-		globe.position.x = lerp(-2, -4, scalePercent(5, 20));
-		globe.position.y = lerp(-2, 0, scalePercent(5, 20));
-		globe.position.z = lerp(1, -5, scalePercent(5, 20));
-		sunGroup.position.x = lerp(-2, -4, scalePercent(5, 20));
-		sunGroup.position.y = lerp(-2, 2, scalePercent(5, 20));
-		sunGroup.position.z = lerp(1, -3, scalePercent(5, 20));
+		sunPivot.position.x = lerp(-2, -4, scalePercent(5, 20));
+		sunPivot.position.y = lerp(-2, 0, scalePercent(5, 20));
+		sunPivot.position.z = lerp(1, -5, scalePercent(5, 20));
+		// sun.position.x = lerp(-2, -4, scalePercent(5, 20));
+		// sun.position.y = lerp(-2, 2, scalePercent(5, 20));
+		// sun.position.z = lerp(1, -3, scalePercent(5, 20));
 	}
 });
 
@@ -93,7 +94,7 @@ animationScripts.push({
 	end: 40,
 	func: () => {
 		globe.position.z = lerp(-5, -15, scalePercent(30, 40));
-		sunGroup.position.z = lerp(-3, -12, scalePercent(30, 40));
+		sun.position.z = lerp(-3, -12, scalePercent(30, 40));
 	}
 });
 
@@ -103,7 +104,7 @@ animationScripts.push({
 	end: 50,
 	func: () => {
 		globe.position.z = lerp(-15, -5, scalePercent(40, 50));
-		sunGroup.position.z = lerp(-12, -3, scalePercent(40, 50));
+		sun.position.z = lerp(-12, -3, scalePercent(40, 50));
 	}
 });
 
@@ -113,7 +114,7 @@ animationScripts.push({
 	end: 50,
 	func: () => {
 		globe.position.x = lerp(-4, 4.5, scalePercent(30, 50));
-		sunGroup.position.x = lerp(-4, 4.5, scalePercent(30, 50));
+		sun.position.x = lerp(-4, 4.5, scalePercent(30, 50));
 	}
 });
 
@@ -123,7 +124,7 @@ animationScripts.push({
 	end: 70,
 	func: () => {
 		globe.position.z = lerp(-5, -15, scalePercent(60, 70));
-		sunGroup.position.z = lerp(-5, -15, scalePercent(60, 70));
+		sun.position.z = lerp(-5, -15, scalePercent(60, 70));
 	}
 });
 
@@ -133,7 +134,7 @@ animationScripts.push({
 	end: 80,
 	func: () => {
 		globe.position.z = lerp(-15, -5, scalePercent(70, 80));
-		sunGroup.position.z = lerp(-15, -5, scalePercent(70, 80));
+		sun.position.z = lerp(-15, -5, scalePercent(70, 80));
 	}
 });
 
@@ -143,7 +144,7 @@ animationScripts.push({
 	end: 80,
 	func: () => {
 		globe.position.x = lerp(4.5, -4, scalePercent(60, 80));
-		sunGroup.position.x = lerp(4.5, -4, scalePercent(60, 80));
+		sun.position.x = lerp(4.5, -4, scalePercent(60, 80));
 	}
 });
 ///////// Globe
