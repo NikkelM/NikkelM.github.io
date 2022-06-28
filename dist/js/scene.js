@@ -30,6 +30,16 @@ export let renderer = new THREE.WebGLRenderer({
 });
 ////////// Camera
 
+
+// ////////// Lights
+// const pointLight = new THREE.PointLight(0xffffff, 0.75);
+// pointLight.position.set(0, 10, 5);
+// scene.add(pointLight);
+
+const ambientLight = new THREE.AmbientLight(0xffffff);
+scene.add(ambientLight);
+////////// Lights
+
 ////////// Renderer
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
