@@ -1,8 +1,13 @@
 // Animation template from https://sbcode.net/threejs/animate-on-scroll/
+import { Clock } from 'https://unpkg.com/three@0.139.2/build/three.module.js';
 import { scene, camera, renderer } from './scene.js'
 import { skybox, starGroup } from './skybox.js'
 import { avatarCube, globe, sun, sunPivot } from './models.js'
 
+// framerate limit
+let clock = new Clock();
+let delta = 0;
+let interval = 1/110;
 
 /////////////// Animation Helpers
 function lerp(start, end, a) {
@@ -162,7 +167,12 @@ function playScrollAnimations() {
 
 export function animate() {
 	requestAnimationFrame(animate);
-	playScrollAnimations();
-	renderer.render(scene, camera);
+
+	delta += clock.getDelta();
+   if (delta  > interval) {
+			 playScrollAnimations();
+			 renderer.render(scene, camera);
+       delta = delta % interval;
+   }
 }
 /////////////// Main Animation Loop
