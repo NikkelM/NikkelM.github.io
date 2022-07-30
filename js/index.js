@@ -1,3 +1,6 @@
+console.log("Made with ❤️ by @NikkelM");
+console.log("Find the source code at https://github.com/NikkelM/NikkelM.github.io");
+
 import { onWindowResize } from './scene.js'
 import { initSkybox } from './skybox.js'
 import { initAvatarCube } from './models.js'
