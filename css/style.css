@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import './links.css';
+@import './scrollArrow.css';
 @import './contactForm.css';
 
 :root {
@@ -26,7 +27,7 @@ canvas {
 }
 
 footer {
-  text-align: center;
+	text-align: center;
 	position: absolute;
 	left: -1%;
 	bottom: 0px;
@@ -42,7 +43,7 @@ main {
 	/* 100% somehow adds a tiny bit of horizontal space for scrolling */
 	width: 99%;
 	padding: 90px 0px;
-	
+
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 }
@@ -57,7 +58,7 @@ header {
 
 h1, h2, h3, h4, blockquote {
 	overflow-wrap: break-word;
-  text-align: left;
+	text-align: left;
 	/* margins at the top and bottom of the item */
 	margin-block-start: 0.4rem;
 	margin-block-end: 0.4rem;
@@ -120,9 +121,27 @@ blockquote p {
 }
 
 /* Google Icons */
-.material-icons.locked { vertical-align: -4px; }
-.material-icons-outlined.download-48 { vertical-align: -9px; font-size: 48px; }
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
+.material-icons.locked {
+	vertical-align: -4px;
+}
+
+.material-icons-outlined.download-48 {
+	vertical-align: -9px;
+	font-size: 48px;
+}
+
+.material-icons.md-18 {
+	font-size: 18px;
+}
+
+.material-icons.md-24 {
+	font-size: 24px;
+}
+
+.material-icons.md-36 {
+	font-size: 36px;
+}
+
+.material-icons.md-48 {
+	font-size: 48px;
+}

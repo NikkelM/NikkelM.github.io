@@ -4,6 +4,9 @@ import { scene, camera, renderer } from './scene.js'
 import { skybox, starGroup } from './skybox.js'
 import { avatarCube, globe } from './models.js'
 
+// constants
+const scrollArrow = document.getElementById('scrollArrow');
+
 // framerate limit
 let clock = new Clock();
 let delta = 0;
@@ -20,14 +23,15 @@ function scalePercent(start, end) {
 }
 
 let scrollPercent = 0;
-// How much has the user scrolled yet?
 document.body.onscroll = () => {
-	//calculate the current scroll progress as a percentage
+	// calculate the current scroll progress as a percentage
 	scrollPercent = ((document.documentElement.scrollTop || document.body.scrollTop) / 
 		((document.documentElement.scrollHeight || document.body.scrollHeight) - document.documentElement.clientHeight)) * 100;
-		if((scrollPercent >= 30 && scrollPercent <= 50) || (scrollPercent >= 60 && scrollPercent <= 80)) {
-			globe.rotation.y -= 0.1;
-		}
+
+	// rotate the globe extra fast on scroll
+	if((scrollPercent >= 30 && scrollPercent <= 50) || (scrollPercent >= 60 && scrollPercent <= 80)) {
+		globe.rotation.y -= 0.1;
+	}
 }
 /////////////// Animation Helpers
 
@@ -59,6 +63,15 @@ animationScripts.push({
 			starLightness > 1 ? starLightness = 0 : starLightness += 0.005;
 			star.material.opacity = starLightness;
 		});
+	}
+});
+
+// Fade out the scrollArrow on initial scroll
+animationScripts.push({
+	start: 0,
+	end: 4,
+	func: () => {
+		scrollArrow.style.opacity = lerp(1, 0, scalePercent(0, 3));
 	}
 });
 
