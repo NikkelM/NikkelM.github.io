@@ -29,7 +29,7 @@ document.body.onscroll = () => {
 		((document.documentElement.scrollHeight || document.body.scrollHeight) - document.documentElement.clientHeight)) * 100;
 
 	// rotate the globe extra fast on scroll
-	if((scrollPercent >= 30 && scrollPercent <= 50) || (scrollPercent >= 60 && scrollPercent <= 80)) {
+	if((scrollPercent >= 25 && scrollPercent <= 45) || (scrollPercent >= 60 && scrollPercent <= 80)) {
 		globe.rotation.y -= 0.1;
 	}
 }
@@ -101,28 +101,28 @@ animationScripts.push({
 
 // Move the globe "backwards" a little during the transition
 animationScripts.push({
-	start: 30,
-	end: 40,
+	start: 25,
+	end: 35,
 	func: () => {
-		globe.position.z = lerp(-5, -15, scalePercent(30, 40));
+		globe.position.z = lerp(-5, -15, scalePercent(25, 35));
 	}
 });
 
-// Move it back to the correct decision before ending the animation
+// Move it back to the correct position before ending the animation
 animationScripts.push({
-	start: 40,
-	end: 50,
+	start: 35,
+	end: 45,
 	func: () => {
-		globe.position.z = lerp(-15, -5, scalePercent(40, 50));
+		globe.position.z = lerp(-15, -5, scalePercent(35, 45));
 	}
 });
 
 // Move the globe to the other side of the screen
 animationScripts.push({
-	start: 30,
-	end: 50,
+	start: 25,
+	end: 45,
 	func: () => {
-		globe.position.x = lerp(-4, 4.5, scalePercent(30, 50));
+		globe.position.x = lerp(-4, 4.5, scalePercent(25, 45));
 	}
 });
 
