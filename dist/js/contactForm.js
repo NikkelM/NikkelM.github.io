@@ -21,5 +21,4 @@ function overlayContactForm() {
 		document.body.style = "";
 	}
   document.getElementById("contactFormDiv").style.display = "block";
-	document.body.style = "overflow: hidden;";
 }
