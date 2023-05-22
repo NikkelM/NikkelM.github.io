@@ -1,21 +1,16 @@
 :root {
-	--font-family: 'Montserrat', sans-serif;
 	--bg-color: #222;
 	--fg-color: #fff;
 	--grey-fg-color: #999;
 	--grey-bg-color: #333;
 
-	font-family: var(--font-family);
 	background-color: var(--bg-color);
 	color: var(--fg-color);
 	position: relative;
 	min-height: calc(100vh - 70px);
-	font-weight: 400;
-	font-style: normal;
 	color-scheme: dark;
 	margin: 20px;
 	overflow-y: auto;
-	/* overflow-wrap: break-word; */
 }
 
 header {
@@ -32,7 +27,6 @@ section {
 	font-size: 18px;
 	margin: 0px auto;
 	width: 80vw;
-	/* margin-bottom: 100px; */
 }
 
 /*
@@ -56,35 +50,6 @@ section {
  * Footer
  */
 footer {
-	text-align: center;
-	position: absolute;
-	bottom: 0;
 	width: 100%;
 	height: 70px;
-}
-
-/* Google Icons */
-.material-icons.locked {
-	vertical-align: -4px;
-}
-
-.material-icons-outlined.download-48 {
-	vertical-align: -9px;
-	font-size: 48px;
-}
-
-.material-icons.md-18 {
-	font-size: 18px;
-}
-
-.material-icons.md-24 {
-	font-size: 24px;
-}
-
-.material-icons.md-36 {
-	font-size: 36px;
-}
-
-.material-icons.md-48 {
-	font-size: 48px;
 }
