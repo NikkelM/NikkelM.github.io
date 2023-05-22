@@ -4,6 +4,8 @@ const closeButton = document.querySelector('.closeButton');
 const openNavBarButton = document.getElementById('openNavBarButton');
 const navBarContents = document.getElementById('navBarContents');
 
+let shouldContinueStartAnimations = true;
+
 // Open the navigation bar when the menu button is clicked
 function openNav() {
 	navBar.style.width = '250px';
@@ -23,6 +25,10 @@ window.addEventListener('click', function (event) {
 
 // Add event listeners to the menu button and close button
 openNavBarButton.addEventListener('click', function (event) {
+	shouldContinueStartAnimations = false;
+	navBarContents.style.display = 'block';
+	openNavBarButton.classList.remove('wiggle');
+
 	openNav();
 	event.stopPropagation();
 });
@@ -42,11 +48,13 @@ window.addEventListener('load', function () {
 	openNavBarButton.classList.add('wiggle');
 
 	setTimeout(function () {
+		if (!shouldContinueStartAnimations) return;
 		navBarContents.style.display = 'none';
 		navBar.style.width = '60px';
 	}, 100);
 
 	setTimeout(function () {
+		if (!shouldContinueStartAnimations) return;
 		navBar.style.width = '0';
 	}, 1500);
 
