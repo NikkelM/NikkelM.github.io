@@ -1,7 +1,6 @@
 @import url("https://use.typekit.net/jmk3xov.css");
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-@import './links.css';
 
 :root {
 	--dark-bg: rgba(15, 15, 15, 0.5);
