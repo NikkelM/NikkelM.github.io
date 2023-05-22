@@ -1,7 +1,7 @@
 @import './links.css';
 
 nav {
-	height: 100%;
+	height: calc(100% - 120px);
 	width: 0;
 	position: fixed;
 	z-index: 999;
@@ -11,7 +11,12 @@ nav {
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
+	padding-bottom: 60px;
 	white-space: nowrap;
+}
+
+nav .navBarTop {
+	margin-top: 20px;
 }
 
 nav .navLink {
@@ -21,6 +26,14 @@ nav .navLink {
 	color: #818181 !important;
 	display: block;
 	transition: 0.3s;
+}
+
+nav .navBarBottom {
+	text-align: center;
+	align-items: center;
+	position: absolute;
+	bottom: 0;
+	margin: 20px 20px 50px 20px;
 }
 
 nav .navLink:hover {
