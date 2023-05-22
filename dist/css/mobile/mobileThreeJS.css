@@ -1,5 +1,4 @@
-@import '../style.css';
-@import './mobileContactForm.css';
+@import '../threeJS.css';
 
 :root {
 	--margin_bottom: 150px;

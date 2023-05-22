@@ -5,7 +5,7 @@ import { onWindowResize } from './scene.js'
 import { initSkybox } from './skybox.js'
 import { initAvatarCube } from './models.js'
 import { animate } from './animation.js'
-import { initContactForm } from './buttons.js'
+import { initContactForm } from '../contactForm.js'
 
 function init() {
 	// reset the scroll when the page is reloaded to make sure our animations aren't getting messed up 

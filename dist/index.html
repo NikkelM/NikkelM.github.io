@@ -1,160 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-		<link rel="manifest" href="/site.webmanifest">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
 
-		<link rel="stylesheet" type="text/css" media="(min-device-width: 668px)" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" media="(max-device-width: 668px)" href="css/mobile/mobileStyle.css" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
-		<meta name="google-site-verification" content="uR-EzE_3Pd8QoEugN8fFQpax8AcCAPYCwHqR2TEPkas" />
-		<title>Nikkel Mollenhauer</title>
-	</head>
+<head>
+	<meta charset="UTF-8" />
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="manifest" href="/site.webmanifest">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
 
-	<section id="loading-screen">
-		<link rel="stylesheet" type="text/css" href="/css/loadingScreen.css" />
-		<div id="loader"></div>
-	</section>
+	<link rel="stylesheet" type="text/css" href="css/scrollArrow.css" />
+	<link rel="stylesheet" type="text/css" media="(min-device-width: 668px)" href="css/contactForm.css" />
+	<link rel="stylesheet" type="text/css" media="(min-device-width: 668px)" href="css/threeJS.css" />
+	<link rel="stylesheet" type="text/css" media="(max-device-width: 668px)" href="css/mobile/mobileContactForm.css" />
+	<link rel="stylesheet" type="text/css" media="(max-device-width: 668px)" href="css/mobile/mobileThreeJS.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	<title>Nikkel Mollenhauer - ThreeJS</title>
+</head>
 
-	<body style="overflow: hidden;">
+<section id="loading-screen">
+	<link rel="stylesheet" type="text/css" href="/css/loadingScreen.css" />
+	<div id="loader"></div>
+</section>
 
-		<canvas id="bg"></canvas>
+<body style="overflow: hidden;">
 
-		<main>
+	<canvas id="bg"></canvas>
 
-			<div id="contactFormDiv">
-				<span class="material-icons md-48 closeButton">close</span>
-				<form id="contactForm" action="https://getform.io/f/e0fd4ff8-5016-41ab-8846-59560b09c151" method="POST">
-						<label for="name">Name</label><br>
-						<input type="text" required="" name="name"><br>
-						<label for="email">Email</label><br>
-						<input type="email" required="" name="email"><br>
-						<label for="message">Message</label><br>
-						<textarea rows="5" required="" name="message"></textarea><br><br>
-						<button type="submit">Submit</button>
-					</form>
-			</div>
+	<main>
 
-			<header>
-				<h1>Nikkel Mollenhauer</h1>
-				<p>🎓 CS Student <a class="hide" href="https://hpi.de/" target="_blank">@HPI</a></p>
-				<p>
-					<a href="https://bit.ly/MollenhauerResumeDownload" target="_blank"><span class="material-icons-outlined download-48">file_download</span></a><a href="https://bit.ly/MollenhauerResumeDownload" target="_blank" class="hideAlways"> </a><a href="https://bit.ly/MollenhauerResumeDownload" target="_blank" class="hideAlways">CV</a>
-					<span style="vertical-align: 5px;">| </span><a href="https://bit.ly/MollenhauerGithubPortfolioWebsite" target="_blank"><img src="static/icons/github_white.png" style="vertical-align: -4px;"/></a>
-					<span style="vertical-align: 5px;">| </span><a href="https://bit.ly/MollenhauerLinkedinPortfolioWebsite" target="_blank"><img src="static/icons/linkedin_white.png" style="vertical-align: -5px;"/></a>
-					<span style="vertical-align: 5px;">| </span><a id="contactLink" class="hideAlways pointer">Contact</a>
-				</p>
-			</header>
+		<div id="contactFormDiv">
+			<span class="material-icons md-48 closeButton">close</span>
+			<form id="contactForm" action="https://getform.io/f/e0fd4ff8-5016-41ab-8846-59560b09c151" method="POST">
+				<label for="name">Name</label><br>
+				<input type="text" required="" name="name"><br>
+				<label for="email">Email</label><br>
+				<input type="email" required="" name="email"><br>
+				<label for="message">Message</label><br>
+				<textarea rows="5" required="" name="message"></textarea><br><br>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
 
-			<div class="scrollArrow" id="scrollArrow"></div>
-			
-			<section class="right">
-				<h2>📜 About me</h2>
-				<p>
-					Hi, I'm Nikkel, currently studying towards my bachelor's degree in IT-Systems Engineering at the Hasso-Plattner-Institute in Potsdam.<br>
-					I'm always open to learn and try out new things, but am especially interested in machine learning, CI/CD and everything that makes workflows more efficient! <br>
-				  In autumn of 2022, I joined the Site Reliability team of the Azure cloud platform at Microsoft Dublin, where I was responsible for extending monitoring functionalities for a number of core Azure services.
-				</p>
-				<p>
-					In 2014 my family and I moved from my hometown of Kiel, Germany to Varese in northern Italy, where I lived until my graduation from the European
-					School of Varese in Summer 2019. In 2017 I had the opportunity to do an internship in San Francisco, California, where I learnt about the 
-					"Silicon Valley Mindset" and a new way of working collaboratively. In 2019 I started studying towards my Bachelor's degree in IT-Systems Engineering at the 
-					Hasso-Plattner-Institute in Potsdam, Germany, which I intend to finish in Summer 2023.
-				</p>
-				<p>
-					I have recently submitted my bachelor thesis <i>"Monitoring of Agents for Dynamic Pricing in different Recommerce Markets"</i>
-					(which can be found <a href="https://bit.ly/MollenhauerBachelorThesisPortfolioWebsite" target="_blank">here</a>),
-					which is based on my bachelor's project run in cooperation with <a href="https://www.getfeather.io/" target="_blank" class="hide">Feather by SAP</a>,
-					<i>"Online Marketplace Simulation: A Testbed for Self-Learning Agents"</i> (<a href="https://bit.ly/MollenhauerBachelorsProjectPortfolioWebsite" target="_blank">here</a>),	which I worked on together with a small group of other students.
-				</p>
-			</section>
+		<header>
+			<h1>Nikkel Mollenhauer</h1>
+			<p>ThreeJS demo - April 2022</p>
+			<p>
+				<a href="https://bit.ly/MollenhauerResumeDownload" target="_blank"><span
+						class="material-icons-outlined download-48">file_download</span></a><a
+					href="https://bit.ly/MollenhauerResumeDownload" target="_blank" class="hideAlways"> </a><a
+					href="https://bit.ly/MollenhauerResumeDownload" target="_blank" class="hideAlways">CV</a>
+				<span style="vertical-align: 5px;">| </span><a href="https://bit.ly/MollenhauerGithubPortfolioWebsite"
+					target="_blank"><img src="static/icons/github_white.png" style="vertical-align: -4px;" /></a>
+				<span style="vertical-align: 5px;">| </span><a href="https://bit.ly/MollenhauerLinkedinPortfolioWebsite"
+					target="_blank"><img src="static/icons/linkedin_white.png" style="vertical-align: -5px;" /></a>
+				<span style="vertical-align: 5px;">| </span><a id="contactLink" class="hideAlways pointer">Contact</a>
+			</p>
+		</header>
 
-			<blockquote class="right">
-				<p class="right-align">Visit me on 
-					<a href="https://bit.ly/MollenhauerGithubPortfolioWebsite" target="_blank"><img src="static/icons/github_white.png"/></a><a href="https://bit.ly/MollenhauerGithubPortfolioWebsite" target="_blank" class="hideAlways"> </a>
-					<a href="https://bit.ly/MollenhauerGithubPortfolioWebsite" target="_blank" class="hide">Github</a></p>
-			</blockquote>
+		<div class="scrollArrow" id="scrollArrow"></div>
 
-			<section class="left">
-				<h2>💻 Projects</h2>
-				<h3>🌐 The Website</h3>
-				<p>
-					I built this website in early April 2022, after I had gained some first Web-Development experience during my studies.
-					To challenge myself and to allow for as much creativity as possible, I decided to use <a href="https://threejs.org/" class="hide">three.js</a> for the project,
-					as this would allow me to revisit my knowledge of 3D-Computergraphics, which I had last involved myself with two years prior.
-					The website is hosted using <a href="https://pages.github.com/" target="_blank" class="hide">Github pages</a>,
-					and its source code can be found in <a href="https://bit.ly/MollenhauerPortfolioWebsitePortfolioWebsite" target="_blank">this repository</a>.
-				</p>
-				<h3>🎓 Bachelor's project</h3>
-				<h4><i>Online Marketplace Simulation: A Testbed for Self-Learning Agents</i></h4>
-				<p>
-					At the HPI, the bachelor's project is a year long software project run in cooperation with a renowned industry partner.
-					My team, comprised of six students, worked in collaboration with <a href="https://www.getfeather.io/" target="_blank" class="hide">Feather by SAP</a>,
-					building a simulation platform for online marketplaces, upon which we applied, tested and compared various reinforcement learning algorithms on their proficiency in setting dynamic prices in recommerce market environments.
-					Please refer to <a href="https://bit.ly/MollenhauerBachelorsProjectPortfolioWebsite" target="_blank">this repository</a> to learn more about the project.
-				</p>
-				<h3>🎓 Bachelor's thesis</h3>
-				<h4><i>Monitoring of Agents for Dynamic Pricing in different Recommerce Markets</i></h4>
-				<p>
-					It is customary for a student's bachelor's thesis to be based on insights gained from the bachelor's project, and to further investigate a core theme of the project.
-					My bachelor's thesis focuses on different approaches to the monitoring of reinforcement learning agents, in the specific context of our market simulation framework.
-					You can find the thesis in <a href="https://bit.ly/MollenhauerBachelorThesisPortfolioWebsite" target="_blank">this repository</a>.
-				</p>
-			</section>
+		<section class="right" style="margin-top:280px">
+			<h2>The ThreeJS demo</h2>
+			<p>
+				I built this page in early April 2022, after I had gained some first Web-Development experience during my
+				studies. To challenge myself I decided to play around with
+				<a href="https://threejs.org/" class="hide">three.js</a> to build this page. The website is hosted using
+				<a href="https://pages.github.com/" target="_blank" class="hide">Github pages</a>, and its source code can be
+				found in <a href="https://bit.ly/MollenhauerPortfolioWebsitePortfolioWebsite" target="_blank">this
+					repository</a>.
+				Take a look at the sections below to find out more about how the different parts of this page work.
+			</p>
+		</section>
 
-			<blockquote class="left">
-				<p class="left-align">Connect with me <br> on 
-					<a href="https://bit.ly/MollenhauerLinkedinPortfolioWebsite" target="_blank"><img src="static/icons/linkedin_white.png" style="vertical-align: -5px;"/></a><a href="https://bit.ly/MollenhauerLinkedinPortfolioWebsite" target="_blank" class="hideAlways"> </a>
-					<a href="https://bit.ly/MollenhauerLinkedinPortfolioWebsite" target="_blank" class="hide">LinkedIn</a></p>
-			</blockquote>
+		<blockquote class="right">
+			<p class="right-align">Visit me on
+				<a href="https://bit.ly/MollenhauerGithubPortfolioWebsite" target="_blank"><img
+						src="static/icons/github_white.png" /></a><a href="https://bit.ly/MollenhauerGithubPortfolioWebsite"
+					target="_blank" class="hideAlways"> </a>
+				<a href="https://bit.ly/MollenhauerGithubPortfolioWebsite" target="_blank" class="hide">Github</a>
+			</p>
+		</blockquote>
 
-			<section class="right">
-				<h2>📖 Experience - Internships</h2>
-				<h3>Microsoft, Dublin - Fall 2022</h3>
-				<p>
-					From September to November 2022, I joined the Site Reliability team of the Azure cloud platform at Microsoft Dublin. 
-					I was responsible for creating entirely new monitoring probes covering core Azure services for the synthetic monitoring
-					of the Azure Resource Manager Control Plane, allowing on-call engineers to identify and mitigate incidents that
-					potentially affect millions of customers earlier & more reliably.
-				</p>
-				<h3>NDR (Northern German Broadcasting), Kiel - Summer 2018</h3>
-				<p>
-					During this internship, which I organized out of curiosity, I was able to get to know the inner workings of one of Germany's biggest public broadcasting companies.
-					I was involved in all steps of the production of the daily evening news, from planning reports to filming, editing and live taping. I was also able to get to know
-					how different live-TV and radio formats get produced.
-				</p>
-				<h3>Enterprise Garage Consultancy, San Francisco - Summer 2017</h3>
-				<p>
-					Over the course of this Student internship I was coached by the companies Founder & CEO, <a href="https://www.linkedin.com/in/marioherger/" class="hide">Mario Herger</a>.
-					Together, we welcomed delegations from German companies to learn about the "Silicon Valley Mindset", and how they could transform their company's culture to become
-					more open-minded and diverse. To achieve this, we visited personalities from the Silicon Valley's Tech-Start-Up scene to talk about what makes working in the SF Bay Area
-					different.<br>
-					An additional task of mine was to assist in planning, conducting and editing Interviews with Engineers from both Tesla and Liquid Motors about the way the Automobile
-					industry is changing to become more environmentally conscious. 
-				</p>
-			</section>
+		<section class="left">
+			<h2>Animations</h2>
+			<p>
+				There are two animation styles on this page: Continuous and keyframed animations. And when I say that there are
+				two animation styles, there really is only one: All animations depend
+				on the 'scroll percentage' of the page, meaning that they will cycle until you
+				scroll up or down, at which point the scale and position of the elements may change. For each rendered frame, a
+				set of animation rules are evaluated. All of these rules have 'start' and 'end' properties that define whether
+				or not this animation should be played at the current scroll percentage.
+			</p>
+			<h3>Continuous animations</h3>
+			<p>For continuous animations, the rule simply states that the animation should start at 0% and end at 100% - so it
+				is always played. Continuous animations include the rotation of the skybox, the blinking of the stars and the
+				rotation of the cube and globe. Most importantly, these animations do not depend on the current scroll
+				percentage - the skybox will always rotate at the same speed, no matter where on the page you are.</p>
+			<h3>Keyframed animations</h3>
+			<p>
+				This is different for keyframed animations, which always depend on the current scroll percentage. For example,
+				the cube will run a specific animation between 0% and 25% scrolled: It will rotate around its y- and z-axis, and
+				move toward the top right of the screen. The animation rule defines start and end values for each of these
+				properties, and calculates the current value based on the current scroll percentage - the keyframe. Continuous
+				and keyframed animations can also easily be combined using this technique, as all animation rules are evaluated
+				for every frame, and the difference in scale and position is applied after all rules were evaluated. This can
+				for example create the effect of the faster rotating globe whenever it moves from one side of the screen to the
+				other - the continuous rotation is applied first, and then an additional keyframed animation is applied on top
+				of that.
+			</p>
+			<h3>Moving in reverse</h3>
+			<p>By defining all keyframed animations at the same time, and looping through the rules with each frame, there is
+				zero overhead for creating animation that can reverse themselves when scrolling back up the page at any point.
+				For continuous animations, the position on the page does not matter anyways, and for keyframed animations, the
+				animation rule is executed depending on the scroll percentage - not based on where the scroll event came from,
+				so the same animation frame will be rendered when scrolling up or down.
+			</p>
+		</section>
 
-			<footer>
-				<p><span style="vertical-align: -6px;" class="material-icons-outlined">copyright</span> 2022 Nikkel Mollenhauer</p>
-				<p><a id="contactLink" class="pointer show">Contact</a></p>
-			</footer>
-		</main>
-		
-		<script type="module" src="/js/index.js"></script>
+		<blockquote class="left">
+			<p class="left-align">Connect with me <br> on
+				<a href="https://bit.ly/MollenhauerLinkedinPortfolioWebsite" target="_blank"><img
+						src="static/icons/linkedin_white.png" style="vertical-align: -5px;" /></a><a
+					href="https://bit.ly/MollenhauerLinkedinPortfolioWebsite" target="_blank" class="hideAlways"> </a>
+				<a href="https://bit.ly/MollenhauerLinkedinPortfolioWebsite" target="_blank" class="hide">LinkedIn</a>
+			</p>
+		</blockquote>
 
-		<script type="text/javascript">
-			var sc_project=12742615; 
-			var sc_invisible=1; 
-			var sc_security="eae248ec"; 
-			</script>
-			<script type="text/javascript"
-			src="https://www.statcounter.com/counter/counter.js" async></script>
-			<noscript><div class="statcounter"><a title="Web Analytics"
-			href="https://statcounter.com/" target="_blank"><img class="statcounter"
-			src="https://c.statcounter.com/12742615/0/eae248ec/1/" alt="Web Analytics"
-			referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-	</body>
+		<section class="right">
+			<h2>Randomness</h2>
+			<p>
+				Nothing in life would be fun without a little bit of randomness - and the same is true for this page. In my
+				case, I wanted the placement and blinking of the stars to be random, so that the background would look slightly
+				different each time. So when the scene is built, a set number of random stars is generated with randomized
+				coordinates, evenly spread out across the skybox. Each star is also given a distance from the camera, which
+				makes some stars appear larger than others. When it came to making the stars blink, I at first encountered some
+				problems: All of the stars blinked at the same speed, which repeated itself over the same interval, which looked
+				very unnatural, even when randomizing their starting opacities. As a solution, all stars are now assigned one of
+				five materials - these do not differ in their appearance, but rather control all stars with the same assigned
+				material. This means that if the opacity of the material is changed, so is the base opacity of all stars with
+				the same material. During the blinking animation, a global lightness modifier is tracked, which cycles between 0
+				and 1 in small steps between the stars. So whenever a star is animated, its base opacity and this fluctuating
+				modifier are combined, this new value in turn also influences the opacity of all other stars with the same
+				material. This results in the stars not only blinking, but also 'flickering' at different speeds, as their
+				materials base opacity get changed by more or less depending on the stars position in the animation queue.
+
+			</p>
+			<h3>Loading...</h3>
+			<p>
+				As you can probably imagine, loading in the different textures, building the models and placing everything just
+				right takes a bit longer than the time it takes for the HTML to load. And while this delay is under half a
+				second on most devices (and connection speeds), it is still very much noticeable. So I had to find a way to hide
+				this 'popping in' of the different elements to smooth the experience. Sometimes, the easiest solution is the
+				best, which is why I settled on simply overlaying a fullscreen div with some rotating bars while the 3D-scene is
+				built in the background. After the scene has loaded it calls a function that removes the loading screen.
+			</p>
+		</section>
+
+		<footer>
+			<p><span style="vertical-align: -6px;" class="material-icons-outlined">copyright</span> 2021-2023 Nikkel
+				Mollenhauer</p>
+			<p><a id="contactLink" class="pointer show">Contact</a></p>
+		</footer>
+	</main>
+
+	<script type="module" src="/js/threejs/index.js"></script>
+
+</body>
+
 </html>

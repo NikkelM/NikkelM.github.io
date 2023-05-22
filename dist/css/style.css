@@ -1,147 +1,237 @@
-@import url("https://use.typekit.net/jmk3xov.css");
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-@import './links.css';
-@import './scrollArrow.css';
-@import './contactForm.css';
-
 :root {
-	--dark-bg: rgba(15, 15, 15, 0.5);
-	--margin_bottom: 250px;
+	--font-family: 'Montserrat', sans-serif;
+	--bg-color: #222;
+	--fg-color: #fff;
+	--grey-fg-color: #999;
+	--grey-bg-color: #333;
 
-	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
 	font-style: normal;
+	color-scheme: dark;
+	overflow-y: auto;
+	margin: 0px;
+	font-size: 14px;
+	font-family: var(--font-family);
+	background-color: var(--bg-color);
+	color: var(--fg-color);
+	color-scheme: dark;
 }
 
-/* This is where the 3D-stuff lives */
-canvas {
-	position: fixed;
-	top: 0;
-	left: 0;
-}
-
-/* Hide scrollbar */
+/*
+ * Scrollbar
+ */
 ::-webkit-scrollbar {
-	display: none;
+	width: 6px;
+	height: 6px;
 }
 
-footer {
-	text-align: center;
-	position: absolute;
-	left: -1%;
-	bottom: 0px;
-	width: 102%;
-	height: 100px;
-	background: var(--dark-bg);
+::-webkit-scrollbar-thumb {
+	background-color: #666;
+	border-radius: 4px;
 }
 
-main {
-	color: white;
-	z-index: 2;
-	position: absolute;
-	/* 100% somehow adds a tiny bit of horizontal space for scrolling */
-	width: 99%;
-	padding: 90px 0px;
-
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
+/*
+ * Generic utilities
+ */
+.grey-text {
+	color: var(--grey-fg-color);
 }
 
-header {
-	background: var(--dark-bg);
-	grid-column: 2 / span 5;
-	font-size: 2rem;
-	padding: 2rem;
-	margin-bottom: var(--margin_bottom);
+.hidden {
+	display: none !important;
 }
 
-h1, h2, h3, h4, blockquote {
-	overflow-wrap: break-word;
+.displayInline {
+	display: inline;
+}
+
+.textLeft {
 	text-align: left;
-	/* margins at the top and bottom of the item */
-	margin-block-start: 0.4rem;
-	margin-block-end: 0.4rem;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 100;
-	font-style: normal;
 }
 
-/* The text blocks with dark background */
-section {
-	overflow-wrap: break-word;
-	grid-column: 4 / span 6;
-	padding: 1.75rem;
-	text-align: justify;
-	background: var(--dark-bg);
-	font-size: 1.25rem;
-	line-height: 1.5;
-	margin-bottom: var(--margin_bottom);
+.halfWidth {
+	width: 50%;
+	margin: auto;
 }
 
-blockquote {
+.thirdWidth {
+	width: 34%;
+	margin: auto;
+}
+
+/*
+ * Main containers
+ */
+
+p {
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+h1 {
+	margin-bottom: 8px;
+}
+
+h2 {
+	margin-top: 10px;
+	margin-bottom: 8px;
+}
+
+h3 {
+	margin-top: 12px;
+	margin-bottom: 4px;
+}
+
+/*
+ * Buttons
+ */
+button {
+	color: var(--fg-color);
+	font-family: var(--font-family);
+	text-decoration: none;
+	border: none;
+	border-radius: 3px;
+	font-size: 14px;
+	cursor: pointer;
+	background-color: #333;
+	padding: 4px 10px;
+	font-weight: 500;
+	margin: 2px 1px;
+}
+
+button:hover {
+	background-color: #444 !important;
+}
+
+button:active {
+	background-color: #555 !important;
+}
+
+button:disabled {
+	background-color: #444 !important;
+	cursor: default;
+	color: var(--grey-fg-color);
+}
+
+/* 
+ * Input 
+ */
+.optionTextInput input {
+	color: var(--fg-color);
+	font-family: var(--font-family);
+	font-size: 14px;
+	border: 2.5px solid transparent;
+	border-radius: 3px;
+	padding: 1.5px;
+	background-color: #333;
+	text-align: center;
+	height: 18px;
+	margin-bottom: 4px;
+}
+
+.optionTextInput input.numberInput {
+	width: 40px;
+	text-align: left;
+	padding-left: 4px;
+}
+
+.optionTextInput input.numberInput.noArrows {
+	width: 25px;
+}
+
+.optionTextInput input.dateInput {
+	margin-top: 6px;
+}
+
+.optionTextInput input.youtubeIdInput {
+	margin-top: 6px;
+	width: 150px;
+}
+
+/* Remove the up and down arrows from the number input */
+.optionTextInput input.numberInput.noArrows::-webkit-outer-spin-button,
+.optionTextInput input.numberInput.noArrows::-webkit-inner-spin-button {
+	-webkit-appearance: none;
 	margin: 0;
-	padding: 0;
-	grid-column: 2 / span 9;
-	margin-bottom: var(--margin_bottom);
 }
 
-blockquote p {
-	color: white;
-	background-color: transparent;
-	font-size: 4rem;
-	display: block;
-	line-height: 0.9;
+.optionTextInput input:focus {
+	outline: none;
 }
 
-/* set alignment of sections */
-.left {
-	grid-column: 2 / span 6;
+.optionTextInput input:disabled {
+	background-color: #444;
+	cursor: default;
+	color: var(--grey-fg-color);
 }
 
-.center {
-	grid-column: 4 / span 8;
+.optionTextInput.disabled {
+	opacity: 0.5;
+	pointer-events: none;
 }
 
-.right {
-	grid-column: 6 / span 6;
+.optionTextInput input.invalid-input {
+	border: 2.5px solid #c32e04 !important;
+	animation: flash 0.5s infinite;
 }
 
-/* set alignment of text */
-.left-align {
-	text-align: left;
+@keyframes flash {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
-.center-align {
-	text-align: center;
+/* 
+ * Dropdown menu
+ */
+select {
+	background-color: #333;
+	color: #fff;
+	padding: 4px;
+	border: none;
+	font-size: 14px;
+	border-radius: 3px;
+	outline: none;
 }
 
-.right-align {
-	text-align: right;
+select option {
+	background-color: #333;
+	color: #fff;
 }
 
-/* Google Icons */
-.material-icons.locked {
-	vertical-align: -4px;
+select:hover {
+	background-color: #444;
 }
 
-.material-icons-outlined.download-48 {
-	vertical-align: -9px;
-	font-size: 48px;
+/*
+ * Links
+ */
+/* A link whose text is white and turns grey when hovered over */
+.whiteGreyLink {
+	color: var(--fg-color);
+	display: inline-block;
+	text-decoration: none;
 }
 
-.material-icons.md-18 {
-	font-size: 18px;
+.whiteGreyLink:hover {
+	color: var(--grey-fg-color);
 }
 
-.material-icons.md-24 {
-	font-size: 24px;
+.whiteGreyLink:active {
+	color: var(--grey-fg-color);
 }
 
-.material-icons.md-36 {
-	font-size: 36px;
-}
-
-.material-icons.md-48 {
-	font-size: 48px;
+/*
+ * Footer
+ */
+footer {
+	padding: 8px 0;
 }
