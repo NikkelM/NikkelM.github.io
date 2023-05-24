@@ -1,4 +1,4 @@
-import { Mesh, BoxGeometry, SphereGeometry, MeshBasicMaterial } from 'https://unpkg.com/three@0.139.2/build/three.module.js';
+import { Mesh, BoxGeometry, SphereGeometry, MeshBasicMaterial } from 'three';
 import { scene, textureLoader } from './scene.js';
 
 export let avatarCube, globe;

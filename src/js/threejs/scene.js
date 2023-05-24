@@ -1,14 +1,14 @@
-import * as THREE from 'https://unpkg.com/three@0.139.2/build/three.module.js';
+import {LoadingManager, TextureLoader, PerspectiveCamera, Scene, FogExp2, WebGLRenderer} from 'three';
 
 ////////// Textureloader
 // loading screen init
-const loadingManager = new THREE.LoadingManager(() => {
+const loadingManager = new LoadingManager(() => {
 	const loadingScreen = document.getElementById('loading-screen');
 	loadingScreen.classList.add('fade-out');
 	loadingScreen.addEventListener('transitionend', onLoadingScreenTransitionEnd);
 });
 
-export let textureLoader = new THREE.TextureLoader(loadingManager);
+export let textureLoader = new TextureLoader(loadingManager);
 
 // will be called when the loading screen has finished
 function onLoadingScreenTransitionEnd( event ) {
@@ -18,12 +18,12 @@ function onLoadingScreenTransitionEnd( event ) {
 ////////// Textureloader
 
 ////////// Camera
-export let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
+export let camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
 
-export let scene = new THREE.Scene();	
-scene.fog = new THREE.FogExp2(0x000000, 0.02);
+export let scene = new Scene();	
+scene.fog = new FogExp2(0x000000, 0.02);
 
-export let renderer = new THREE.WebGLRenderer({
+export let renderer = new WebGLRenderer({
 	antialias: true,
 	alpha: true,
 	canvas: document.querySelector('#bg'),
