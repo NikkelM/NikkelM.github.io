@@ -15,6 +15,7 @@
 
 header {
 	text-align: center;
+	/* Scale the header fonts up a bit */
 	font-size: 34px;
 }
 
@@ -22,11 +23,30 @@ body {
 	margin: 0;
 }
 
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
 section {
 	text-align: left;
 	font-size: 22px;
 	margin: 0px auto;
 	width: 80vw;
+}
+
+/* On smaller widths, we need to use more of the space available */
+@media (max-width: 768px) {
+  section {
+    width: 90vw;
+  }
 }
 
 /*
