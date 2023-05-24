@@ -156,6 +156,21 @@ footer {
 	background-color: #555 !important;
 }
 
+.divider {
+	border: none;
+	border-top: 1px solid #ccc;
+	margin: 50px auto;
+	width: 75vw;
+}
+
+.divider.short {
+	width: 50vw;
+}
+
+.divider.very-short {
+	width: 25vw;
+}
+
 /* Google Icons */
 .material-icons.locked {
 	vertical-align: -4px;
