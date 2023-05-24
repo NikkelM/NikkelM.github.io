@@ -46,7 +46,11 @@ header {
 	margin-bottom: var(--margin_bottom);
 }
 
-h1, h2, h3, h4, blockquote {
+h1,
+h2,
+h3,
+h4,
+blockquote {
 	overflow-wrap: break-word;
 	text-align: left;
 	/* margins at the top and bottom of the item */
@@ -108,4 +112,31 @@ blockquote p {
 
 .right-align {
 	text-align: right;
+}
+
+@media (max-device-width: 768px) {
+	:root {
+		--margin_bottom: 150px;
+		font-weight: 200;
+	}
+
+	main {
+		width: 96%;
+		display: block;
+	}
+
+	header {
+		font-size: 1.5rem;
+		padding: 1rem;
+	}
+
+	/* The text blocks with dark background */
+	section {
+		padding: 1rem;
+	}
+
+	blockquote p {
+		font-size: 3rem;
+		line-height: 1;
+	}
 }

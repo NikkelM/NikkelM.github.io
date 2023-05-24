@@ -24,15 +24,15 @@ body {
 }
 
 h1 {
-  font-size: 2em;
+	font-size: 2em;
 }
 
 h2 {
-  font-size: 1.8em;
+	font-size: 1.8em;
 }
 
 h3 {
-  font-size: 1.3em;
+	font-size: 1.3em;
 }
 
 section {
@@ -44,9 +44,9 @@ section {
 
 /* On smaller widths, we need to use more of the space available */
 @media (max-width: 768px) {
-  section {
-    width: 90vw;
-  }
+	section {
+		width: 90vw;
+	}
 }
 
 /*
