@@ -4,12 +4,11 @@
 <head>
 	<meta charset="UTF-8" />
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-	<link rel="manifest" href="/site.webmanifest">
+	<link rel="manifest" href="/manifest.json">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="css/common.css" />
-	<link rel="stylesheet" type="text/css" href="css/contactForm.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Nikkel Mollenhauer</title>
@@ -31,21 +30,26 @@
 	</div>
 </nav>
 
+<div id="cookieConsent" class="cookieConsent" style="display:none;">
+	<p>This website uses cookies to store purely cosmetic preferences, no personal data is being collected.</p>
+	<button id="acceptCookiesButton" class="acceptCookiesButton">Acknowledge</button>
+</div>
+
+<div id="contactFormDiv">
+	<span class="closeButton">&times;</span>
+	<form id="contactForm" action="https://getform.io/f/e0fd4ff8-5016-41ab-8846-59560b09c151" method="POST">
+		<label for="name">Name</label><br>
+		<input type="text" required="" name="name"><br>
+		<label for="email">Contact</label><br>
+		<input type="email" required="" name="email"><br>
+		<label for="message">Message</label><br>
+		<textarea rows="5" required="" name="message"></textarea><br><br>
+		<button type="submit">Submit</button>
+	</form>
+
+</div>
+
 <body>
-
-	<div id="contactFormDiv">
-		<span class="closeButton">&times;</span>
-		<form id="contactForm" action="https://getform.io/f/e0fd4ff8-5016-41ab-8846-59560b09c151" method="POST">
-			<label for="name">Name</label><br>
-			<input type="text" required="" name="name"><br>
-			<label for="email">Contact</label><br>
-			<input type="email" required="" name="email"><br>
-			<label for="message">Message</label><br>
-			<textarea rows="5" required="" name="message"></textarea><br><br>
-			<button type="submit">Submit</button>
-		</form>
-
-	</div>
 
 	<span id="openNavBarButton">&#9776;</span>
 
@@ -160,8 +164,8 @@
 		<p><a id="contactLink" class="pointer show">Contact</a></p>
 	</footer>
 
+	<script type="module" src="/js/common.js"></script>
 	<script type="module" src="/js/index.js"></script>
-	<script type="text/javascript" src="/js/navBar.js"></script>
 
 </body>
 

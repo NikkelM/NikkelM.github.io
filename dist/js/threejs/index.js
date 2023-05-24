@@ -1,11 +1,7 @@
-console.log("Made with ❤️ by @NikkelM");
-console.log("Find the source code at https://github.com/NikkelM/NikkelM.github.io");
-
-import { onWindowResize } from './scene.js'
-import { initSkybox } from './skybox.js'
-import { initAvatarCube } from './models.js'
-import { animate } from './animation.js'
-import { initContactForm } from '../contactForm.js'
+import { onWindowResize } from './scene.js';
+import { initSkybox } from './skybox.js';
+import { initAvatarCube } from './models.js';
+import { animate } from './animation.js';
 
 function init() {
 	// reset the scroll when the page is reloaded to make sure our animations aren't getting messed up 
@@ -16,10 +12,8 @@ function init() {
 			window.scrollTo(0, 0);
 		}
 	}
-	window.onload = function() {
-		initContactForm();
-	}
-	// add the various models
+
+	// Add the various models
 	initSkybox();
 	initAvatarCube();
 

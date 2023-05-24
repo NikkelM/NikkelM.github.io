@@ -1,4 +1,5 @@
 @import './links.css';
+@import './contactForm.css';
 
 :root {
 	font-family: 'Montserrat', sans-serif;
@@ -6,6 +7,7 @@
 	font-weight: 400;
 }
 
+/* navBar */
 nav {
 	height: 100%;
 	width: 0;
@@ -73,6 +75,7 @@ nav .closeButton {
 	}
 }
 
+/* Open navBar button */
 .wiggle {
 	animation: wiggle 1s infinite;
 }
@@ -95,10 +98,42 @@ nav .closeButton {
 	}
 }
 
+/* Footer */
 footer {
 	text-align: center;
 	position: absolute;
 	bottom: 0px;
+}
+
+/* Cookie consent */
+.cookieConsent {
+	z-index: 900;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+.cookieConsent p {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.cookieConsent button {
+  display: inline-block;
+  margin-left: 10px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
 }
 
 /* Google Icons */

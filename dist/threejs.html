@@ -4,13 +4,12 @@
 <head>
 	<meta charset="UTF-8" />
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-	<link rel="manifest" href="/site.webmanifest">
+	<link rel="manifest" href="/manifest.json">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="css/common.css" />
 	<link rel="stylesheet" type="text/css" href="css/scrollArrow.css" />
-	<link rel="stylesheet" type="text/css" href="css/contactForm.css" />
 	<link rel="stylesheet" type="text/css" href="css/threeJS.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 	<title>Nikkel Mollenhauer - ThreeJS</title>
@@ -36,6 +35,24 @@
 		</div>
 	</div>
 </nav>
+	
+<div id="cookieConsent" class="cookieConsent" style="display:none;">
+	<p>This website uses cookies to store purely cosmetic preferences, no personal data is being collected.</p>
+	<button id="acceptCookiesButton" class="acceptCookiesButton">Acknowledge</button>
+</div>
+
+<div id="contactFormDiv">
+	<span class="closeButton">&times;</span>
+	<form id="contactForm" action="https://getform.io/f/e0fd4ff8-5016-41ab-8846-59560b09c151" method="POST">
+		<label for="name">Name</label><br>
+		<input type="text" required="" name="name"><br>
+		<label for="email">Contact</label><br>
+		<input type="email" required="" name="email"><br>
+		<label for="message">Message</label><br>
+		<textarea rows="5" required="" name="message"></textarea><br><br>
+		<button type="submit">Submit</button>
+	</form>
+</div>
 
 <body style="overflow: hidden;">
 
@@ -43,19 +60,6 @@
 
 	<main>
 		<span id="openNavBarButton" style="margin-left:40px; margin-top:-30px;">&#9776;</span>
-
-		<div id="contactFormDiv">
-			<span class="closeButton">&times;</span>
-			<form id="contactForm" action="https://getform.io/f/e0fd4ff8-5016-41ab-8846-59560b09c151" method="POST">
-				<label for="name">Name</label><br>
-				<input type="text" required="" name="name"><br>
-				<label for="email">Contact</label><br>
-				<input type="email" required="" name="email"><br>
-				<label for="message">Message</label><br>
-				<textarea rows="5" required="" name="message"></textarea><br><br>
-				<button type="submit">Submit</button>
-			</form>
-		</div>
 
 		<header>
 			<h1>Nikkel Mollenhauer</h1>
@@ -180,8 +184,8 @@
 		</footer>
 	</main>
 
+	<script type="module" src="/js/common.js"></script>
 	<script type="module" src="/js/threejs/index.js"></script>
-	<script type="text/javascript" src="/js/navBar.js"></script>
 
 </body>
 
