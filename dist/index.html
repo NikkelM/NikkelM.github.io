@@ -1,160 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-		<link rel="manifest" href="/site.webmanifest">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
 
-		<link rel="stylesheet" type="text/css" media="(min-device-width: 668px)" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" media="(max-device-width: 668px)" href="css/mobile/mobileStyle.css" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
-		<meta name="google-site-verification" content="uR-EzE_3Pd8QoEugN8fFQpax8AcCAPYCwHqR2TEPkas" />
-		<title>Nikkel Mollenhauer</title>
-	</head>
+<head>
+	<meta charset="UTF-8" />
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="manifest" href="/manifest.json">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
 
-	<section id="loading-screen">
-		<link rel="stylesheet" type="text/css" href="/css/loadingScreen.css" />
-		<div id="loader"></div>
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Nikkel Mollenhauer</title>
+</head>
+
+<nav id="navBar">
+	<div id="navBarContents">
+		<div id="navBarContentsTop" class="navBarTop">
+			<a href="javascript:void(0)" class="closeButton">&times;</a>
+			<a href="javascript:void(0)" class="navLink">Home</a>
+			<a href="./threejs.html" class="navLink">Three.js Demo</a>
+		</div>
+		<div id="navBarContentsBottom" class="navBarBottom">
+			<a href="https://github.com/NikkelM" class="navLink" style="display: inline" target="_blank"><img
+					src="static/icons/github_white.png" /></a>
+			<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" class="navLink" style="display: inline"
+				target="_blank"><img src="static/icons/linkedin_white.png" /></a>
+		</div>
+	</div>
+</nav>
+
+<div id="cookieConsent" class="cookieConsent" style="display:none;">
+	<p>This website uses cookies to provide a better user experience. No personal data is being collected.</p>
+	<button id="acceptCookiesButton" class="acceptCookiesButton">Accept</button>
+</div>
+
+<div id="contactFormDiv">
+	<span class="closeButton">&times;</span>
+	<form id="contactForm" action="https://getform.io/f/e0fd4ff8-5016-41ab-8846-59560b09c151" method="POST">
+		<label for="name">Name</label><br>
+		<input type="text" required="" name="name"><br>
+		<label for="email">Contact</label><br>
+		<input type="email" required="" name="email"><br>
+		<label for="message">Message</label><br>
+		<textarea rows="5" required="" name="message"></textarea><br><br>
+		<button type="submit">Submit</button>
+	</form>
+
+</div>
+
+<body>
+
+	<span id="openNavBarButton">&#9776;</span>
+
+	<header>
+		<h1>Nikkel Mollenhauer</h1>
+		<p>IT-Systems Engineering Student <a class="hide" href="https://hpi.de/" target="_blank">@HPI</a></p>
+		<p>
+			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span
+					class="material-icons-outlined download-48">file_download</span></a><!-- Do not add a line break here --><a
+				href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"
+				class="hideAlways"> </a>
+			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"
+				class="hideAlways">CV</a>
+			<span style="vertical-align: 5px;">| </span><a href="https://github.com/NikkelM" target="_blank"><img
+					src="static/icons/github_white.png" style="vertical-align: -4px;" /></a>
+			<span style="vertical-align: 5px;">| </span><a href="https://www.linkedin.com/in/nikkel-mollenhauer/"
+				target="_blank"><img src="static/icons/linkedin_white.png" style="vertical-align: -5px;" /></a>
+			<span style="vertical-align: 5px;">| </span><a id="contactLink" class="hideAlways pointer">Contact</a>
+		</p>
+
+	</header>
+
+	<br>
+	<section>
+		<h2>About me</h2>
+		<p>
+			Hi, I'm Nikkel, currently studying towards my bachelor's degree in IT-Systems Engineering at the
+			Hasso-Plattner-Institute in Potsdam, after which I will be joining the Azure Site Reliability Engineering team at
+			Microsoft Dublin.
+			<br>
+			If you are interested in my experience and skills, you can find me on
+			<a href="https://github.com/NikkelM" target="_blank">GitHub</a>
+			and
+			<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank">LinkedIn</a>,
+			download my
+			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf"
+				target="_blank">CV</a>,
+			or send me a quick message using the form linked above.
+		</p>
 	</section>
 
-	<body style="overflow: hidden;">
+	<hr class="divider">
 
-		<canvas id="bg"></canvas>
+	<section>
+		<h2>Projects</h2>
+		<p>Everyone's always working on something, and so am I. All of the projects below and many more can be found
+			on my <a href="https://github.com/NikkelM" target="_blank">GitHub</a> profile.</p>
 
-		<main>
+		<hr class="divider very-short">
 
-			<div id="contactFormDiv">
-				<span class="material-icons md-48 closeButton">close</span>
-				<form id="contactForm" action="https://getform.io/f/e0fd4ff8-5016-41ab-8846-59560b09c151" method="POST">
-						<label for="name">Name</label><br>
-						<input type="text" required="" name="name"><br>
-						<label for="email">Email</label><br>
-						<input type="email" required="" name="email"><br>
-						<label for="message">Message</label><br>
-						<textarea rows="5" required="" name="message"></textarea><br><br>
-						<button type="submit">Submit</button>
-					</form>
-			</div>
+		<h3>
+			<a class="hideAlways"
+				href="https://chrome.google.com/webstore/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf"
+				target="_blank">Random YouTube Video</a>
+		</h3>
+		<p>
+			Random YouTube Video is a browser extension which allows users to truly shuffle from all videos
+			uploaded on a channel - without the need for playlists. The extension adds a 'Shuffle' button to channel and video
+			pages, and allows for thorough customization through its popup.
+			<br>
+			I built this extension using JavaScript bundled through webpack. In the backend it uses the YouTube Data API to
+			fetch video data, and shares this data using a Firebase Realtime Database. User preferences are stored and shared
+			across devices using the built-in chrome storage API's. You can get the extension on the
+			<a href="https://chrome.google.com/webstore/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf"
+				target="_blank">Chrome</a> and <a
+				href="https://microsoftedge.microsoft.com/addons/detail/random-youtube-video/fccfflipicelkilpmgniblpoflkbhdbe"
+				target="_blank">Edge</a> stores, it is compatible with all Chromium-based browsers.
+		</p>
 
-			<header>
-				<h1>Nikkel Mollenhauer</h1>
-				<p>🎓 CS Student <a class="hide" href="https://hpi.de/" target="_blank">@HPI</a></p>
-				<p>
-					<a href="https://bit.ly/MollenhauerResumeDownload" target="_blank"><span class="material-icons-outlined download-48">file_download</span></a><a href="https://bit.ly/MollenhauerResumeDownload" target="_blank" class="hideAlways"> </a><a href="https://bit.ly/MollenhauerResumeDownload" target="_blank" class="hideAlways">CV</a>
-					<span style="vertical-align: 5px;">| </span><a href="https://bit.ly/MollenhauerGithubPortfolioWebsite" target="_blank"><img src="static/icons/github_white.png" style="vertical-align: -4px;"/></a>
-					<span style="vertical-align: 5px;">| </span><a href="https://bit.ly/MollenhauerLinkedinPortfolioWebsite" target="_blank"><img src="static/icons/linkedin_white.png" style="vertical-align: -5px;"/></a>
-					<span style="vertical-align: 5px;">| </span><a id="contactLink" class="hideAlways pointer">Contact</a>
-				</p>
-			</header>
+		<hr class="divider very-short">
 
-			<div class="scrollArrow" id="scrollArrow"></div>
-			
-			<section class="right">
-				<h2>📜 About me</h2>
-				<p>
-					Hi, I'm Nikkel, currently studying towards my bachelor's degree in IT-Systems Engineering at the Hasso-Plattner-Institute in Potsdam.<br>
-					I'm always open to learn and try out new things, but am especially interested in machine learning, CI/CD and everything that makes workflows more efficient! <br>
-				  In autumn of 2022, I joined the Site Reliability team of the Azure cloud platform at Microsoft Dublin, where I was responsible for extending monitoring functionalities for a number of core Azure services.
-				</p>
-				<p>
-					In 2014 my family and I moved from my hometown of Kiel, Germany to Varese in northern Italy, where I lived until my graduation from the European
-					School of Varese in Summer 2019. In 2017 I had the opportunity to do an internship in San Francisco, California, where I learnt about the 
-					"Silicon Valley Mindset" and a new way of working collaboratively. In 2019 I started studying towards my Bachelor's degree in IT-Systems Engineering at the 
-					Hasso-Plattner-Institute in Potsdam, Germany, which I intend to finish in Summer 2023.
-				</p>
-				<p>
-					I have recently submitted my bachelor thesis <i>"Monitoring of Agents for Dynamic Pricing in different Recommerce Markets"</i>
-					(which can be found <a href="https://bit.ly/MollenhauerBachelorThesisPortfolioWebsite" target="_blank">here</a>),
-					which is based on my bachelor's project run in cooperation with <a href="https://www.getfeather.io/" target="_blank" class="hide">Feather by SAP</a>,
-					<i>"Online Marketplace Simulation: A Testbed for Self-Learning Agents"</i> (<a href="https://bit.ly/MollenhauerBachelorsProjectPortfolioWebsite" target="_blank">here</a>),	which I worked on together with a small group of other students.
-				</p>
-			</section>
+		<h3>Notion integrations</h3>
+		<h4>
+			<i>
+				<a class="hideAlways" href="https://github.com/NikkelM/JSON-to-Notion" target="_blank">JSON to Notion</a>
+			</i>
+		</h4>
+		<p>
+			I've also created a number of Notion integrations you can try out for yourself! The one I find most useful is the
+			'JSON to Notion' integration, which allows you to import JSON files to your Notion database. Using a configuration
+			file, you can specify which properties of your JSON file should be imported, and define other transformations as
+			necessary. You can find the project on <a href="https://github.com/NikkelM/JSON-to-Notion"
+				target="_blank">GitHub</a>.
+		</p>
+		<h4>
+			<i>
+				<a class="hideAlways" href="https://github.com/NikkelM/Notion-Steam-API-Integration" target="_blank">Steam
+					API integration</a>
+			</i>
+		</h4>
+		<p>
+			Another Notion integration connects your Notion database to the Steam API. All you need is to add a Steam app ID
+			field to your database, define which app properties you would like to have fetched, and the integration will
+			automatically update your database entries. As always, you can find the tool on
+			<a href="https://github.com/NikkelM/Notion-Steam-API-Integration" target="_blank">GitHub</a>.
+		</p>
 
-			<blockquote class="right">
-				<p class="right-align">Visit me on 
-					<a href="https://bit.ly/MollenhauerGithubPortfolioWebsite" target="_blank"><img src="static/icons/github_white.png"/></a><a href="https://bit.ly/MollenhauerGithubPortfolioWebsite" target="_blank" class="hideAlways"> </a>
-					<a href="https://bit.ly/MollenhauerGithubPortfolioWebsite" target="_blank" class="hide">Github</a></p>
-			</blockquote>
+		<hr class="divider very-short">
 
-			<section class="left">
-				<h2>💻 Projects</h2>
-				<h3>🌐 The Website</h3>
-				<p>
-					I built this website in early April 2022, after I had gained some first Web-Development experience during my studies.
-					To challenge myself and to allow for as much creativity as possible, I decided to use <a href="https://threejs.org/" class="hide">three.js</a> for the project,
-					as this would allow me to revisit my knowledge of 3D-Computergraphics, which I had last involved myself with two years prior.
-					The website is hosted using <a href="https://pages.github.com/" target="_blank" class="hide">Github pages</a>,
-					and its source code can be found in <a href="https://bit.ly/MollenhauerPortfolioWebsitePortfolioWebsite" target="_blank">this repository</a>.
-				</p>
-				<h3>🎓 Bachelor's project</h3>
-				<h4><i>Online Marketplace Simulation: A Testbed for Self-Learning Agents</i></h4>
-				<p>
-					At the HPI, the bachelor's project is a year long software project run in cooperation with a renowned industry partner.
-					My team, comprised of six students, worked in collaboration with <a href="https://www.getfeather.io/" target="_blank" class="hide">Feather by SAP</a>,
-					building a simulation platform for online marketplaces, upon which we applied, tested and compared various reinforcement learning algorithms on their proficiency in setting dynamic prices in recommerce market environments.
-					Please refer to <a href="https://bit.ly/MollenhauerBachelorsProjectPortfolioWebsite" target="_blank">this repository</a> to learn more about the project.
-				</p>
-				<h3>🎓 Bachelor's thesis</h3>
-				<h4><i>Monitoring of Agents for Dynamic Pricing in different Recommerce Markets</i></h4>
-				<p>
-					It is customary for a student's bachelor's thesis to be based on insights gained from the bachelor's project, and to further investigate a core theme of the project.
-					My bachelor's thesis focuses on different approaches to the monitoring of reinforcement learning agents, in the specific context of our market simulation framework.
-					You can find the thesis in <a href="https://bit.ly/MollenhauerBachelorThesisPortfolioWebsite" target="_blank">this repository</a>.
-				</p>
-			</section>
+		<h3>
+			<a class="hideAlways" href="threejs.html" target="_blank">Three.js</a>
+		</h3>
+		<p>
+			Three.js is a JavaScript library that allows for the creation and display of 3D computer graphics in a web
+			browser. In April 2022, I built a very small demo page using the library, which you can find linked in the menu
+			or directly <a href="threejs.html" target="_blank">here</a>.
+		</p>
+	</section>
 
-			<blockquote class="left">
-				<p class="left-align">Connect with me <br> on 
-					<a href="https://bit.ly/MollenhauerLinkedinPortfolioWebsite" target="_blank"><img src="static/icons/linkedin_white.png" style="vertical-align: -5px;"/></a><a href="https://bit.ly/MollenhauerLinkedinPortfolioWebsite" target="_blank" class="hideAlways"> </a>
-					<a href="https://bit.ly/MollenhauerLinkedinPortfolioWebsite" target="_blank" class="hide">LinkedIn</a></p>
-			</blockquote>
 
-			<section class="right">
-				<h2>📖 Experience - Internships</h2>
-				<h3>Microsoft, Dublin - Fall 2022</h3>
-				<p>
-					From September to November 2022, I joined the Site Reliability team of the Azure cloud platform at Microsoft Dublin. 
-					I was responsible for creating entirely new monitoring probes covering core Azure services for the synthetic monitoring
-					of the Azure Resource Manager Control Plane, allowing on-call engineers to identify and mitigate incidents that
-					potentially affect millions of customers earlier & more reliably.
-				</p>
-				<h3>NDR (Northern German Broadcasting), Kiel - Summer 2018</h3>
-				<p>
-					During this internship, which I organized out of curiosity, I was able to get to know the inner workings of one of Germany's biggest public broadcasting companies.
-					I was involved in all steps of the production of the daily evening news, from planning reports to filming, editing and live taping. I was also able to get to know
-					how different live-TV and radio formats get produced.
-				</p>
-				<h3>Enterprise Garage Consultancy, San Francisco - Summer 2017</h3>
-				<p>
-					Over the course of this Student internship I was coached by the companies Founder & CEO, <a href="https://www.linkedin.com/in/marioherger/" class="hide">Mario Herger</a>.
-					Together, we welcomed delegations from German companies to learn about the "Silicon Valley Mindset", and how they could transform their company's culture to become
-					more open-minded and diverse. To achieve this, we visited personalities from the Silicon Valley's Tech-Start-Up scene to talk about what makes working in the SF Bay Area
-					different.<br>
-					An additional task of mine was to assist in planning, conducting and editing Interviews with Engineers from both Tesla and Liquid Motors about the way the Automobile
-					industry is changing to become more environmentally conscious. 
-				</p>
-			</section>
+	<div id="preFooterMargin" style="margin-bottom: 100px"></div>
+	<footer>
+		<p><span style="vertical-align: -6px;" class="material-icons-outlined">copyright</span> 2021-2023 Nikkel
+			Mollenhauer</p>
+		<p><a id="contactLink" class="pointer show">Contact</a></p>
+	</footer>
 
-			<footer>
-				<p><span style="vertical-align: -6px;" class="material-icons-outlined">copyright</span> 2022 Nikkel Mollenhauer</p>
-				<p><a id="contactLink" class="pointer show">Contact</a></p>
-			</footer>
-		</main>
-		
-		<script type="module" src="/js/index.js"></script>
+	<script type="module" src="/js/common.js"></script>
+	<script type="module" src="/js/index.js"></script>
 
-		<script type="text/javascript">
-			var sc_project=12742615; 
-			var sc_invisible=1; 
-			var sc_security="eae248ec"; 
-			</script>
-			<script type="text/javascript"
-			src="https://www.statcounter.com/counter/counter.js" async></script>
-			<noscript><div class="statcounter"><a title="Web Analytics"
-			href="https://statcounter.com/" target="_blank"><img class="statcounter"
-			src="https://c.statcounter.com/12742615/0/eae248ec/1/" alt="Web Analytics"
-			referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-	</body>
+</body>
+
 </html>
