@@ -1,8 +1,4 @@
 ## Custom stuff for testing etc.
-test.js
-test.html
-test.css
-
 images/
 
 # Logs
@@ -16,6 +12,7 @@ lerna-debug.log*
 
 node_modules
 dist-ssr
+dist
 *.local
 
 # Editor directories and files

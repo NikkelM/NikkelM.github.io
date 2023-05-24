@@ -6,7 +6,7 @@ export let skybox, starGroup;
 // Skybox
 export function initSkybox() {
 	const materialArray = ['right1', 'left2', 'top3', 'bottom4', 'front5', 'back6'].map(image => {
-		let texture = textureLoader.load('static/textures/skybox/' + image + '.jpg');
+		let texture = textureLoader.load(`../textures/skybox/${image}.jpg`);
 		return new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide });
 	});
 

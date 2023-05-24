@@ -1,3 +1,4 @@
+import '../common.js';
 import { onWindowResize } from './scene.js';
 import { initSkybox } from './skybox.js';
 import { initAvatarCube } from './models.js';
