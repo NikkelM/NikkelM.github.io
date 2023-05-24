@@ -1,9 +1,5 @@
-@import url("https://use.typekit.net/jmk3xov.css");
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-
 :root {
-	--dark-bg: rgba(15, 15, 15, 0.5);
+	--dark-bg-tp: rgba(15, 15, 15, 0.5);
 	--margin_bottom: 250px;
 }
 
@@ -23,7 +19,7 @@ footer {
 	left: -1%;
 	width: 102%;
 	height: 100px;
-	background: var(--dark-bg);
+	background: var(--dark-bg-tp);
 }
 
 main {
@@ -39,7 +35,7 @@ main {
 }
 
 header {
-	background: var(--dark-bg);
+	background: var(--dark-bg-tp);
 	grid-column: 2 / span 5;
 	font-size: 2rem;
 	padding: 2rem;
@@ -56,7 +52,6 @@ blockquote {
 	/* margins at the top and bottom of the item */
 	margin-block-start: 0.4rem;
 	margin-block-end: 0.4rem;
-	font-family: 'Open Sans', sans-serif;
 	font-weight: 100;
 	font-style: normal;
 }
@@ -67,7 +62,7 @@ section {
 	grid-column: 4 / span 6;
 	padding: 1.75rem;
 	text-align: justify;
-	background: var(--dark-bg);
+	background: var(--dark-bg-tp);
 	font-size: 1.25rem;
 	line-height: 1.5;
 	margin-bottom: var(--margin_bottom);

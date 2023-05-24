@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 @import './links.css';
 @import './contactForm.css';
 
 :root {
+	--bg-color: #222;
+	--fg-color: #fff;
+	--grey-fg-color: #999;
+	--grey-bg-color: #333;
+
 	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -108,32 +115,45 @@ footer {
 /* Cookie consent */
 .cookieConsent {
 	z-index: 900;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  text-align: center;
-  font-size: 14px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 10px;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	text-align: center;
+	font-size: 18px;
 }
 
 .cookieConsent p {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
 }
 
+/*
+ * Buttons
+ */
 .cookieConsent button {
-  display: inline-block;
-  margin-left: 10px;
-  background-color: #fff;
-  color: #000;
-  border: none;
-  padding: 5px 10px;
-  font-size: 14px;
-  cursor: pointer;
+	display: inline-block;
+	color: var(--fg-color);
+	text-decoration: none;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	background-color: #333;
+	padding: 4px 10px;
+	margin: 2px 1px;
+	font-size: 18px;
+}
+
+.cookieConsent button:hover {
+	background-color: #444 !important;
+}
+
+.cookieConsent button:active {
+	background-color: #555 !important;
 }
 
 /* Google Icons */
