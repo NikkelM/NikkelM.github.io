@@ -1,5 +1,5 @@
 // Animation template from https://sbcode.net/threejs/animate-on-scroll/
-import { Clock } from 'https://unpkg.com/three@0.139.2/build/three.module.js';
+import { Clock } from 'three';
 import { scene, camera, renderer } from './scene.js'
 import { skybox, starGroup } from './skybox.js'
 import { avatarCube, globe } from './models.js'
