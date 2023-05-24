@@ -1,10 +1,10 @@
 {
-  "name": "nikkelm-portfolio",
+  "name": "nikkelm-personal-website",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "vite dist",
-    "build": "vite build",
+    "dev": "vite src",
+    "build": "vite build src",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
