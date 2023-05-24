@@ -1,4 +1,4 @@
-import {LoadingManager, TextureLoader, PerspectiveCamera, Scene, FogExp2, WebGLRenderer} from 'three';
+import { LoadingManager, TextureLoader, PerspectiveCamera, Scene, FogExp2, WebGLRenderer, AmbientLight } from 'three';
 
 ////////// Textureloader
 // loading screen init
@@ -11,7 +11,7 @@ const loadingManager = new LoadingManager(() => {
 export let textureLoader = new TextureLoader(loadingManager);
 
 // will be called when the loading screen has finished
-function onLoadingScreenTransitionEnd( event ) {
+function onLoadingScreenTransitionEnd(event) {
 	document.body.style = "";
 	event.target.remove();
 };
@@ -20,7 +20,7 @@ function onLoadingScreenTransitionEnd( event ) {
 ////////// Camera
 export let camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
 
-export let scene = new Scene();	
+export let scene = new Scene();
 scene.fog = new FogExp2(0x000000, 0.02);
 
 export let renderer = new WebGLRenderer({
@@ -36,7 +36,7 @@ export let renderer = new WebGLRenderer({
 // pointLight.position.set(0, 10, 5);
 // scene.add(pointLight);
 
-const ambientLight = new THREE.AmbientLight(0xffffff);
+const ambientLight = new AmbientLight(0xffffff);
 scene.add(ambientLight);
 ////////// Lights
 
