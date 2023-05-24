@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+	<link rel="manifest" href="./manifest.json">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="./css/common.css" />
+	<link rel="stylesheet" type="text/css" href="./css/index.css" />
+	<title>Nikkel Mollenhauer</title>
+</head>
+
+<nav id="navBar">
+	<div id="navBarContents">
+		<div id="navBarContentsTop" class="navBarTop">
+			<a href="javascript:void(0)" class="closeButton">&times;</a>
+			<a href="javascript:void(0)" class="navLink">Home</a>
+			<a href="./threejs.html" class="navLink">Three.js Demo</a>
+		</div>
+		<div id="navBarContentsBottom" class="navBarBottom">
+			<a href="https://github.com/NikkelM" class="navLink" style="display: inline" target="_blank"><img
+					src="./icons/github_white.png" /></a>
+			<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" class="navLink" style="display: inline"
+				target="_blank"><img src="./icons/linkedin_white.png" /></a>
+		</div>
+	</div>
+</nav>
+
+<div id="cookieConsent" class="cookieConsent" style="display:none;">
+	<p>This website uses cookies to provide a better user experience. No personal data is being collected.</p>
+	<button id="acceptCookiesButton" class="acceptCookiesButton">Accept</button>
+</div>
+
+<div id="contactFormDiv">
+	<span class="closeButton">&times;</span>
+	<form id="contactForm" action="https://getform.io/f/e0fd4ff8-5016-41ab-8846-59560b09c151" method="POST">
+		<label for="name">Name</label><br>
+		<input type="text" required="" name="name"><br>
+		<label for="email">E-Mail</label><br>
+		<input type="email" required="" name="email"><br>
+		<label for="message">Message</label><br>
+		<textarea rows="5" required="" name="message"></textarea><br><br>
+		<button type="submit">Submit</button>
+	</form>
+
+</div>
+
+<body>
+
+	<span id="openNavBarButton">&#9776;</span>
+
+	<header>
+		<h1>Nikkel Mollenhauer</h1>
+		<p>IT-Systems Engineering Student <a class="hide" href="https://hpi.de/" target="_blank">@HPI</a></p>
+		<p>
+			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span
+					class="material-icons-outlined download-48">file_download</span></a><!-- Do not add a line break here --><a
+				href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"
+				class="hideAlways"> </a>
+			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"
+				class="hideAlways">CV</a>
+			<span style="vertical-align: 5px;">| </span><a href="https://github.com/NikkelM" target="_blank"><img
+					src="./icons/github_white.png" style="vertical-align: -4px;" /></a>
+			<span style="vertical-align: 5px;">| </span><a href="https://www.linkedin.com/in/nikkel-mollenhauer/"
+				target="_blank"><img src="./icons/linkedin_white.png" style="vertical-align: -5px;" /></a>
+			<span style="vertical-align: 5px;">| </span><a id="contactLink" class="hideAlways pointer">Contact</a>
+		</p>
+
+	</header>
+
+	<br>
+	<section>
+		<h2>About me</h2>
+		<p>
+			Hi, I'm Nikkel, currently studying towards my bachelor's degree in IT-Systems Engineering at the
+			Hasso-Plattner-Institute in Potsdam, after which I will be joining the Azure Site Reliability Engineering team at
+			Microsoft Dublin.
+			<br>
+			If you are interested in my experience and skills, you can find me on
+			<a href="https://github.com/NikkelM" target="_blank">GitHub</a>
+			and
+			<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank">LinkedIn</a>,
+			download my
+			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf"
+				target="_blank">CV</a>,
+			or send me a quick message using the form linked above.
+		</p>
+	</section>
+
+	<hr class="divider">
+
+	<section>
+		<h2>Projects</h2>
+		<p>Everyone's always working on something, and so am I. All of the projects below and many more can be found
+			on my <a href="https://github.com/NikkelM" target="_blank">GitHub</a> profile.</p>
+
+		<hr class="divider very-short">
+
+		<h3>
+			<a class="hideAlways"
+				href="https://chrome.google.com/webstore/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf"
+				target="_blank">Random YouTube Video</a>
+		</h3>
+		<p>
+			Random YouTube Video is a browser extension which allows users to truly shuffle from all videos
+			uploaded on a channel - without the need for playlists. The extension adds a 'Shuffle' button to channel and video
+			pages, and allows for thorough customization through its popup.
+			<br>
+			I built this extension using JavaScript bundled through webpack. In the backend it uses the YouTube Data API to
+			fetch video data, and shares this data using a Firebase Realtime Database. User preferences are stored and shared
+			across devices using the built-in chrome storage API's. You can get the extension on the
+			<a href="https://chrome.google.com/webstore/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf"
+				target="_blank">Chrome</a> and <a
+				href="https://microsoftedge.microsoft.com/addons/detail/random-youtube-video/fccfflipicelkilpmgniblpoflkbhdbe"
+				target="_blank">Edge</a> stores, it is compatible with all Chromium-based browsers.
+		</p>
+
+		<hr class="divider very-short">
+
+		<h3>Notion integrations</h3>
+		<h4>
+			<i>
+				<a class="hideAlways" href="https://github.com/NikkelM/JSON-to-Notion" target="_blank">JSON to Notion</a>
+			</i>
+		</h4>
+		<p>
+			I've also created a number of Notion integrations you can try out for yourself! The one I find most useful is the
+			'JSON to Notion' integration, which allows you to import JSON files to your Notion database. Using a configuration
+			file, you can specify which properties of your JSON file should be imported, and define other transformations as
+			necessary. You can find the project on <a href="https://github.com/NikkelM/JSON-to-Notion"
+				target="_blank">GitHub</a>.
+		</p>
+		<h4>
+			<i>
+				<a class="hideAlways" href="https://github.com/NikkelM/Notion-Steam-API-Integration" target="_blank">Steam
+					API integration</a>
+			</i>
+		</h4>
+		<p>
+			Another Notion integration connects your Notion database to the Steam API. All you need is to add a Steam app ID
+			field to your database, define which app properties you would like to have fetched, and the integration will
+			automatically update your database entries. As always, you can find the tool on
+			<a href="https://github.com/NikkelM/Notion-Steam-API-Integration" target="_blank">GitHub</a>.
+		</p>
+
+		<hr class="divider very-short">
+
+		<h3>
+			<a class="hideAlways" href="./threejs.html">Three.js</a>
+		</h3>
+		<p>
+			Three.js is a JavaScript library that allows for the creation and display of 3D computer graphics in a web
+			browser. In April 2022, I built a very small demo page using the library, which you can find linked in the menu
+			or directly <a href="./threejs.html">here</a>.
+		</p>
+	</section>
+
+
+	<div id="preFooterMargin" style="margin-bottom: 100px"></div>
+	<footer>
+		<p><span style="vertical-align: -6px;" class="material-icons-outlined">copyright</span> 2021-2023 Nikkel
+			Mollenhauer</p>
+		<p><a id="contactLink" class="pointer show">Contact</a></p>
+	</footer>
+
+	<script type="module" src="./index.js"></script>
+
+</body>
+
+</html>

@@ -1,18 +1,19 @@
 {
-  "name": "portfolio",
-  "private": false,
-  "version": "0.0.0",
+  "name": "nikkelm-personal-website",
+  "private": true,
+  "version": "1.0.0",
   "scripts": {
-    "dev": "vite dist",
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "gh-pages": "^3.2.3",
-    "vite": "^2.9.0"
+    "vite": "^2.9.13"
   },
   "dependencies": {
+    "js-cookie": "^3.0.5",
     "three": "^0.139.2"
   }
 }
