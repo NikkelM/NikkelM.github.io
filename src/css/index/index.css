@@ -41,6 +41,10 @@ section {
 @media (max-width: 768px) {
 	section {
 		width: 90vw;
+		font-size: 20px;
+	}
+	header {
+		font-size: 22px;
 	}
 }
 
