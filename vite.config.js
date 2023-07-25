@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import compress from 'vite-plugin-compress';
 
 const root = resolve(__dirname, 'src');
 const outDir = resolve(__dirname, 'dist');
@@ -17,4 +18,7 @@ export default defineConfig({
       },
     },
   },
+  plugins: [
+    compress(),
+  ],
 });
