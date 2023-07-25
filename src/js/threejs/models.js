@@ -1,4 +1,7 @@
-import { Mesh, BoxGeometry, SphereGeometry, MeshBasicMaterial } from 'three';
+import { Mesh } from 'three/src/objects/Mesh.js'
+import { BoxGeometry } from 'three/src/geometries/BoxGeometry.js'
+import { SphereGeometry } from 'three/src/geometries/SphereGeometry.js'
+import { MeshBasicMaterial } from 'three/src/materials/MeshBasicMaterial.js'
 import { scene, textureLoader } from './scene.js';
 
 export let avatarCube, globe;
