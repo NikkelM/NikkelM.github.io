@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-
-@import './links.css';
-@import './contactForm.css';
+@import "./links.css";
+@import "./contactForm.css";
 
 :root {
 	--bg-color: #222;
@@ -9,9 +7,26 @@
 	--grey-fg-color: #999;
 	--grey-bg-color: #333;
 
-	font-family: 'Montserrat', sans-serif;
+	font-family: "Montserrat", sans-serif;
 	font-style: normal;
 	font-weight: 400;
+}
+
+#loadingOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--bg-color);
+	z-index: 9999;
+}
+
+/* Fade-out for the overlay */
+#loadingOverlay.fadeOut {
+	opacity: 0;
+	transition: opacity 0.5s ease-out;
+	pointer-events: none;
 }
 
 /* navBar */
@@ -172,27 +187,10 @@ footer {
 }
 
 /* Google Icons */
-.material-icons.locked {
-	vertical-align: -4px;
-}
-
-.material-icons-outlined.download-48 {
+.material-icons-outlined {
 	vertical-align: -9px;
-	font-size: 48px;
 }
 
-.material-icons.md-18 {
-	font-size: 18px;
-}
-
-.material-icons.md-24 {
-	font-size: 24px;
-}
-
-.material-icons.md-36 {
-	font-size: 36px;
-}
-
-.material-icons.md-48 {
+.material-icons-outlined.f48 {
 	font-size: 48px;
 }

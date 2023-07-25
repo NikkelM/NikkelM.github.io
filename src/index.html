@@ -5,12 +5,15 @@
 	<meta charset="utf-8" />
 	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
 	<link rel="manifest" href="./site.webmanifest">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
+	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" as="style" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap">
+	<link rel="preconnect" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin>
+	<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="./css/common.css" />
 	<link rel="stylesheet" type="text/css" href="./css/index/index.css" />
-	<title>Nikkel Mollenhauer</title>
+	<title>NikkelM</title>
 </head>
 
 <nav id="navBar">
@@ -47,8 +50,9 @@
 	</form>
 </div>
 
-<body>
+<div id="loadingOverlay"></div>
 
+<body>
 	<span id="openNavBarButton">&#9776;</span>
 
 	<header>
@@ -56,7 +60,7 @@
 		<p>IT-Systems Engineering Student <a class="hide" href="https://hpi.de/" target="_blank">@HPI</a></p>
 		<p>
 			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span
-					class="material-icons-outlined download-48">file_download</span></a><!-- Do not add a line break here --><a
+					class="material-icons-outlined f48">file_download</span></a><!-- Do not add a line break here --><a
 				href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"
 				class="hideAlways" aria-label="Download CV"> </a>
 			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"
