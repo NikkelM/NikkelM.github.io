@@ -1,5 +1,11 @@
-import { Mesh, BoxGeometry, SphereGeometry, Object3D, MeshBasicMaterial, MeshPhongMaterial, PointLight } from 'three';
+import { Mesh } from 'three/src/objects/Mesh.js'
+import { BoxGeometry } from 'three/src/geometries/BoxGeometry.js'
+import { SphereGeometry } from 'three/src/geometries/SphereGeometry.js'
+import { MeshBasicMaterial } from 'three/src/materials/MeshBasicMaterial.js'
 import { scene, textureLoader } from './scene.js';
+import { Object3D } from 'three/src/core/Object3D.js';
+import { MeshPhongMaterial } from 'three/src/materials/MeshPhongMaterial.js';
+import { PointLight } from 'three/src/lights/PointLight.js';
 
 export let avatarCube, globe, sun, sunPivot;
 

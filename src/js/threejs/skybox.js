@@ -1,4 +1,9 @@
-import { Mesh, MeshBasicMaterial, BoxGeometry, SphereGeometry, Vector3, BackSide, Group } from 'three';
+import { Mesh } from 'three/src/objects/Mesh.js'
+import { MeshBasicMaterial } from 'three/src/materials/MeshBasicMaterial.js'
+import { BoxGeometry } from 'three/src/geometries/BoxGeometry.js'
+import { SphereGeometry } from 'three/src/geometries/SphereGeometry.js'
+import { Vector3 } from 'three/src/math/Vector3.js'
+import { Group } from 'three/src/objects/Group.js'
 import { randFloatSpread } from 'three/src/math/MathUtils.js';
 import { scene, textureLoader } from './scene.js';
 
@@ -8,7 +13,7 @@ export let skybox, starGroup;
 export function initSkybox() {
 	const materialArray = ['right1', 'left2', 'top3', 'bottom4', 'front5', 'back6'].map(image => {
 		let texture = textureLoader.load(`../textures/skybox/${image}.jpg`);
-		return new MeshBasicMaterial({ map: texture, side: BackSide });
+		return new MeshBasicMaterial({ map: texture, side: 1 });
 	});
 
 	skybox = new Mesh(new BoxGeometry(100, 100, 100), materialArray);

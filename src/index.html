@@ -2,15 +2,20 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
+	<meta charset="utf-8" />
 	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
-	<link rel="manifest" href="./manifest.json">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
-
+	<link rel="manifest" href="./site.webmanifest">
+	<link rel="preconnect" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin>
+	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" as="style" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin>
+	<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Personal website of NikkelM">
 	<link rel="stylesheet" type="text/css" href="./css/common.css" />
-	<link rel="stylesheet" type="text/css" href="./css/index.css" />
-	<title>Nikkel Mollenhauer</title>
+	<link rel="stylesheet" type="text/css" href="./css/index/index.css" />
+	<title>NikkelM</title>
 </head>
 
 <nav id="navBar">
@@ -21,10 +26,10 @@
 			<a href="./threejs.html" class="navLink">Three.js Demo</a>
 		</div>
 		<div id="navBarContentsBottom" class="navBarBottom">
-			<a href="https://github.com/NikkelM" class="navLink" style="display: inline" target="_blank"><img
-					src="./icons/github.png" /></a>
-			<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" class="navLink" style="display: inline"
-				target="_blank"><img src="./icons/linkedin.png" /></a>
+			<a href="https://github.com/NikkelM" class="navLink" style="display: inline" target="_blank"
+				aria-label="GitHub profile"><img src="./icons/github.webp" alt="" style="height: 50px; width: 50px;"/></a>
+			<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" class="navLink" style="display: inline" target="_blank"
+				aria-label="LinkedIn profile"><img src="./icons/linkedin.webp" alt="" style="height: 50px; width: 50px;"/></a>
 		</div>
 	</div>
 </nav>
@@ -47,8 +52,9 @@
 	</form>
 </div>
 
-<body>
+<div id="loadingOverlay"></div>
 
+<body>
 	<span id="openNavBarButton">&#9776;</span>
 
 	<header>
@@ -56,15 +62,16 @@
 		<p>IT-Systems Engineering Student <a class="hide" href="https://hpi.de/" target="_blank">@HPI</a></p>
 		<p>
 			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span
-					class="material-icons-outlined download-48">file_download</span></a><!-- Do not add a line break here --><a
+					class="material-icons-outlined f48">file_download</span></a><!-- Do not add a line break here --><a
 				href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"
-				class="hideAlways"> </a>
+				class="hideAlways" aria-label="Download CV"> </a>
 			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"
 				class="hideAlways">CV</a>
-			<span style="vertical-align: 5px;">| </span><a href="https://github.com/NikkelM" target="_blank"><img
-					src="./icons/github.png" style="vertical-align: -4px;" /></a>
+			<span style="vertical-align: 5px;">| </span><a href="https://github.com/NikkelM" target="_blank"
+				aria-label="GitHub profile"><img src="./icons/github.webp" style="vertical-align: -4px; height: 50px; width: 50px;" alt="" /></a>
 			<span style="vertical-align: 5px;">| </span><a href="https://www.linkedin.com/in/nikkel-mollenhauer/"
-				target="_blank"><img src="./icons/linkedin.png" style="vertical-align: -5px;" /></a>
+				target="_blank" aria-label="LinkedIn profile"><img src="./icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px;"
+					alt="" /></a>
 			<span style="vertical-align: 5px;">| </span><a id="contactLink" class="hideAlways pointer">Contact</a>
 		</p>
 
@@ -108,13 +115,19 @@
 			uploaded on a channel - without the need for playlists. The extension adds a 'Shuffle' button to channel and video
 			pages, and allows for thorough customization through its popup.
 			<br>
-			I built this extension using JavaScript bundled through webpack. In the backend it uses the YouTube Data API to
-			fetch video data, and shares this data using a Firebase Realtime Database. User preferences are stored and shared
-			across devices using the built-in chrome storage API's. You can get the extension on the
+			I built this extension using JavaScript bundled with webpack. In the backend it uses the YouTube Data API to
+			fetch video data, and stores and shares this data using a Firebase Realtime Database. User preferences are stored
+			and shared across devices using the built-in chrome storage API's. It's functionality is tested using a thorough
+			test suite implemented using mocha and expect.js, which tests a wide range of possible data states using an easily
+			scalable permutation approach.
+			<br>
+			You can get the extension for
 			<a href="https://chrome.google.com/webstore/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf"
-				target="_blank">Chrome</a> and <a
+				target="_blank">Chrome</a>, <a
 				href="https://microsoftedge.microsoft.com/addons/detail/random-youtube-video/fccfflipicelkilpmgniblpoflkbhdbe"
-				target="_blank">Edge</a> stores, it is compatible with all Chromium-based browsers.
+				target="_blank">Edge</a> and <a href="https://addons.mozilla.org/en-GB/firefox/addon/random-youtube-video/"
+				target="_blank">Firefox</a>. The extension is compatible with all Chromium-based browsers through the
+			Chrome Web Store version.
 		</p>
 
 		<hr class="divider very-short">
@@ -153,7 +166,7 @@
 		<p>
 			Three.js is a JavaScript library that allows for the creation and display of 3D computer graphics in a web
 			browser. In April 2022, I built a very small demo page using the library, which you can find linked in the menu
-			or directly <a href="./threejs.html">here</a>.
+			or here: <a href="./threejs.html">ThreeJS demo</a>.
 		</p>
 	</section>
 
@@ -165,8 +178,7 @@
 		<p><a id="contactLink" class="pointer show">Contact</a></p>
 	</footer>
 
-	<script type="module" src="./index.js"></script>
+	<script type="module" src="./js/index/index.js"></script>
 
 </body>
-
 </html>

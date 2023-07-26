@@ -1,4 +1,10 @@
-import { LoadingManager, TextureLoader, PerspectiveCamera, Scene, FogExp2, WebGLRenderer, AmbientLight } from 'three';
+import { LoadingManager } from 'three/src/loaders/LoadingManager.js'
+import { TextureLoader } from 'three/src/loaders/TextureLoader.js'
+import { PerspectiveCamera } from 'three/src/cameras/PerspectiveCamera.js'
+import { Scene } from 'three/src/scenes/Scene.js'
+import { FogExp2 } from 'three/src/scenes/FogExp2.js'
+import { WebGLRenderer } from 'three/src/renderers/WebGLRenderer.js'
+import { AmbientLight } from 'three/src/lights/AmbientLight.js';
 
 ////////// Textureloader
 // loading screen init
