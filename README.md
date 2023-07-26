@@ -4,7 +4,7 @@ This repository contains the source code for my personal website hosted with Git
 
 ### Looking for some direct links?
 
-- [NikkelM.dev](https://github.nikkelm.dev/)
+- [NikkelM.dev](https://nikkelm.dev/)
 - [LinkedIn](https://www.linkedin.com/in/nikkel-mollenhauer/)
 - [Download my CV](https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf)
 
