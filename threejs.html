@@ -17,10 +17,10 @@
 	
 	
 	<title>NikkelM - ThreeJS</title>
-  <script type="module" crossorigin src="/assets/threejs.434f799f.js"></script>
-  <link rel="modulepreload" href="/assets/common.3c9bafb8.js">
-  <link rel="stylesheet" href="/assets/common.757f9be9.css">
-  <link rel="stylesheet" href="/assets/threejs.cbd464c3.css">
+  <script type="module" crossorigin src="/assets/threejs.2e266179.js"></script>
+  <link rel="modulepreload" href="/assets/common.f7877ee2.js">
+  <link rel="stylesheet" href="/assets/common.b4a9370b.css">
+  <link rel="stylesheet" href="/assets/threejs.e7aefe9e.css">
 </head>
 
 <section id="loading-screen">
@@ -51,7 +51,9 @@
 
 <div id="contactFormDiv">
 	<span class="closeButton">&times;</span>
-	<form id="contactForm" action="https://getform.io/f/e0fd4ff8-5016-41ab-8846-59560b09c151" method="POST">
+	<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+		<input type="hidden" name="from_name" value="nikkelm.dev-threejs">
+
 		<label for="name">Name</label><br>
 		<input id="name" type="text" required="" name="name" autocomplete="name"><br>
 		<label for="email">E-Mail</label><br>
@@ -59,6 +61,7 @@
 		<label for="message">Message</label><br>
 		<textarea id="message" rows="5" required="" name="message"></textarea><br><br>
 		<button type="submit">Submit</button>
+		<p id="result"></p>
 	</form>
 </div>
 
@@ -70,7 +73,7 @@
 		<span id="openNavBarButton" style="margin-left:40px; margin-top:-30px;">&#9776;</span>
 
 		<header>
-			<h1>Nikkel Mollenhauer</h1>
+			<h1>NikkelM</h1>
 			<p>ThreeJS demo - April 2022</p>
 			<p>
 				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf"
@@ -192,6 +195,7 @@
 		</footer>
 	</main>
 
+	<script src="https://web3forms.com/client/script.js" async defer></script>
 	
 
 </body>
