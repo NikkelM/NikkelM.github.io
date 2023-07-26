@@ -7,10 +7,10 @@ console.log("Find the source code at https://github.com/NikkelM/NikkelM.github.i
 init();
 
 function init() {
-	window.onload = function () {
+	window.addEventListener('load', function() {
 		initContactForm();
 		checkCookieConsent();
-	}
+	});
 }
 
 // ----- Contact form -----
