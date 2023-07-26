@@ -48,10 +48,12 @@ function setupFormSubmission(form) {
 		e.preventDefault();
 		const formData = new FormData(form);
 		const object = Object.fromEntries(formData);
+		object.access_key = "d8cb0be5-68b2-4c0c-91e7-4f9f4a13e9ea";
+		object.replyto = object.email;
 		const json = JSON.stringify(object);
 		result.innerText = "Please wait...";
 		result.style.display = "block";
-	
+
 		fetch('https://api.web3forms.com/submit', {
 			method: 'POST',
 			headers: {
@@ -63,7 +65,7 @@ function setupFormSubmission(form) {
 		.then(async (response) => {
 			let json = await response.json();
 			if (response.status == 200) {
-				result.innerText = json.message;
+				result.innerText = "Your message has been sent!";
 			} else {
 				console.log(response);
 				result.innerText = json.message;
