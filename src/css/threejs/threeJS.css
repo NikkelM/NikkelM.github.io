@@ -1,6 +1,7 @@
 :root {
 	--dark-bg-tp: rgba(15, 15, 15, 0.5);
 	--margin_bottom: 250px;
+	color-scheme: dark;
 }
 
 /* Hide scrollbar */

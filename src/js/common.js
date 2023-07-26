@@ -7,10 +7,10 @@ console.log("Find the source code at https://github.com/NikkelM/NikkelM.github.i
 init();
 
 function init() {
-	window.onload = function () {
+	window.addEventListener('load', function() {
 		initContactForm();
 		checkCookieConsent();
-	}
+	});
 }
 
 // ----- Contact form -----
@@ -28,15 +28,62 @@ function initContactForm() {
 	// stopPropagation to stop the whole contact form from disappearing if the form is clicked
 	contactForm.addEventListener('click', function(e) {
 		e.stopPropagation();
-	})
+	});
+	setupFormSubmission(contactForm);
 }
 
 function overlayContactForm() {
-  document.getElementById("contactFormDiv").onclick = function() {
-		document.getElementById("contactFormDiv").style.display = "none";
+	const contactFormDiv = document.getElementById("contactFormDiv");
+  contactFormDiv.onclick = function() {
+		contactFormDiv.style.display = "none";
 		document.body.style = "";
 	}
-  document.getElementById("contactFormDiv").style.display = "block";
+  contactFormDiv.style.display = "block";
+}
+
+function setupFormSubmission(form) {
+	const result = document.getElementById('result');
+
+	form.addEventListener('submit', function(e) {
+		e.preventDefault();
+		const formData = new FormData(form);
+		const object = Object.fromEntries(formData);
+		object.access_key = "d8cb0be5-68b2-4c0c-91e7-4f9f4a13e9ea";
+		object.replyto = object.email;
+		const json = JSON.stringify(object);
+		result.innerText = "Please wait...";
+		result.style.display = "block";
+
+		fetch('https://api.web3forms.com/submit', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept': 'application/json'
+			},
+			body: json
+		})
+		.then(async (response) => {
+			let json = await response.json();
+			if (response.status == 200) {
+				result.innerText = "Your message has been sent!";
+			} else {
+				console.log(response);
+				result.innerText = json.message;
+			}
+			form.reset();
+			setTimeout(() => {
+				result.style.display = "none";
+				document.getElementById("contactFormDiv").style.display = "none";
+			}, 3000);
+		})
+		.catch(error => {
+			console.log(error);
+			result.innerText = "Something went wrong!";
+			setTimeout(() => {
+				result.style.display = "none";
+			}, 3000);
+		});
+	});
 }
 
 // ----- Cookies -----

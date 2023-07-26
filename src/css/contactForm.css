@@ -31,7 +31,12 @@
 	transform: translate(-50%, -50%);
 }
 
-#contactFormDiv form label {
+#contactFormDiv form p {
+	font-size: 20px;
+	text-align: center;
+}
+
+#contactFormDiv form label{
 	display: inline-block;
 	font-size: 28px;
 	text-align: left;
@@ -39,7 +44,7 @@
 
 #contactFormDiv form input {
 	display: inline-block;
-	width: 50%;
+	width: 98%;
 	font-size: 20px;
 
 	border: 2.5px #333 solid;
@@ -57,6 +62,7 @@
 	width: 98%;
 	font-size: 20px;
 	resize: vertical;
+	max-height: 30vw;
 
 	border: 2.5px #333 solid;
 	border-radius: 3px;
