@@ -1,8 +1,8 @@
-import '../common.js';
+import './common.js';
 
-initIndex();
+initTextPage();
 
-function initIndex() {
+function initTextPage() {
 	window.addEventListener('load', function() {
 			// Fade out the loadingOverlay
 			document.getElementById("loadingOverlay").classList.add("fadeOut");

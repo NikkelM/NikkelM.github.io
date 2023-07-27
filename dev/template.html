@@ -13,15 +13,19 @@
 	<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style" crossorigin>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="NikkelM - 404 Page Not Found">
+	<!-- TODO: ADD DESCRIPTION HERE -->
+	<meta name="description" content="Personal website of NikkelM">
+	<!-- TODO: MAKE SURE CORRECT CSS IS USED -->
 	<link rel="stylesheet" type="text/css" href="./css/common.css" />
 	<link rel="stylesheet" type="text/css" href="./css/commonTextPages.css" />
-	<title>NikkelM - Page Not Found</title>
+	<!-- TODO: UPDATE TITLE -->
+	<title>NikkelM - Template</title>
 </head>
 
 <nav id="navBar">
 	<div id="navBarContents">
 		<div id="navBarContentsTop" class="navBarTop">
+			<!-- TODO: MAKE SURE LINKS WORK CORRECTLY -->
 			<a href="javascript:void(0)" class="closeButton">&times;</a>
 			<a href="./index.html" class="navLink">Home</a>
 			<a href="./threejs.html" class="navLink">Three.js Demo</a>
@@ -43,7 +47,8 @@
 <div id="contactFormDiv">
 	<span class="closeButton">&times;</span>
 	<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-		<input type="hidden" name="from_name" value="nikkelm.dev-404">
+		<!-- TODO: UPDATE FROM_NAME -->
+		<input type="hidden" name="from_name" value="nikkelm.dev-template">
 
 		<label for="name">Name</label><br>
 		<input id="name" type="text" required="" name="name" autocomplete="name"><br>
@@ -62,28 +67,45 @@
 	<span id="openNavBarButton">&#9776;</span>
 
 	<header>
-		<h1>404 - Page Not Found</h1>
-		<p>This page does not exist.</p>
-	</header>
-	<br>
-	<br>
-	<section class="center">
+		<h1>Nikkel Mollenhauer</h1>
+		<p>Some subtext</p>
 		<p>
-			If you think that this should not have happened, please reach out to me via the 
-			<a id="contactLink" class="pointer show">contact form</a>.
+			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span
+					class="material-icons-outlined f48">file_download</span></a><!-- Do not add a line break here --><a
+				href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"
+				class="hideAlways" aria-label="Download CV"> </a>
+			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"
+				class="hideAlways">CV</a>
+			<span style="vertical-align: 5px;">| </span><a href="https://github.com/NikkelM" target="_blank"
+				aria-label="GitHub profile"><img src="./icons/github.webp" style="vertical-align: -4px; height: 50px; width: 50px;" alt="" /></a>
+			<span style="vertical-align: 5px;">| </span><a href="https://www.linkedin.com/in/nikkel-mollenhauer/"
+				target="_blank" aria-label="LinkedIn profile"><img src="./icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px;"
+					alt="" /></a>
+			<span style="vertical-align: 5px;">| </span><a id="contactLink" class="hideAlways pointer">Contact</a>
 		</p>
-		<br>
-		<p><a href="./index.html" class="pointer">Go back Home</a></p>
+
+	</header>
+
+	<br>
+	<section>
+		<h2>About this page</h2>
+		<p>
+			This is the template page - this should not be seen!
+		</p>
 	</section>
+
+	<hr class="divider">
 
 	<div id="preFooterMargin" style="margin-bottom: 100px"></div>
 	<footer>
+		<!-- TODO: UPDATE COPYRIGHT IF NECESSARY -->
 		<p><span style="vertical-align: -6px;" class="material-icons-outlined">copyright</span> 2021-2023 Nikkel
 			Mollenhauer</p>
 		<p><a id="contactLink" class="pointer show">Contact</a></p>
 	</footer>
 	
 	<script src="https://web3forms.com/client/script.js" async defer></script>
+	<!-- TODO: INCLUDE CORRECT JS -->
 	<script type="module" src="./js/commonTextPages.js"></script>
 
 </body>
