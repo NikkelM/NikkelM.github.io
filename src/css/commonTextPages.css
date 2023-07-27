@@ -10,7 +10,6 @@
 
 header {
 	text-align: center;
-	/* Scale the header fonts up a bit */
 	font-size: 34px;
 }
 
@@ -43,8 +42,21 @@ section {
 		width: 90vw;
 		font-size: 20px;
 	}
+
 	header {
 		font-size: 22px;
+	}
+
+	h1 {
+		font-size: 40px;
+	}
+
+	h2 {
+		font-size: 30px;
+	}
+	
+	h3 {
+		font-size: 25px;
 	}
 }
 

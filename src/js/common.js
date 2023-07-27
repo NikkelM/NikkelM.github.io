@@ -34,6 +34,7 @@ function initContactForm() {
 
 function overlayContactForm() {
 	const contactFormDiv = document.getElementById("contactFormDiv");
+
   contactFormDiv.onclick = function() {
 		contactFormDiv.style.display = "none";
 		document.body.style = "";
