@@ -14,6 +14,7 @@ export default defineConfig({
       input: {
         main: resolve(root, 'index.html'),
         threejs: resolve(root, 'threejs.html'),
+        404: resolve(root, '404.html'),
       },
     },
   },
