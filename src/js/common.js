@@ -15,14 +15,14 @@ function init() {
 
 // ----- Contact form -----
 function initContactForm() {
-	let contactFormLinks = document.querySelectorAll(`[id^="contactLink"]`);
+	let contactFormLinks = document.getElementsByClassName("contactLink");
 
-	contactFormLinks.forEach(element => {
-		element.onclick = function() {
+	for (let i = 0; i < contactFormLinks.length; i++) {
+		contactFormLinks[i].onclick = function() {
 			overlayContactForm();
 			return false;
 		}
-	});
+	}
 
 	let contactForm = document.getElementById("contactForm");
 	// stopPropagation to stop the whole contact form from disappearing if the form is clicked
