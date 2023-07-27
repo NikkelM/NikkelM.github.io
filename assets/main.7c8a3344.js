@@ -1,1 +1,0 @@
-import"./common.f7877ee2.js";e();function e(){window.addEventListener("load",function(){document.getElementById("loadingOverlay").classList.add("fadeOut"),setTimeout(function(){document.getElementById("loadingOverlay").style.display="none"},500)})}
