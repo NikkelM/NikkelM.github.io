@@ -15,14 +15,14 @@ function init() {
 
 // ----- Contact form -----
 function initContactForm() {
-	let contactFormLinks = document.querySelectorAll(`[id^="contactLink"]`);
+	let contactFormLinks = document.getElementsByClassName("contactLink");
 
-	contactFormLinks.forEach(element => {
-		element.onclick = function() {
+	for (let i = 0; i < contactFormLinks.length; i++) {
+		contactFormLinks[i].onclick = function() {
 			overlayContactForm();
 			return false;
 		}
-	});
+	}
 
 	let contactForm = document.getElementById("contactForm");
 	// stopPropagation to stop the whole contact form from disappearing if the form is clicked
@@ -34,11 +34,26 @@ function initContactForm() {
 
 function overlayContactForm() {
 	const contactFormDiv = document.getElementById("contactFormDiv");
+
   contactFormDiv.onclick = function() {
-		contactFormDiv.style.display = "none";
-		document.body.style = "";
+		closeContactForm();
 	}
   contactFormDiv.style.display = "block";
+	
+	// On mobile, prevent scrolling
+	if (window.innerWidth < 768) {
+		const html = document.getElementsByTagName('html')[0];
+		html.setAttribute('style', 'overflow: hidden !important');
+	}
+}
+
+function closeContactForm() {
+	const contactFormDiv = document.getElementById("contactFormDiv");
+	contactFormDiv.style.display = "none";
+	document.body.style = "";
+
+	const html = document.getElementsByTagName('html')[0];
+	html.setAttribute('style', 'overflow: auto !important');
 }
 
 function setupFormSubmission(form) {
@@ -73,7 +88,7 @@ function setupFormSubmission(form) {
 			form.reset();
 			setTimeout(() => {
 				result.style.display = "none";
-				document.getElementById("contactFormDiv").style.display = "none";
+				closeContactForm();
 			}, 3000);
 		})
 		.catch(error => {
