@@ -3,8 +3,10 @@
 
 <head>
 	<meta charset="utf-8" />
-	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
-	<link rel="manifest" href="./site.webmanifest">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon_light.ico" media="(prefers-color-scheme: dark)">
+	<link rel="canonical" href="https://nikkelm.dev"/>
+	<link rel="manifest" href="/site.webmanifest">
 	<link rel="preconnect" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin>
 	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" as="style" crossorigin>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin>
@@ -13,8 +15,8 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Personal website of NikkelM">
-	<link rel="stylesheet" type="text/css" href="./css/common.css" />
-	<link rel="stylesheet" type="text/css" href="./css/index/index.css" />
+	<link rel="stylesheet" type="text/css" href="/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/css/commonTextPages.css" />
 	<title>NikkelM</title>
 </head>
 
@@ -23,25 +25,27 @@
 		<div id="navBarContentsTop" class="navBarTop">
 			<a href="javascript:void(0)" class="closeButton">&times;</a>
 			<a href="javascript:void(0)" class="navLink">Home</a>
-			<a href="./threejs.html" class="navLink">Three.js Demo</a>
+			<a href="/threejs.html" class="navLink">Three.js Demo</a>
 		</div>
 		<div id="navBarContentsBottom" class="navBarBottom">
 			<a href="https://github.com/NikkelM" class="navLink" style="display: inline" target="_blank"
-				aria-label="GitHub profile"><img src="./icons/github.webp" alt="" style="height: 50px; width: 50px;"/></a>
+				aria-label="GitHub profile"><img src="/icons/github.webp" alt="" style="height: 50px; width: 50px;"/></a>
 			<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" class="navLink" style="display: inline" target="_blank"
-				aria-label="LinkedIn profile"><img src="./icons/linkedin.webp" alt="" style="height: 50px; width: 50px;"/></a>
+				aria-label="LinkedIn profile"><img src="/icons/linkedin.webp" alt="" style="height: 50px; width: 50px;"/></a>
 		</div>
 	</div>
 </nav>
 
 <div id="cookieConsent" class="cookieConsent" style="display:none;">
 	<p>This website uses cookies to provide a better user experience. No personal data is being collected.</p>
-	<button id="acceptCookiesButton" class="acceptCookiesButton">Accept</button>
+	<button type="button" id="acceptCookiesButton" class="acceptCookiesButton">Accept</button>
 </div>
 
 <div id="contactFormDiv">
 	<span class="closeButton">&times;</span>
-	<form id="contactForm" action="https://getform.io/f/e0fd4ff8-5016-41ab-8846-59560b09c151" method="POST">
+	<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+		<input type="hidden" name="from_name" value="nikkelm.dev-index">
+
 		<label for="name">Name</label><br>
 		<input id="name" type="text" required="" name="name" autocomplete="name"><br>
 		<label for="email">E-Mail</label><br>
@@ -49,6 +53,7 @@
 		<label for="message">Message</label><br>
 		<textarea id="message" rows="5" required="" name="message"></textarea><br><br>
 		<button type="submit">Submit</button>
+		<p id="result"></p>
 	</form>
 </div>
 
@@ -68,11 +73,11 @@
 			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"
 				class="hideAlways">CV</a>
 			<span style="vertical-align: 5px;">| </span><a href="https://github.com/NikkelM" target="_blank"
-				aria-label="GitHub profile"><img src="./icons/github.webp" style="vertical-align: -4px; height: 50px; width: 50px;" alt="" /></a>
+				aria-label="GitHub profile"><img src="/icons/github.webp" style="vertical-align: -4px; height: 50px; width: 50px;" alt="" /></a>
 			<span style="vertical-align: 5px;">| </span><a href="https://www.linkedin.com/in/nikkel-mollenhauer/"
-				target="_blank" aria-label="LinkedIn profile"><img src="./icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px;"
+				target="_blank" aria-label="LinkedIn profile"><img src="/icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px;"
 					alt="" /></a>
-			<span style="vertical-align: 5px;">| </span><a id="contactLink" class="hideAlways pointer">Contact</a>
+			<span style="vertical-align: 5px;">| </span><a class="contactLink hideAlways pointer">Contact</a>
 		</p>
 
 	</header>
@@ -161,12 +166,12 @@
 		<hr class="divider very-short">
 
 		<h3>
-			<a class="hideAlways" href="./threejs.html">Three.js</a>
+			<a class="hideAlways" href="/threejs.html">Three.js</a>
 		</h3>
 		<p>
 			Three.js is a JavaScript library that allows for the creation and display of 3D computer graphics in a web
 			browser. In April 2022, I built a very small demo page using the library, which you can find linked in the menu
-			or here: <a href="./threejs.html">ThreeJS demo</a>.
+			or here: <a href="/threejs.html">ThreeJS demo</a>.
 		</p>
 	</section>
 
@@ -175,10 +180,11 @@
 	<footer>
 		<p><span style="vertical-align: -6px;" class="material-icons-outlined">copyright</span> 2021-2023 Nikkel
 			Mollenhauer</p>
-		<p><a id="contactLink" class="pointer show">Contact</a></p>
+		<p><a class="contactLink pointer show">Contact</a></p>
 	</footer>
-
-	<script type="module" src="./js/index/index.js"></script>
+	
+	<script src="https://web3forms.com/client/script.js" async defer></script>
+	<script type="module" src="/js/commonTextPages.js"></script>
 
 </body>
 </html>

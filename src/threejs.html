@@ -3,8 +3,9 @@
 
 <head>
 	<meta charset="utf-8" />
-	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
-	<link rel="manifest" href="./site.webmanifest">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon_light.ico" media="(prefers-color-scheme: dark)">
+	<link rel="manifest" href="/site.webmanifest">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="ThreeJS demo built by NikkelM">
 	<link rel="preconnect" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin>
@@ -13,14 +14,14 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin>
 	<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style" crossorigin>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin>
-	<link rel="stylesheet" type="text/css" href="./css/common.css" />
-	<link rel="stylesheet" type="text/css" href="./css/threejs/scrollArrow.css" />
-	<link rel="stylesheet" type="text/css" href="./css/threejs/threeJS.css" />
+	<link rel="stylesheet" type="text/css" href="/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/css/threejs/scrollArrow.css" />
+	<link rel="stylesheet" type="text/css" href="/css/threejs/threeJS.css" />
 	<title>NikkelM - ThreeJS</title>
 </head>
 
 <section id="loading-screen">
-	<link rel="stylesheet" type="text/css" href="./css/threejs/loadingScreen.css" />
+	<link rel="stylesheet" type="text/css" href="/css/threejs/loadingScreen.css" />
 	<div id="loader"></div>
 </section>
 
@@ -28,26 +29,28 @@
 	<div id="navBarContents">
 		<div id="navBarContentsTop" class="navBarTop">
 			<a href="javascript:void(0)" class="closeButton">&times;</a>
-			<a href="./index.html" class="navLink">Home</a>
+			<a href="/index.html" class="navLink">Home</a>
 			<a href="javascript:void(0)" class="navLink">Three.js Demo</a>
 		</div>
 		<div id="navBarContentsBottom" class="navBarBottom">
 			<a href="https://github.com/NikkelM" class="navLink" style="display: inline" target="_blank" aria-label=""><img
-					src="./icons/github.webp" alt="" style="height: 50px; width: 50px;"/></a>
+					src="/icons/github.webp" alt="" style="height: 50px; width: 50px;"/></a>
 			<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" class="navLink" style="display: inline"
-				target="_blank"><img src="./icons/linkedin.webp" alt="" style="height: 50px; width: 50px;"/></a>
+				target="_blank"><img src="/icons/linkedin.webp" alt="" style="height: 50px; width: 50px;"/></a>
 		</div>
 	</div>
 </nav>
 
 <div id="cookieConsent" class="cookieConsent" style="display:none;">
 	<p>This website uses cookies to store cosmetic preferences, no personal data is being collected.</p>
-	<button id="acceptCookiesButton" class="acceptCookiesButton">Accept</button>
+	<button type="button" id="acceptCookiesButton" class="acceptCookiesButton">Accept</button>
 </div>
 
 <div id="contactFormDiv">
 	<span class="closeButton">&times;</span>
-	<form id="contactForm" action="https://getform.io/f/e0fd4ff8-5016-41ab-8846-59560b09c151" method="POST">
+	<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+		<input type="hidden" name="from_name" value="nikkelm.dev-threejs">
+
 		<label for="name">Name</label><br>
 		<input id="name" type="text" required="" name="name" autocomplete="name"><br>
 		<label for="email">E-Mail</label><br>
@@ -55,6 +58,7 @@
 		<label for="message">Message</label><br>
 		<textarea id="message" rows="5" required="" name="message"></textarea><br><br>
 		<button type="submit">Submit</button>
+		<p id="result"></p>
 	</form>
 </div>
 
@@ -66,7 +70,7 @@
 		<span id="openNavBarButton" style="margin-left:40px; margin-top:-30px;">&#9776;</span>
 
 		<header>
-			<h1>Nikkel Mollenhauer</h1>
+			<h1>NikkelM</h1>
 			<p>ThreeJS demo - April 2022</p>
 			<p>
 				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf"
@@ -76,10 +80,10 @@
 					href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"
 					class="hideAlways">CV</a>
 				<span style="vertical-align: 5px;">| </span><a href="https://github.com/NikkelM" target="_blank"><img
-						src="./icons/github.webp" style="vertical-align: -4px; height: 50px; width: 50px;" alt=""/></a>
+						src="/icons/github.webp" style="vertical-align: -4px; height: 50px; width: 50px;" alt=""/></a>
 				<span style="vertical-align: 5px;">| </span><a href="https://www.linkedin.com/in/nikkel-mollenhauer/"
-					target="_blank"><img src="./icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px;" alt=""/></a>
-				<span style="vertical-align: 5px;">| </span><a id="contactLink" class="hideAlways pointer">Contact</a>
+					target="_blank"><img src="/icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px;" alt=""/></a>
+				<span style="vertical-align: 5px;">| </span><a class="contactLink hideAlways pointer">Contact</a>
 			</p>
 		</header>
 
@@ -88,7 +92,7 @@
 		<section class="right" style="margin-top:280px">
 			<h2>ThreeJS demo</h2>
 			<p>
-				I built this page in early April 2022, after I had gained some first Web-Development experience during my
+				I built this page in early April 2022, after I had gained some first web development experience during my
 				studies. To challenge myself I decided to play around with
 				<a href="https://threejs.org/" class="hide">three.js</a> to build this page. The website is hosted using
 				<a href="https://pages.github.com/" target="_blank" class="hide">GitHub pages</a>, and its source code can be
@@ -100,7 +104,7 @@
 
 		<blockquote class="right">
 			<p class="right-align">Visit me on
-				<a href="https://github.com/NikkelM" target="_blank"><img src="./icons/github.webp" alt="" style="height: 50px; width: 50px;"/></a><a
+				<a href="https://github.com/NikkelM" target="_blank"><img src="/icons/github.webp" alt="" style="height: 50px; width: 50px;"/></a><a
 					href="https://github.com/NikkelM" target="_blank" class="hideAlways"> </a>
 				<a href="https://github.com/NikkelM" target="_blank" class="hideAlways">GitHub</a>
 			</p>
@@ -144,7 +148,7 @@
 
 		<blockquote class="left">
 			<p class="left-align">Connect with me <br> on
-				<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"><img src="./icons/linkedin.webp"
+				<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"><img src="/icons/linkedin.webp"
 						style="vertical-align: -5px; height: 50px; width: 50px;" alt=""/></a><a href="https://www.linkedin.com/in/nikkel-mollenhauer/"
 					target="_blank" class="hideAlways"> </a>
 				<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hideAlways">LinkedIn</a>
@@ -184,11 +188,12 @@
 		<footer>
 			<p><span style="vertical-align: -6px;" class="material-icons-outlined">copyright</span> 2021-2023 Nikkel
 				Mollenhauer</p>
-			<p><a id="contactLink" class="pointer show">Contact</a></p>
+			<p><a class="contactLink pointer show">Contact</a></p>
 		</footer>
 	</main>
 
-	<script type="module" src="./js/threejs/threejs.js"></script>
+	<script src="https://web3forms.com/client/script.js" async defer></script>
+	<script type="module" src="/js/threejs/threejs.js"></script>
 
 </body>
 
