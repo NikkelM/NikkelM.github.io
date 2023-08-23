@@ -10,4 +10,4 @@ This repository contains the source code for my personal website hosted with Git
 
 ### Want to get into contact?
 
-Send me a [message](mailto:contact@nikkelm.dev)!
+Send me a [message](mailto:contact@nikkelm.dev?subject=Getting%20into%20contact)!
