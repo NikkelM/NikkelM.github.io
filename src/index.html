@@ -143,7 +143,7 @@
 				Random YouTube Video is a browser extension which allows users to truly shuffle from all videos uploaded on a channel - without the need for playlists. The extension adds a 'Shuffle' button to
 				channel and video pages, and allows for thorough customization through its popup.
 				<br />
-				I built this extension using JavaScript bundled with webpack. In the backend it uses the YouTube Data API to fetch video data, and stores and shares this data using a Firebase Realtime
+				I built this extension using JavaScript, bundled with webpack. In the backend it uses the YouTube Data API to fetch video data, and stores and shares this data using a Firebase Realtime
 				Database. User preferences are stored and shared across devices using the built-in chrome storage API's. It's functionality is tested using a thorough test suite implemented using mocha and
 				expect.js, which tests a wide range of possible data states using an easily scalable permutation approach.
 				<br />
@@ -161,10 +161,11 @@
 			</h3>
 			<p>
 				Outlook Mail Notes is an Outlook Add-In which allows you to add notes to e-mails, conversations and senders. The Add-In will automatically add a relevant category to the message, so you don't
-				loose track of which messages have notes attached.
+				loose track of which messages have notes attached. The Add-In is written in TypeScript and uses the OfficeJS API to interact with a user's mailbox. To ensure compatibility with older Outlook
+				versions, babel is used to convert syntax to be usable with Internet Explorer. The project is bundled and deployed using webpack and GitHub pages.
 				<br />
 				You can add the Add-In to your Outlook client using the following manifest URL:
-				<a href="https://nikkelm.dev/Outlook-Mail-Notes/manifest.xml">https://nikkelm.dev/Outlook-Mail-Notes/manifest.xml</a>.
+				<a href="https://nikkelm.dev/Outlook-Mail-Notes/manifest.xml" target="_blank" class="hide">https://nikkelm.dev/Outlook-Mail-Notes/manifest.xml</a>.
 				<br />
 				You can also find more detailed installation instructions on the project's
 				<a href="https://github.com/NikkelM/Outlook-Mail-Notes" target="_blank">GitHub page</a>.
