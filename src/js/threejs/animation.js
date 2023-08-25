@@ -10,7 +10,7 @@ const scrollArrow = document.getElementById('scrollArrow');
 // framerate limit
 let clock = new Clock();
 let delta = 0;
-let interval = 1/110;
+let interval = 1 / 110;
 
 /////////////// Animation Helpers
 function lerp(start, end, a) {
@@ -25,11 +25,11 @@ function scalePercent(start, end) {
 let scrollPercent = 0;
 document.body.onscroll = () => {
 	// calculate the current scroll progress as a percentage
-	scrollPercent = ((document.documentElement.scrollTop || document.body.scrollTop) / 
+	scrollPercent = ((document.documentElement.scrollTop || document.body.scrollTop) /
 		((document.documentElement.scrollHeight || document.body.scrollHeight) - document.documentElement.clientHeight)) * 100;
 
 	// rotate the globe extra fast on scroll
-	if((scrollPercent >= 25 && scrollPercent <= 45) || (scrollPercent >= 60 && scrollPercent <= 80)) {
+	if ((scrollPercent >= 25 && scrollPercent <= 45) || (scrollPercent >= 60 && scrollPercent <= 80)) {
 		globe.rotation.y -= 0.1;
 	}
 }
@@ -159,9 +159,9 @@ animationScripts.push({
 // Loop through all scripts and run each of them
 function playScrollAnimations() {
 	animationScripts.forEach((animation) => {
-			if (scrollPercent >= animation.start && scrollPercent < animation.end) {
-				animation.func();
-			}
+		if (scrollPercent >= animation.start && scrollPercent < animation.end) {
+			animation.func();
+		}
 	});
 }
 
@@ -169,10 +169,10 @@ export function animate() {
 	requestAnimationFrame(animate);
 
 	delta += clock.getDelta();
-   if (delta  > interval) {
-			 playScrollAnimations();
-			 renderer.render(scene, camera);
-       delta = delta % interval;
-   }
+	if (delta > interval) {
+		playScrollAnimations();
+		renderer.render(scene, camera);
+		delta = delta % interval;
+	}
 }
 /////////////// Main Animation Loop

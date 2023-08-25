@@ -1,100 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon_light.ico" media="(prefers-color-scheme: dark)" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap"
+			crossorigin />
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap"
+			as="style"
+			crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap"
+			crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin />
+		<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Page Not Found - NikkelM" />
+		<link rel="stylesheet" type="text/css" href="/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="/css/commonTextPages.css" />
+		<title>Page Not Found - NikkelM</title>
+	</head>
 
-<head>
-	<meta charset="utf-8" />
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon_light.ico" media="(prefers-color-scheme: dark)">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="preconnect" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin>
-	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" as="style" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin>
-	<link rel="preconnect" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin>
-	<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Page Not Found - NikkelM">
-	<link rel="stylesheet" type="text/css" href="/css/common.css" />
-	<link rel="stylesheet" type="text/css" href="/css/commonTextPages.css" />
-	<title>Page Not Found - NikkelM</title>
-</head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9K4WW3ECLR"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9K4WW3ECLR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+		gtag("config", "G-9K4WW3ECLR");
+	</script>
 
-  gtag('config', 'G-9K4WW3ECLR');
-</script>
-
-<nav id="navBar">
-	<div id="navBarContents">
-		<div id="navBarContentsTop" class="navBarTop">
-			<a href="javascript:void(0)" class="closeButton">&times;</a>
-			<a href="/index.html" class="navLink">Home</a>
-			<a href="/threejs.html" class="navLink">Three.js Demo</a>
+	<nav id="navBar">
+		<div id="navBarContents">
+			<div id="navBarContentsTop" class="navBarTop">
+				<a href="javascript:void(0)" class="closeButton">&times;</a>
+				<a href="/index.html" class="navLink">Home</a>
+				<a href="/threejs.html" class="navLink">Three.js Demo</a>
+			</div>
+			<div id="navBarContentsBottom" class="navBarBottom">
+				<a
+					href="https://github.com/NikkelM"
+					class="navLink"
+					style="display: inline"
+					target="_blank"
+					aria-label="GitHub profile"
+					><img src="/icons/github.webp" alt="" style="height: 50px; width: 50px"
+				/></a>
+				<a
+					href="https://www.linkedin.com/in/nikkel-mollenhauer/"
+					class="navLink"
+					style="display: inline"
+					target="_blank"
+					aria-label="LinkedIn profile"
+					><img src="/icons/linkedin.webp" alt="" style="height: 50px; width: 50px"
+				/></a>
+			</div>
 		</div>
-		<div id="navBarContentsBottom" class="navBarBottom">
-			<a href="https://github.com/NikkelM" class="navLink" style="display: inline" target="_blank"
-				aria-label="GitHub profile"><img src="/icons/github.webp" alt="" style="height: 50px; width: 50px;"/></a>
-			<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" class="navLink" style="display: inline" target="_blank"
-				aria-label="LinkedIn profile"><img src="/icons/linkedin.webp" alt="" style="height: 50px; width: 50px;"/></a>
-		</div>
+	</nav>
+
+	<div id="cookieConsent" class="cookieConsent" style="display: none">
+		<p>This website uses cookies to provide a better user experience. No personal data is being collected.</p>
+		<button type="button" id="acceptCookiesButton" class="acceptCookiesButton">Accept</button>
 	</div>
-</nav>
 
-<div id="cookieConsent" class="cookieConsent" style="display:none;">
-	<p>This website uses cookies to provide a better user experience. No personal data is being collected.</p>
-	<button type="button" id="acceptCookiesButton" class="acceptCookiesButton">Accept</button>
-</div>
+	<div id="contactFormDiv">
+		<span class="closeButton">&times;</span>
+		<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+			<input type="hidden" name="from_name" value="nikkelm.dev-404" />
 
-<div id="contactFormDiv">
-	<span class="closeButton">&times;</span>
-	<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-		<input type="hidden" name="from_name" value="nikkelm.dev-404">
+			<label for="name">Name</label><br />
+			<input id="name" type="text" required="" name="name" autocomplete="name" /><br />
+			<label for="email">E-Mail</label><br />
+			<input id="email" type="email" required="" name="email" autocomplete="email" /><br />
+			<label for="message">Message</label><br />
+			<textarea id="message" rows="5" required="" name="message"></textarea><br /><br />
+			<button type="submit">Submit</button>
+			<p id="result"></p>
+		</form>
+	</div>
 
-		<label for="name">Name</label><br>
-		<input id="name" type="text" required="" name="name" autocomplete="name"><br>
-		<label for="email">E-Mail</label><br>
-		<input id="email" type="email" required="" name="email" autocomplete="email"><br>
-		<label for="message">Message</label><br>
-		<textarea id="message" rows="5" required="" name="message"></textarea><br><br>
-		<button type="submit">Submit</button>
-		<p id="result"></p>
-	</form>
-</div>
+	<div id="loadingOverlay"></div>
 
-<div id="loadingOverlay"></div>
+	<body>
+		<span id="openNavBarButton">&#9776;</span>
 
-<body>
-	<span id="openNavBarButton">&#9776;</span>
+		<header>
+			<h1>404 - Page Not Found</h1>
+			<p>This page does not exist.</p>
+		</header>
+		<br />
+		<br />
+		<section class="center">
+			<p>
+				If you think that this should not have happened, please reach out to me via the
+				<a class="contactLink pointer show">contact form</a>.
+			</p>
+			<br />
+			<p><a href="/index.html" class="pointer">Go back Home</a></p>
+		</section>
 
-	<header>
-		<h1>404 - Page Not Found</h1>
-		<p>This page does not exist.</p>
-	</header>
-	<br>
-	<br>
-	<section class="center">
-		<p>
-			If you think that this should not have happened, please reach out to me via the 
-			<a class="contactLink pointer show">contact form</a>.
-		</p>
-		<br>
-		<p><a href="/index.html" class="pointer">Go back Home</a></p>
-	</section>
+		<div id="preFooterMargin" style="margin-bottom: 100px"></div>
+		<footer>
+			<p>
+				<span style="vertical-align: -6px" class="material-icons-outlined">copyright</span> 2021-2023 Nikkel Mollenhauer
+			</p>
+			<p><a class="contactLink pointer show">Contact</a></p>
+		</footer>
 
-	<div id="preFooterMargin" style="margin-bottom: 100px"></div>
-	<footer>
-		<p><span style="vertical-align: -6px;" class="material-icons-outlined">copyright</span> 2021-2023 Nikkel
-			Mollenhauer</p>
-		<p><a class="contactLink pointer show">Contact</a></p>
-	</footer>
-	
-	<script src="https://web3forms.com/client/script.js" async defer></script>
-	<script type="module" src="/js/commonTextPages.js"></script>
-
-</body>
+		<script src="https://web3forms.com/client/script.js" async defer></script>
+		<script type="module" src="/js/commonTextPages.js"></script>
+	</body>
 </html>
