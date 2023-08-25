@@ -16,7 +16,7 @@ const loadingManager = new LoadingManager(() => {
 export let textureLoader = new TextureLoader(loadingManager);
 
 // will be called when the loading screen has finished
-function onLoadingScreenTransitionEnd( event ) {
+function onLoadingScreenTransitionEnd(event) {
 	document.body.style = "";
 	event.target.remove();
 };
@@ -25,7 +25,7 @@ function onLoadingScreenTransitionEnd( event ) {
 ////////// Camera
 export let camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
 
-export let scene = new Scene();	
+export let scene = new Scene();
 scene.fog = new FogExp2(0x000000, 0.02);
 
 export let renderer = new WebGLRenderer({

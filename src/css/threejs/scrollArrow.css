@@ -21,9 +21,8 @@
 	border-bottom: 2px #fff solid;
 }
 
-
 .scrollArrow:before {
-	content: '';
+	content: "";
 	width: 20px;
 	height: 20px;
 	top: 50%;
