@@ -7,7 +7,7 @@ console.log("Find the source code at https://github.com/NikkelM/NikkelM.github.i
 init();
 
 function init() {
-	window.addEventListener('load', function() {
+	window.addEventListener('load', function () {
 		initContactForm();
 		checkCookieConsent();
 	});
@@ -18,7 +18,7 @@ function initContactForm() {
 	let contactFormLinks = document.getElementsByClassName("contactLink");
 
 	for (let i = 0; i < contactFormLinks.length; i++) {
-		contactFormLinks[i].onclick = function() {
+		contactFormLinks[i].onclick = function () {
 			overlayContactForm();
 			return false;
 		}
@@ -26,7 +26,7 @@ function initContactForm() {
 
 	let contactForm = document.getElementById("contactForm");
 	// stopPropagation to stop the whole contact form from disappearing if the form is clicked
-	contactForm.addEventListener('click', function(e) {
+	contactForm.addEventListener('click', function (e) {
 		e.stopPropagation();
 	});
 	setupFormSubmission(contactForm);
@@ -35,11 +35,11 @@ function initContactForm() {
 function overlayContactForm() {
 	const contactFormDiv = document.getElementById("contactFormDiv");
 
-  contactFormDiv.onclick = function() {
+	contactFormDiv.onclick = function () {
 		closeContactForm();
 	}
-  contactFormDiv.style.display = "block";
-	
+	contactFormDiv.style.display = "block";
+
 	// On mobile, prevent scrolling
 	if (window.innerWidth < 768) {
 		const html = document.getElementsByTagName('html')[0];
@@ -59,7 +59,7 @@ function closeContactForm() {
 function setupFormSubmission(form) {
 	const result = document.getElementById('result');
 
-	form.addEventListener('submit', function(e) {
+	form.addEventListener('submit', function (e) {
 		e.preventDefault();
 		const formData = new FormData(form);
 		const object = Object.fromEntries(formData);
@@ -77,27 +77,27 @@ function setupFormSubmission(form) {
 			},
 			body: json
 		})
-		.then(async (response) => {
-			let json = await response.json();
-			if (response.status == 200) {
-				result.innerText = "Your message has been sent!";
-			} else {
-				console.log(response);
-				result.innerText = json.message;
-			}
-			form.reset();
-			setTimeout(() => {
-				result.style.display = "none";
-				closeContactForm();
-			}, 3000);
-		})
-		.catch(error => {
-			console.log(error);
-			result.innerText = "Something went wrong!";
-			setTimeout(() => {
-				result.style.display = "none";
-			}, 3000);
-		});
+			.then(async (response) => {
+				let json = await response.json();
+				if (response.status == 200) {
+					result.innerText = "Your message has been sent!";
+				} else {
+					console.log(response);
+					result.innerText = json.message;
+				}
+				form.reset();
+				setTimeout(() => {
+					result.style.display = "none";
+					closeContactForm();
+				}, 3000);
+			})
+			.catch(error => {
+				console.log(error);
+				result.innerText = "Something went wrong!";
+				setTimeout(() => {
+					result.style.display = "none";
+				}, 3000);
+			});
 	});
 }
 
