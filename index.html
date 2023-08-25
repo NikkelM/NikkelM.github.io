@@ -1,204 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Favicons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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" />
+		<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAAAJiS0dEAP+Hj8y/AAAAB3RJTUUH5wgZEDIS2BtUBwAAAbJJREFUSMft1MtvTVEUBvAfvZJyqw+SkkhKamZAmGgqZUI80qRzAwOCGBN/AWFobowKN1WJSAwYMlHaTohJE62GRF9ebfR2GTj3ca7eexuTTrpG56y1vm/v/a1vb9Zi9WNd3Y6s03aYdMf3/1tirwnhqezy5fV1CfZrx5AfKyVo1qO5rN4tY8EQmh3WUnu1Jr0eG9FRzLR7LYzbgw6jnuizuZpYJ+XMCmNlBD2mhRda0GFM+GZQr6Y0eJMTHpoRwoL72oqVy0K4BdrcMy+EOTmnCrJmHdNvWgh5Iy7aUoQ3ygm/nUn+W533Vl4Isx44LsuAr0IIn9y0O7WzTh+Ezw6kcjdMJIgpg5LPvEFdMhW69PkpvLI1lW1w0ECyjyiMMeQtiQqCLhsxaroivyhf6i0dYdx1nSlHPBeWXEqBd7nmY/kR0iIOu1CcwT6TwpRDRXCrc95Uilg5xnn9CcVZi8Kw7Qm8yhirGanBbSHctSHpKBjp0b9GWs7K2wwJ4UqxWsfKJen+XqYjZoQ5R8sqdS9TeVwVwns7a7dVew8adYN3vtQmyFTNPzOKl36tfNNrsVrxBxG+rE+QLUWWAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIzLTA4LTI1VDE2OjUwOjE4KzAwOjAwIdhH9gAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMy0wOC0yNVQxNjo1MDoxOCswMDowMFCF/0oAAAAodEVYdGRhdGU6dGltZXN0YW1wADIwMjMtMDgtMjVUMTY6NDM6MjErMDA6MDA2PvhmAAAAV3pUWHRSYXcgcHJvZmlsZSB0eXBlIGlwdGMAAHic4/IMCHFWKCjKT8vMSeVSAAMjCy5jCxMjE0uTFAMTIESANMNkAyOzVCDL2NTIxMzEHMQHy4BIoEouAOoXEXTyQjWVAAAAAElFTkSuQmCC" />
+		<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAAAJiS0dEAP+Hj8y/AAAAB3RJTUUH5wgZEDIS2BtUBwAAANNJREFUKM+t0bEuQ3EUx/HPvTd6mwomy20lQjCYDCRewC4drBZPUYPexmzyBjoYeQBmb2Ag0QRpDcJG0vRvuOqymHqWk5Nzku/3l8PkK1ER/Xew79RsOcY/PVNFak9dkI03MSJLjpyZR8O6GzO62pYL1IqWOy86amh6t6MiN3Dv0CoPhi5tScCJnkUkNl0Y6hWkYATmbLvVRxCEwqJADORSG14do6ZdIgrJ3JXMgU+7WHCtM5YsY07r6ltDVf13TBh5Fntz7hEfnr6t/lQkNTX5330B8k8xnJtSP4YAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMDgtMjVUMTY6NTA6MTgrMDA6MDAh2Ef2AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTA4LTI1VDE2OjUwOjE4KzAwOjAwUIX/SgAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMy0wOC0yNVQxNjo0MzoyMSswMDowMDY++GYAAABXelRYdFJhdyBwcm9maWxlIHR5cGUgaXB0YwAAeJzj8gwIcVYoKMpPy8xJ5VIAAyMLLmMLEyMTS5MUAxMgRIA0w2QDI7NUIMvY1MjEzMQcxAfLgEigSi4A6hcRdPJCNZUAAAAASUVORK5CYII=" />
+		<link rel="mask-icon" href="/assets/safari-pinned-tab-7c5cacd0.svg" color="#5bbad5" />
+		<meta name="msapplication-TileColor" content="#2b5797" />
+		<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAAAJiS0dEAP+Hj8y/AAAAB3RJTUUH5wgZEDgiBC2MIQAAAchJREFUSMft1LtvzXEYx/FPtRKcOpSkJJKS2gyEhZCyEJc0sRsMBDETfwFhtJvdQlOViMTAyKK0XYhFQjUkenOrcLwMPT3HaXsOg8TimX75PL/v+7l+v8l/+/fW1NgtKeRQ1mQkl/Ox6c+YtQAbDeOugnn/WPCb+MnmtCfpz6f8HiCiqEtR1b89Lfma/iRFOy0T9aKJVt1uG9RhRmv3GK9tEB2G3HHQ0jkQEQX79ZjAy2mAiC5jeGCZ6PASH/Tp1lqBiFhin5vGwVfXtVUAp8BFEW2umgKTehxQEImCPa4ZAyWDTlgxTReL9OCbw6Zxyx3zVAlMuGGvQvR6b9reuGB9tT7R6QXe2qKabafzhssnRvWl/FnSZ5sWtX056DMeWVmjN9uqt5yHBRW9lB9zJrQti5MMZWyW/j2laqLVEl47p3OmBFF0Hz+c/EWLdc569WsJtU0ccFxbuWWbjGDUjspMljvqyewmzh7jlGtlxBHfMWB1GTD/GOstkmaXwBULy4CZRbpVs0j1Vtkq/eB0ZSvqr/J8l8ku45i0uwJofJnmgM6A59Y2PlDvPViU7UmSZ3nXOFhLXf1ehpI8zJfGgHmfOY2c/+3v2094pwgTigRshQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0wOC0yNVQxNjo1NjozNCswMDowMKlDWrgAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjMtMDgtMjVUMTY6NTY6MzQrMDA6MDDYHuIEAAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDIzLTA4LTI1VDE2OjQzOjE5KzAwOjAwi16x4gAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg==" media="(prefers-color-scheme: dark)" />
+		<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAAAJiS0dEAP+Hj8y/AAAAB3RJTUUH5wgZEDgiBC2MIQAAAO1JREFUKM+lkLEuQ2EYhp//nKRtKo3JckoiFQwmA4kbsIvB1NFVMOhpzL0JHYxcALM7MJBogrQGYSNtzmP4VZWx3/Z975e8z/vCrBOmVyElZYhjIfkjQ5MOtcktiYKJmRWgzAF1JDMxPoiBBiecsQAsssENNbq0WDEIrnrknS+2rYr7vrtrydyB9x67hg+OvHTbVMSOPZfF1C0vHNlLvukKAObZ4ZZ+xIrMY4uBuWU3ffVUrNqaWGCwYe6VmYd+uicueW3bCPkr5pxd+66LFes/MWOdoeCZhDfOeYTwEZ5CEaarFgIlCob/+p9xvgCsaI4uFXHgFQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0wOC0yNVQxNjo1NjozNCswMDowMKlDWrgAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjMtMDgtMjVUMTY6NTY6MzQrMDA6MDDYHuIEAAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDIzLTA4LTI1VDE2OjQzOjE5KzAwOjAwi16x4gAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg==" media="(prefers-color-scheme: dark)" />
+		<!-- Favicons end -->
+		<meta name="theme-color" content="#222" />
+		<link rel="canonical" href="https://nikkelm.dev" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="preconnect" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin />
+		<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" as="style" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin />
+		<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Personal website of NikkelM" />
+		
+		
+		<title>NikkelM - Home</title>
+		<script type="module" crossorigin src="/assets/common-49c3eef0.js"></script>
+		<script type="module" crossorigin src="/assets/404-6aaf948e.js"></script>
+		<link rel="stylesheet" href="/assets/common-16f17cf2.css">
+		<link rel="stylesheet" href="/assets/404-de40eb78.css">
+	</head>
 
-<head>
-	<meta charset="utf-8" />
-	<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-1e8ad542.ico">
-	<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon_light-f31510e3.ico" media="(prefers-color-scheme: dark)">
-	<link rel="canonical" href="https://nikkelm.dev"/>
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="preconnect" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin>
-	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" as="style" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin>
-	<link rel="preconnect" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin>
-	<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Personal website of NikkelM">
-	
-	
-	<title>NikkelM</title>
-  <script type="module" crossorigin src="/assets/common-7b7dad95.js"></script>
-  <script type="module" crossorigin src="/assets/404-0ba1244a.js"></script>
-  <link rel="stylesheet" href="/assets/common-f9930f43.css">
-  <link rel="stylesheet" href="/assets/404-de40eb78.css">
-</head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9K4WW3ECLR"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9K4WW3ECLR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+		gtag("config", "G-9K4WW3ECLR");
+	</script>
 
-  gtag('config', 'G-9K4WW3ECLR');
-</script>
-
-<nav id="navBar">
-	<div id="navBarContents">
-		<div id="navBarContentsTop" class="navBarTop">
-			<a href="javascript:void(0)" class="closeButton">&times;</a>
-			<a href="javascript:void(0)" class="navLink">Home</a>
-			<a href="/threejs.html" class="navLink">Three.js Demo</a>
+	<nav id="navBar">
+		<div id="navBarContents">
+			<div id="navBarContentsTop" class="navBarTop">
+				<a href="javascript:void(0)" class="closeButton">&times;</a>
+				<a href="javascript:void(0)" class="navLink">Home</a>
+				<a href="/threejs.html" class="navLink">Three.js Demo</a>
+			</div>
+			<div id="navBarContentsBottom" class="navBarBottom">
+				<a href="https://github.com/NikkelM" class="navLink" style="display: inline" target="_blank" aria-label="GitHub profile"
+					><img src="/icons/github.webp" alt="" style="height: 50px; width: 50px"
+				/></a>
+				<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" class="navLink" style="display: inline" target="_blank" aria-label="LinkedIn profile"
+					><img src="/icons/linkedin.webp" alt="" style="height: 50px; width: 50px"
+				/></a>
+			</div>
 		</div>
-		<div id="navBarContentsBottom" class="navBarBottom">
-			<a href="https://github.com/NikkelM" class="navLink" style="display: inline" target="_blank"
-				aria-label="GitHub profile"><img src="/icons/github.webp" alt="" style="height: 50px; width: 50px;"/></a>
-			<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" class="navLink" style="display: inline" target="_blank"
-				aria-label="LinkedIn profile"><img src="/icons/linkedin.webp" alt="" style="height: 50px; width: 50px;"/></a>
-		</div>
+	</nav>
+
+	<div id="cookieConsent" class="cookieConsent" style="display: none">
+		<p>This website uses cookies to provide a better user experience. No personal data is being collected.</p>
+		<button type="button" id="acceptCookiesButton" class="acceptCookiesButton">Accept</button>
 	</div>
-</nav>
 
-<div id="cookieConsent" class="cookieConsent" style="display:none;">
-	<p>This website uses cookies to provide a better user experience. No personal data is being collected.</p>
-	<button type="button" id="acceptCookiesButton" class="acceptCookiesButton">Accept</button>
-</div>
+	<div id="contactFormDiv">
+		<span class="closeButton">&times;</span>
+		<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+			<input type="hidden" name="from_name" value="nikkelm.dev-index" />
 
-<div id="contactFormDiv">
-	<span class="closeButton">&times;</span>
-	<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-		<input type="hidden" name="from_name" value="nikkelm.dev-index">
+			<label for="name">Name</label><br />
+			<input id="name" type="text" required="" name="name" autocomplete="name" /><br />
+			<label for="email">E-Mail</label><br />
+			<input id="email" type="email" required="" name="email" autocomplete="email" /><br />
+			<label for="options">Topic</label><br />
+			<select id="options" name="topic">
+				<option value="Just getting into contact">Just getting into contact</option>
+				<option value="Random YouTube Video">Random YouTube Video</option>
+				<option value="Outlook Mail Notes">Outlook Mail Notes</option>
+				<option value="Notion integration">Notion integration</option>
+				<option value="Another project">Another project</option></select
+			><br />
+			<label for="message">Message</label><br />
+			<textarea id="message" rows="5" required="" name="message"></textarea><br /><br />
+			<button type="submit">Submit</button>
+			<p id="result"></p>
+		</form>
+	</div>
 
-		<label for="name">Name</label><br>
-		<input id="name" type="text" required="" name="name" autocomplete="name"><br>
-		<label for="email">E-Mail</label><br>
-		<input id="email" type="email" required="" name="email" autocomplete="email"><br>
-		<label for="message">Message</label><br>
-		<textarea id="message" rows="5" required="" name="message"></textarea><br><br>
-		<button type="submit">Submit</button>
-		<p id="result"></p>
-	</form>
-</div>
+	<div id="loadingOverlay"></div>
 
-<div id="loadingOverlay"></div>
+	<body>
+		<span id="openNavBarButton">&#9776;</span>
 
-<body>
-	<span id="openNavBarButton">&#9776;</span>
+		<header>
+			<h1>Nikkel Mollenhauer</h1>
+			<p>Site Reliability Engineer @Microsoft Dublin</p>
+			<p>
+				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span class="material-icons-outlined f48">file_download</span></a
+				><!-- Do not add a line break here --><a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways" aria-label="Download CV">
+				</a>
+				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways">CV</a>
+				<span style="vertical-align: 5px">| </span
+				><a href="https://github.com/NikkelM" target="_blank" aria-label="GitHub profile"><img src="/icons/github.webp" style="vertical-align: -4px; height: 50px; width: 50px" alt="" /></a>
+				<span style="vertical-align: 5px">| </span
+				><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" aria-label="LinkedIn profile"
+					><img src="/icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px" alt=""
+				/></a>
+				<span style="vertical-align: 5px">| </span><a class="contactLink hideAlways pointer">Contact</a>
+			</p>
+		</header>
 
-	<header>
-		<h1>Nikkel Mollenhauer</h1>
-		<p>IT-Systems Engineering Student <a class="hide" href="https://hpi.de/" target="_blank">@HPI</a></p>
-		<p>
-			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span
-					class="material-icons-outlined f48">file_download</span></a><!-- Do not add a line break here --><a
-				href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"
-				class="hideAlways" aria-label="Download CV"> </a>
-			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"
-				class="hideAlways">CV</a>
-			<span style="vertical-align: 5px;">| </span><a href="https://github.com/NikkelM" target="_blank"
-				aria-label="GitHub profile"><img src="/icons/github.webp" style="vertical-align: -4px; height: 50px; width: 50px;" alt="" /></a>
-			<span style="vertical-align: 5px;">| </span><a href="https://www.linkedin.com/in/nikkel-mollenhauer/"
-				target="_blank" aria-label="LinkedIn profile"><img src="/icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px;"
-					alt="" /></a>
-			<span style="vertical-align: 5px;">| </span><a class="contactLink hideAlways pointer">Contact</a>
-		</p>
+		<br />
+		<section>
+			<h2>About me</h2>
+			<p>
+				Hi, I'm Nikkel, a software engineer that's always open to new challenges. Next to my role as Site Reliability Engineer at Microsoft, I'm also working on a number of side projects, which you
+				can find below.
+				<br />
+				If you are interested in my experience and skills, you can find me on
+				<a href="https://github.com/NikkelM" target="_blank">GitHub</a>
+				and
+				<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank">LinkedIn</a>, download my
+				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank">CV</a>, or send me a quick message using the
+				<a class="contactLink show pointer">contact form</a>.
+			</p>
+		</section>
 
-	</header>
+		<hr class="divider" />
 
-	<br>
-	<section>
-		<h2>About me</h2>
-		<p>
-			Hi, I'm Nikkel, currently studying towards my bachelor's degree in IT-Systems Engineering at the
-			Hasso-Plattner-Institute in Potsdam, after which I will be joining the Azure Site Reliability Engineering team at
-			Microsoft Dublin.
-			<br>
-			If you are interested in my experience and skills, you can find me on
-			<a href="https://github.com/NikkelM" target="_blank">GitHub</a>
-			and
-			<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank">LinkedIn</a>,
-			download my
-			<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf"
-				target="_blank">CV</a>,
-			or send me a quick message using the form linked above.
-		</p>
-	</section>
+		<section>
+			<h2>Projects</h2>
+			<p>
+				Everyone's always working on something, and so am I. All of the projects below and many more can be found on my
+				<a href="https://github.com/NikkelM" target="_blank">GitHub</a> profile.
+			</p>
 
-	<hr class="divider">
+			<hr class="divider very-short" />
 
-	<section>
-		<h2>Projects</h2>
-		<p>Everyone's always working on something, and so am I. All of the projects below and many more can be found
-			on my <a href="https://github.com/NikkelM" target="_blank">GitHub</a> profile.</p>
+			<h3>
+				<a class="hideAlways" href="https://chrome.google.com/webstore/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf" target="_blank">Random YouTube Video</a>
+			</h3>
+			<p>
+				Random YouTube Video is a browser extension which allows users to truly shuffle from all videos uploaded on a channel - without the need for playlists. The extension adds a 'Shuffle' button to
+				channel and video pages, and allows for thorough customization through its popup.
+				<br />
+				I built this extension using JavaScript, bundled with webpack. In the backend it uses the YouTube Data API to fetch video data, and stores and shares this data using a Firebase Realtime
+				Database. User preferences are stored and shared across devices using the built-in chrome storage API's. It's functionality is tested using a thorough test suite implemented using mocha and
+				expect.js, which tests a wide range of possible data states using an easily scalable permutation approach.
+				<br />
+				You can get the extension for
+				<a href="https://chrome.google.com/webstore/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf" target="_blank">Chrome</a>,
+				<a href="https://microsoftedge.microsoft.com/addons/detail/random-youtube-video/fccfflipicelkilpmgniblpoflkbhdbe" target="_blank">Edge</a>
+				and <a href="https://addons.mozilla.org/en-GB/firefox/addon/random-youtube-video/" target="_blank">Firefox</a>. The extension is compatible with all Chromium-based browsers through the Chrome
+				Web Store version.
+			</p>
 
-		<hr class="divider very-short">
+			<hr class="divider very-short" />
 
-		<h3>
-			<a class="hideAlways"
-				href="https://chrome.google.com/webstore/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf"
-				target="_blank">Random YouTube Video</a>
-		</h3>
-		<p>
-			Random YouTube Video is a browser extension which allows users to truly shuffle from all videos
-			uploaded on a channel - without the need for playlists. The extension adds a 'Shuffle' button to channel and video
-			pages, and allows for thorough customization through its popup.
-			<br>
-			I built this extension using JavaScript bundled with webpack. In the backend it uses the YouTube Data API to
-			fetch video data, and stores and shares this data using a Firebase Realtime Database. User preferences are stored
-			and shared across devices using the built-in chrome storage API's. It's functionality is tested using a thorough
-			test suite implemented using mocha and expect.js, which tests a wide range of possible data states using an easily
-			scalable permutation approach.
-			<br>
-			You can get the extension for
-			<a href="https://chrome.google.com/webstore/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf"
-				target="_blank">Chrome</a>, <a
-				href="https://microsoftedge.microsoft.com/addons/detail/random-youtube-video/fccfflipicelkilpmgniblpoflkbhdbe"
-				target="_blank">Edge</a> and <a href="https://addons.mozilla.org/en-GB/firefox/addon/random-youtube-video/"
-				target="_blank">Firefox</a>. The extension is compatible with all Chromium-based browsers through the
-			Chrome Web Store version.
-		</p>
+			<h3>
+				<a class="hideAlways" href="https://github.com/NikkelM/Outlook-Mail-Notes" target="_blank">Outlook Mail Notes</a>
+			</h3>
+			<p>
+				Outlook Mail Notes is an Outlook Add-In which allows you to add notes to e-mails, conversations and senders. The Add-In will automatically add a relevant category to the message, so you don't
+				loose track of which messages have notes attached. The Add-In is written in TypeScript and uses the OfficeJS API to interact with a user's mailbox. To ensure compatibility with older Outlook
+				versions, babel is used to convert syntax to be usable with Internet Explorer. The project is bundled and deployed using webpack and GitHub pages.
+				<br />
+				You can add the Add-In to your Outlook client using the following manifest URL:
+				<a href="https://nikkelm.dev/Outlook-Mail-Notes/manifest.xml" target="_blank" class="hide">https://nikkelm.dev/Outlook-Mail-Notes/manifest.xml</a>.
+				<br />
+				You can also find more detailed installation instructions on the project's
+				<a href="https://github.com/NikkelM/Outlook-Mail-Notes" target="_blank">GitHub page</a>.
+			</p>
 
-		<hr class="divider very-short">
+			<hr class="divider very-short" />
 
-		<h3>Notion integrations</h3>
-		<h4>
-			<i>
-				<a class="hideAlways" href="https://github.com/NikkelM/JSON-to-Notion" target="_blank">JSON to Notion</a>
-			</i>
-		</h4>
-		<p>
-			I've also created a number of Notion integrations you can try out for yourself! The one I find most useful is the
-			'JSON to Notion' integration, which allows you to import JSON files to your Notion database. Using a configuration
-			file, you can specify which properties of your JSON file should be imported, and define other transformations as
-			necessary. You can find the project on <a href="https://github.com/NikkelM/JSON-to-Notion"
-				target="_blank">GitHub</a>.
-		</p>
-		<h4>
-			<i>
-				<a class="hideAlways" href="https://github.com/NikkelM/Notion-Steam-API-Integration" target="_blank">Steam
-					API integration</a>
-			</i>
-		</h4>
-		<p>
-			Another Notion integration connects your Notion database to the Steam API. All you need is to add a Steam app ID
-			field to your database, define which app properties you would like to have fetched, and the integration will
-			automatically update your database entries. As always, you can find the tool on
-			<a href="https://github.com/NikkelM/Notion-Steam-API-Integration" target="_blank">GitHub</a>.
-		</p>
+			<h3>Notion integrations</h3>
+			<h4>
+				<i>
+					<a class="hideAlways" href="https://github.com/NikkelM/JSON-to-Notion" target="_blank">JSON to Notion</a>
+				</i>
+			</h4>
+			<p>
+				I've also created a number of Notion integrations you can try out for yourself! The one I find most useful is the 'JSON to Notion' integration, which allows you to import JSON files to your
+				Notion database. Using a configuration file, you can specify which properties of your JSON file should be imported, and define other transformations as necessary. You can find the project on
+				<a href="https://github.com/NikkelM/JSON-to-Notion" target="_blank">GitHub</a>.
+			</p>
+			<h4>
+				<i>
+					<a class="hideAlways" href="https://github.com/NikkelM/Notion-Steam-API-Integration" target="_blank">Steam API integration</a>
+				</i>
+			</h4>
+			<p>
+				Another Notion integration connects your Notion database to the Steam API. All you need is to add a Steam app ID field to your database, define which app properties you would like to have
+				fetched, and the integration will automatically update your database entries. As always, you can find the tool on
+				<a href="https://github.com/NikkelM/Notion-Steam-API-Integration" target="_blank">GitHub</a>.
+			</p>
 
-		<hr class="divider very-short">
+			<hr class="divider very-short" />
 
-		<h3>
-			<a class="hideAlways" href="/threejs.html">Three.js</a>
-		</h3>
-		<p>
-			Three.js is a JavaScript library that allows for the creation and display of 3D computer graphics in a web
-			browser. In April 2022, I built a very small demo page using the library, which you can find linked in the menu
-			or here: <a href="/threejs.html">ThreeJS demo</a>.
-		</p>
-	</section>
+			<h3>
+				<a class="hideAlways" href="/threejs.html">Three.js</a>
+			</h3>
+			<p>
+				Three.js is a JavaScript library that allows for the creation and display of 3D computer graphics in a web browser. In April 2022, I built a very small demo page using the library, which you
+				can find linked in the menu or here:
+				<a href="/threejs.html">ThreeJS demo</a>.
+			</p>
+		</section>
 
+		<div id="preFooterMargin" style="margin-bottom: 100px"></div>
+		<footer>
+			<p><span style="vertical-align: -6px" class="material-icons-outlined">copyright</span> 2021-2023 Nikkel Mollenhauer</p>
+			<p><a class="contactLink pointer show">Contact</a></p>
+		</footer>
 
-	<div id="preFooterMargin" style="margin-bottom: 100px"></div>
-	<footer>
-		<p><span style="vertical-align: -6px;" class="material-icons-outlined">copyright</span> 2021-2023 Nikkel
-			Mollenhauer</p>
-		<p><a class="contactLink pointer show">Contact</a></p>
-	</footer>
-	
-	<script src="https://web3forms.com/client/script.js" async defer></script>
-	
-
-</body>
+		<script src="https://web3forms.com/client/script.js" async defer></script>
+		
+	</body>
 </html>
