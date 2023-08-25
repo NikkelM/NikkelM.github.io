@@ -53,7 +53,9 @@
 			</div>
 			<div id="navBarContentsBottom" class="navBarBottom">
 				<a href="https://github.com/NikkelM" class="navLink" style="display: inline" target="_blank" aria-label=""><img src="/icons/github.webp" alt="" style="height: 50px; width: 50px" /></a>
-				<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" class="navLink" style="display: inline" target="_blank"><img src="/icons/linkedin.webp" alt="" style="height: 50px; width: 50px" /></a>
+				<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" class="navLink" style="display: inline" target="_blank"
+					><img src="/icons/linkedin.webp" alt="" style="height: 50px; width: 50px"
+				/></a>
 			</div>
 		</div>
 	</nav>
@@ -90,9 +92,12 @@
 				<p>ThreeJS demo - April 2022</p>
 				<p>
 					<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span class="material-icons-outlined f48">file_download</span></a
-					><a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways"> </a><a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways">CV</a>
-					<span style="vertical-align: 5px">| </span><a href="https://github.com/NikkelM" target="_blank"><img src="/icons/github.webp" style="vertical-align: -4px; height: 50px; width: 50px" alt="" /></a> <span style="vertical-align: 5px">| </span
-					><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"><img src="/icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px" alt="" /></a> <span style="vertical-align: 5px">| </span><a class="contactLink hideAlways pointer">Contact</a>
+					><a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways"> </a
+					><a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways">CV</a> <span style="vertical-align: 5px">| </span
+					><a href="https://github.com/NikkelM" target="_blank"><img src="/icons/github.webp" style="vertical-align: -4px; height: 50px; width: 50px" alt="" /></a>
+					<span style="vertical-align: 5px">| </span
+					><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"><img src="/icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px" alt="" /></a>
+					<span style="vertical-align: 5px">| </span><a class="contactLink hideAlways pointer">Contact</a>
 				</p>
 			</header>
 
@@ -102,15 +107,17 @@
 				<h2>ThreeJS demo</h2>
 				<p>
 					I built this page in early April 2022, after I had gained some first web development experience during my studies. To challenge myself I decided to play around with
-					<a href="https://threejs.org/" class="hide">three.js</a> to build this page. The website is hosted using <a href="https://pages.github.com/" target="_blank" class="hide">GitHub pages</a>, and its source code can be found in
-					<a href="https://github.com/NikkelM/NikkelM.github.io" target="_blank">this repository</a>. Take a look at the sections below to find out more about how the different parts of this page work.
+					<a href="https://threejs.org/" class="hide">three.js</a> to build this page. The website is hosted using <a href="https://pages.github.com/" target="_blank" class="hide">GitHub pages</a>,
+					and its source code can be found in <a href="https://github.com/NikkelM/NikkelM.github.io" target="_blank">this repository</a>. Take a look at the sections below to find out more about how
+					the different parts of this page work.
 				</p>
 			</section>
 
 			<blockquote class="right">
 				<p class="right-align">
 					Visit me on
-					<a href="https://github.com/NikkelM" target="_blank"><img src="/icons/github.webp" alt="" style="height: 50px; width: 50px" /></a><a href="https://github.com/NikkelM" target="_blank" class="hideAlways"> </a>
+					<a href="https://github.com/NikkelM" target="_blank"><img src="/icons/github.webp" alt="" style="height: 50px; width: 50px" /></a
+					><a href="https://github.com/NikkelM" target="_blank" class="hideAlways"> </a>
 					<a href="https://github.com/NikkelM" target="_blank" class="hideAlways">GitHub</a>
 				</p>
 			</blockquote>
@@ -118,25 +125,29 @@
 			<section class="left">
 				<h2>Animations</h2>
 				<p>
-					There are two animation styles on this page: Continuous and keyframed animations. And when I say that there are two animation styles, there really is only one: All animations depend on the 'scroll percentage' of the page, meaning that they will cycle until you scroll up or down, at which
-					point the scale and position of the elements may change. For each rendered frame, a set of animation rules are evaluated. All of these rules have 'start' and 'end' properties that define whether or not this animation should be played at the current scroll percentage.
+					There are two animation styles on this page: Continuous and keyframed animations. And when I say that there are two animation styles, there really is only one: All animations depend on the
+					'scroll percentage' of the page, meaning that they will cycle until you scroll up or down, at which point the scale and position of the elements may change. For each rendered frame, a set of
+					animation rules are evaluated. All of these rules have 'start' and 'end' properties that define whether or not this animation should be played at the current scroll percentage.
 				</p>
 				<h3>Continuous animations</h3>
 				<p>
-					For continuous animations, the rule simply states that the animation should start at 0% and end at 100% - so it is always played. Continuous animations include the rotation of the skybox, the blinking of the stars and the rotation of the cube and globe. Most importantly, these animations
-					do not depend on the current scroll percentage - the skybox will always rotate at the same speed, no matter where on the page you are.
+					For continuous animations, the rule simply states that the animation should start at 0% and end at 100% - so it is always played. Continuous animations include the rotation of the skybox,
+					the blinking of the stars and the rotation of the cube and globe. Most importantly, these animations do not depend on the current scroll percentage - the skybox will always rotate at the
+					same speed, no matter where on the page you are.
 				</p>
 				<h3>Keyframed animations</h3>
 				<p>
-					This is different for keyframed animations, which always depend on the current scroll percentage. For example, the cube will run a specific animation between 0% and 25% scrolled: It will rotate around its y- and z-axis, and move toward the top right of the screen. The animation rule
-					defines start and end values for each of these properties, and calculates the current value based on the current scroll percentage - the keyframe. Continuous and keyframed animations can also easily be combined using this technique, as all animation rules are evaluated for every frame, and
-					the difference in scale and position is applied after all rules were evaluated. This can for example create the effect of the faster rotating globe whenever it moves from one side of the screen to the other - the continuous rotation is applied first, and then an additional keyframed
-					animation is applied on top of that.
+					This is different for keyframed animations, which always depend on the current scroll percentage. For example, the cube will run a specific animation between 0% and 25% scrolled: It will
+					rotate around its y- and z-axis, and move toward the top right of the screen. The animation rule defines start and end values for each of these properties, and calculates the current value
+					based on the current scroll percentage - the keyframe. Continuous and keyframed animations can also easily be combined using this technique, as all animation rules are evaluated for every
+					frame, and the difference in scale and position is applied after all rules were evaluated. This can for example create the effect of the faster rotating globe whenever it moves from one side
+					of the screen to the other - the continuous rotation is applied first, and then an additional keyframed animation is applied on top of that.
 				</p>
 				<h3>Moving in reverse</h3>
 				<p>
-					By defining all keyframed animations at the same time, and looping through the rules with each frame, there is zero overhead for creating animation that can reverse themselves when scrolling back up the page at any point. For continuous animations, the position on the page does not matter
-					anyways, and for keyframed animations, the animation rule is executed depending on the scroll percentage - not based on where the scroll event came from, so the same animation frame will be rendered when scrolling up or down.
+					By defining all keyframed animations at the same time, and looping through the rules with each frame, there is zero overhead for creating animation that can reverse themselves when scrolling
+					back up the page at any point. For continuous animations, the position on the page does not matter anyways, and for keyframed animations, the animation rule is executed depending on the
+					scroll percentage - not based on where the scroll event came from, so the same animation frame will be rendered when scrolling up or down.
 				</p>
 			</section>
 
@@ -144,7 +155,8 @@
 				<p class="left-align">
 					Connect with me <br />
 					on
-					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"><img src="/icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px" alt="" /></a><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hideAlways"> </a>
+					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"><img src="/icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px" alt="" /></a
+					><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hideAlways"> </a>
 					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hideAlways">LinkedIn</a>
 				</p>
 			</blockquote>
@@ -152,18 +164,22 @@
 			<section class="right">
 				<h2>Randomness</h2>
 				<p>
-					Nothing in life would be fun without a little bit of randomness - and the same is true for this page. In my case, I wanted the placement and blinking of the stars to be random, so that the background would look slightly different each time. So when the scene is built, a set number of
-					random stars is generated with randomized coordinates, evenly spread out across the skybox. Each star is also given a distance from the camera, which makes some stars appear larger than others. When it came to making the stars blink, I at first encountered some problems: All of the stars
-					blinked at the same speed, which repeated itself over the same interval, which looked very unnatural, even when randomizing their starting opacities. As a solution, all stars are now assigned one of five materials - these do not differ in their appearance, but rather control all stars with
-					the same assigned material. This means that if the opacity of the material is changed, so is the base opacity of all stars with the same material. During the blinking animation, a global lightness modifier is tracked, which cycles between 0 and 1 in small steps between the stars. So
-					whenever a star is animated, its base opacity and this fluctuating modifier are combined, this new value in turn also influences the opacity of all other stars with the same material. This results in the stars not only blinking, but also 'flickering' at different speeds, as their materials
-					base opacity get changed by more or less depending on the stars position in the animation queue.
+					Nothing in life would be fun without a little bit of randomness - and the same is true for this page. In my case, I wanted the placement and blinking of the stars to be random, so that the
+					background would look slightly different each time. So when the scene is built, a set number of random stars is generated with randomized coordinates, evenly spread out across the skybox.
+					Each star is also given a distance from the camera, which makes some stars appear larger than others. When it came to making the stars blink, I at first encountered some problems: All of the
+					stars blinked at the same speed, which repeated itself over the same interval, which looked very unnatural, even when randomizing their starting opacities. As a solution, all stars are now
+					assigned one of five materials - these do not differ in their appearance, but rather control all stars with the same assigned material. This means that if the opacity of the material is
+					changed, so is the base opacity of all stars with the same material. During the blinking animation, a global lightness modifier is tracked, which cycles between 0 and 1 in small steps
+					between the stars. So whenever a star is animated, its base opacity and this fluctuating modifier are combined, this new value in turn also influences the opacity of all other stars with the
+					same material. This results in the stars not only blinking, but also 'flickering' at different speeds, as their materials base opacity get changed by more or less depending on the stars
+					position in the animation queue.
 				</p>
 				<h3>Loading...</h3>
 				<p>
-					As you can probably imagine, loading in the different textures, building the models and placing everything just right takes a bit longer than the time it takes for the HTML to load. And while this delay is under half a second on most devices (and connection speeds), it is still very much
-					noticeable. So I had to find a way to hide this 'popping in' of the different elements to smooth the experience. Sometimes, the easiest solution is the best, which is why I settled on simply overlaying a fullscreen div with some rotating bars while the 3D-scene is built in the background.
-					After the scene has loaded it calls a function that removes the loading screen.
+					As you can probably imagine, loading in the different textures, building the models and placing everything just right takes a bit longer than the time it takes for the HTML to load. And
+					while this delay is under half a second on most devices (and connection speeds), it is still very much noticeable. So I had to find a way to hide this 'popping in' of the different elements
+					to smooth the experience. Sometimes, the easiest solution is the best, which is why I settled on simply overlaying a fullscreen div with some rotating bars while the 3D-scene is built in the
+					background. After the scene has loaded it calls a function that removes the loading screen.
 				</p>
 			</section>
 
