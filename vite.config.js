@@ -17,5 +17,6 @@ export default defineConfig({
 				404: resolve(root, '404.html'),
 			},
 		},
+		assetsInlineLimit: 0,
 	},
 });
