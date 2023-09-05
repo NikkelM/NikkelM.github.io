@@ -150,6 +150,13 @@ footer {
 /*
  * Buttons
  */
+.cookieButtonContainer {
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
 .cookieConsent button {
 	display: inline-block;
 	color: var(--fg-color);
@@ -161,6 +168,7 @@ footer {
 	padding: 4px 10px;
 	margin: 2px 1px;
 	font-size: 18px;
+	margin-right: 5px;
 }
 
 .cookieConsent button:hover {
