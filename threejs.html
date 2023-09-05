@@ -27,23 +27,11 @@
 		
 		
 		<title>ThreeJS Demo - NikkelM</title>
-		<script type="module" crossorigin src="/assets/threejs-8736698a.js"></script>
-		<link rel="modulepreload" crossorigin href="/assets/common-49c3eef0.js">
-		<link rel="stylesheet" href="/assets/common-16f17cf2.css">
-		<link rel="stylesheet" href="/assets/threejs-7de07b5f.css">
+		<script type="module" crossorigin src="/assets/threejs-ce69fce0.js"></script>
+		<link rel="modulepreload" crossorigin href="/assets/common-8b180716.js">
+		<link rel="stylesheet" href="/assets/common-d2468f3e.css">
+		<link rel="stylesheet" href="/assets/threejs-9232d32a.css">
 	</head>
-
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9K4WW3ECLR"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag("js", new Date());
-
-		gtag("config", "G-9K4WW3ECLR");
-	</script>
 
 	<section id="loading-screen">
 		
@@ -67,8 +55,11 @@
 	</nav>
 
 	<div id="cookieConsent" class="cookieConsent" style="display: none">
-		<p>This website uses cookies to store cosmetic preferences, no personal data is being collected.</p>
-		<button type="button" id="acceptCookiesButton" class="acceptCookiesButton">Accept</button>
+		<p>This website uses cookies to provide a better user experience.</p>
+		<div class="cookieButtonContainer">
+			<button type="button" id="acceptCookiesButton">Accept</button>
+			<button type="button" id="declineCookiesButton">Decline optional</button>
+		</div>
 	</div>
 
 	<div id="contactFormDiv">
@@ -203,6 +194,7 @@
 			</footer>
 		</main>
 
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-9K4WW3ECLR"></script>
 		<script src="https://web3forms.com/client/script.js" async defer></script>
 		
 	</body>
