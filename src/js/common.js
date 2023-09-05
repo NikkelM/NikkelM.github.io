@@ -105,19 +105,45 @@ function setupFormSubmission(form) {
 function checkCookieConsent() {
 	const cookieConsent = document.getElementById('cookieConsent');
 	const acceptCookiesButton = document.getElementById('acceptCookiesButton');
+	const declineCookiesButton = document.getElementById('declineCookiesButton');
 
-	// Check if the user has already accepted cookies
-	if (!Cookies.get('cookieConsent')) {
+	// Check if the user has already accepted or declined cookies
+	if (Cookies.get('cookieConsent') === undefined) {
 		// Show the cookie consent form
 		cookieConsent.style.display = 'block';
+
+		// Add an event listener to the accept button
+		acceptCookiesButton.addEventListener('click', function () {
+			Cookies.set('cookieConsent', 'true', { expires: 365 });
+			cookieConsent.style.display = 'none';
+			cookiesAllowed();
+		});
+
+		// Add an event listener to the decline button
+		declineCookiesButton.addEventListener('click', function () {
+			// As per GDPR, we may ask the user again in 1 year
+			Cookies.set('cookieConsent', 'false', { expires: 365 });
+			cookieConsent.style.display = 'none';
+		});
+
+		// If the user has already accepted cookies
+	} else if (Cookies.get('cookieConsent') === 'true') {
+		cookiesAllowed();
+	}
+}
+
+// Setup Google analytics if cookies are allowed
+function cookiesAllowed() {
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
 	}
 
-	// Add an event listener to the accept button
-	acceptCookiesButton.addEventListener('click', function () {
-		// Set a cookie to indicate that the user has accepted cookies
-		Cookies.set('cookieConsent', 'true', { expires: 365 });
-
-		// Hide the cookie consent form
-		cookieConsent.style.display = 'none';
+	gtag("consent", "default", {
+		ad_storage: "denied",
+		analytics_storage: "granted",
 	});
+
+	gtag("js", new Date());
+	gtag("config", "G-9K4WW3ECLR");
 }
