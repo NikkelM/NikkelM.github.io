@@ -75,6 +75,15 @@ animationScripts.push({
 	}
 });
 
+// To prevent the scrollArrow from not disappearing completely if the user scrolls very fast
+animationScripts.push({
+	start: 4,
+	end: 100,
+	func: () => {
+		scrollArrow.style.opacity = 0;
+	}
+});
+
 // Move the avatarCube cube out of the way when the initial header moves out of view
 animationScripts.push({
 	start: 0,

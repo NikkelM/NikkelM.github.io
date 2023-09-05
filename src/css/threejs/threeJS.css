@@ -2,6 +2,10 @@
 	--dark-bg-tp: rgba(15, 15, 15, 0.5);
 	--margin_bottom: 250px;
 	color-scheme: dark;
+	/* Hide scrollbar */
+	scrollbar-width: none;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-color: transparent; /* Firefox */
 }
 
 /* Hide scrollbar */
@@ -18,7 +22,7 @@ canvas {
 
 footer {
 	left: -1%;
-	width: 102%;
+	width: 101.5%;
 	height: 100px;
 	background: var(--dark-bg-tp);
 }
