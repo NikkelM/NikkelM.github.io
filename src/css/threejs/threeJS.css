@@ -114,6 +114,12 @@ blockquote p {
 	text-align: right;
 }
 
+/* Navbar custom styling to fix margins */
+#openNavBarButton {
+	margin-left: 32px;
+	margin-top: 36px;
+}
+
 @media (max-device-width: 768px) {
 	:root {
 		--margin_bottom: 150px;
@@ -138,5 +144,10 @@ blockquote p {
 	blockquote p {
 		font-size: 3rem;
 		line-height: 1;
+	}
+
+	#openNavBarButton {
+		margin-left: 0px;
+		margin-top: -80px;
 	}
 }

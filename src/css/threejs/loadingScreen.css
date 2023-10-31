@@ -57,6 +57,7 @@
 	-webkit-animation: spin 1.5s linear infinite;
 	animation: spin 1.5s linear infinite;
 }
+
 @-webkit-keyframes spin {
 	0% {
 		-webkit-transform: rotate(0deg);
@@ -69,6 +70,7 @@
 		transform: rotate(360deg);
 	}
 }
+
 @keyframes spin {
 	0% {
 		-webkit-transform: rotate(0deg);
