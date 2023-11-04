@@ -10,6 +10,7 @@ export default defineConfig({
 	build: {
 		outDir,
 		emptyOutDir: true,
+		cssCodeSplit: true,
 		rollupOptions: {
 			input: {
 				main: resolve(root, 'index.html'),
