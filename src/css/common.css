@@ -63,7 +63,13 @@ nav .navBarBottom {
 	align-items: center;
 	position: absolute;
 	bottom: 0;
-	margin: 20px 20px 50px 20px;
+	margin: 20px 45px 50px 20px;
+}
+
+@media (max-height: 300px) {
+	nav .navBarBottom {
+		position: static;
+	}
 }
 
 nav .navLink:hover {
@@ -83,18 +89,10 @@ nav .closeButton {
 	cursor: pointer;
 	margin-left: 20px;
 	margin-top: -20px;
-	padding: 10px 20px 10px 20px;
+	padding: 0px 9px 3px 9px;
 	position: fixed;
-}
-
-@media (max-height: 450px) {
-	nav {
-		padding-top: 15px;
-	}
-
-	nav .navLink {
-		font-size: 18px;
-	}
+	background-color: rgba(34, 34, 34, 0.85);
+	border-radius: 6px;
 }
 
 /* Open navBar button */
