@@ -60,6 +60,11 @@ section {
 	}
 }
 
+#openNavBarButton {
+	background-color: rgba(34, 34, 34, 0.85);
+	border-radius: 6px;
+}
+
 /* Utilities */
 .center {
 	text-align: center;
