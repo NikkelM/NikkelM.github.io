@@ -60,7 +60,7 @@ section {
 	}
 }
 
-#openNavBarButton {
+#openNavBarButton.hasBackground {
 	background-color: rgba(34, 34, 34, 0.85);
 	border-radius: 6px;
 }

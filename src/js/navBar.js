@@ -60,6 +60,7 @@ window.addEventListener('load', function () {
 	// Only play the animations if the navigation bar has not been opened before in this session
 	if (!Cookies.get('navBarOpened')) {
 		openNavBarButton.classList.add('wiggle');
+		openNavBarButton.classList.remove('hasBackground');
 
 		// After 100ms, peek the menu bar, but hide its contents
 		setTimeout(function () {
@@ -79,9 +80,10 @@ window.addEventListener('load', function () {
 			navBar.style.width = '0';
 		}, 1500);
 
-		// After the menu bar is closed, make its contents visible again
+		// After the menu bar is closed, make its contents visible again, and add the background color for the button
 		setTimeout(function () {
 			navBarContents.style.display = 'block';
+			openNavBarButton.classList.add('hasBackground');
 		}, 1700);
 	}
 });
