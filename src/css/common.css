@@ -91,6 +91,7 @@ nav .closeButton {
 	margin-top: -15px;
 	padding: 0px 9px 3px 9px;
 	position: fixed;
+	z-index: 998;
 }
 
 @media (max-width: 768px) {
