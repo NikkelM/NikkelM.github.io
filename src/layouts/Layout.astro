@@ -1,51 +1,115 @@
 ---
 interface Props {
 	title: string;
+	description: string;
+	stylesheets: string[];
+	layoutedFooter?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, description, stylesheets, layoutedFooter } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta charset="utf-8" />
+		<!-- Favicons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+		<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+		<meta name="msapplication-TileColor" content="#2b5797" />
+		<link rel="icon" type="image/x-icon" href="/favicon/favicon_light.ico" media="(prefers-color-scheme: dark)" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon_light-32x32.png" media="(prefers-color-scheme: dark)" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon_light-16x16.png" media="(prefers-color-scheme: dark)" />
+		<!-- Favicons end -->
+		<meta name="theme-color" content="#222" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="preconnect" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin />
+		<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" as="style" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin />
+		<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		{stylesheets.map((stylesheet) => <link rel="stylesheet" type="text/css" href={stylesheet} />)}
+		<slot name="customHead" />
 		<title>{title}</title>
 	</head>
-	<body>
-		<slot />
-	</body>
+
+	<nav id="navBar">
+		<div id="navBarContents">
+			<div id="navBarContentsTop" class="navBarTop">
+				<a href="javascript:void(0)" class="closeButton">&times;</a>
+				<a href={Astro.url.pathname === "/index.html" || Astro.url.pathname === "/" ? "javascript:void(0)" : "/index.html"} class="navLink">Home</a>
+				<a href={Astro.url.pathname === "/threejs.html" ? "javascript:void(0)" : "/threejs.html"} class="navLink">Three.js Demo</a>
+			</div>
+			<div id="navBarContentsBottom" class="navBarBottom">
+				<a href="https://github.com/NikkelM" class="navLink" style="display: inline" target="_blank" aria-label="GitHub profile"
+					><img src="/icons/github.webp" alt="" style="height: 50px; width: 50px" /></a
+				>
+				<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" class="navLink" style="display: inline" target="_blank" aria-label="LinkedIn profile"
+					><img src="/icons/linkedin.webp" alt="" style="height: 50px; width: 50px" /></a
+				>
+			</div>
+		</div>
+	</nav>
+
+	<div id="cookieConsent" class="cookieConsent" style="display: none">
+		<p>This website uses cookies to provide a better user experience.</p>
+		<div class="cookieButtonContainer">
+			<button type="button" id="acceptCookiesButton">Accept</button>
+			<button type="button" id="declineCookiesButton">Decline optional</button>
+		</div>
+	</div>
+
+	<div id="contactFormDiv">
+		<span class="closeButton">&times;</span>
+		<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+			<input type="hidden" name="from_name" value={title} />
+
+			<label for="name">Name</label><br />
+			<input id="name" type="text" required="" name="name" autocomplete="name" /><br />
+			<label for="email">E-Mail</label><br />
+			<input id="email" type="email" required="" name="email" autocomplete="email" /><br />
+			<label for="options">Topic</label><br />
+			<select id="options" name="topic">
+				{Astro.url.pathname === "/404.html" ? <option value="Regarding the Website">Regarding the website</option> : ""}
+				<option value="Just getting into contact">Just getting into contact</option>
+				<option value="Random YouTube Video">Random YouTube Video</option>
+				<option value="Outlook Mail Notes">Outlook Mail Notes</option>
+				<option value="Notion integration">Notion integration</option>
+				<option value="Another project">Another project</option></select
+			><br />
+			<label for="message">Message</label><br />
+			<textarea id="message" rows="5" required="" name="message"></textarea><br /><br />
+			<button type="submit">Submit</button>
+			<p id="result"></p>
+		</form>
+	</div>
+
+	<!-- The default slot that everything else goes into -->
+	<slot />
+
+	<!-- Show the footer if layoutedFooter is true -->
+	{
+		layoutedFooter ? (
+			<>
+				<div id="preFooterMargin" style="margin-bottom: 100px" />
+				<footer>
+					<p>Nikkel Mollenhauer</p>
+					<p>
+						<a class="contactLink pointer show">Contact</a>
+					</p>
+				</footer>
+			</>
+		) : (
+			""
+		)
+	}
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9K4WW3ECLR"></script>
+	<script src="https://web3forms.com/client/script.js" async defer></script>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
