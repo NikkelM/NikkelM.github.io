@@ -4,5 +4,8 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	site: 'https://nikkelm.dev',
 	output: 'static',
-	publicDir: './src/public'
+	publicDir: './src/public',
+	build: {
+    format: 'preserve'
+  }
 });
