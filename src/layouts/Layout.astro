@@ -34,6 +34,7 @@ const { title, description, stylesheets, isTextPage = true } = Astro.props;
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
+		<link rel="stylesheet" type="text/css" href="/css/common.css" />
 		{stylesheets.map((stylesheet) => <link rel="stylesheet" type="text/css" href={stylesheet} />)}
 		<slot name="customHead" />
 		<title>{title}</title>
