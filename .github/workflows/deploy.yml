@@ -62,7 +62,6 @@ jobs:
         with:
           tag_name: v${{ needs.CheckVersion.outputs.newVersion }}
           name: v${{ needs.CheckVersion.outputs.newVersion }}
-          files: JSON.to.Notion.zip
           body_path: CHANGELOG.md
 
   Build:
