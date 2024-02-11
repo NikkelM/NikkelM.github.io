@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SocialLinkImage from "../components/SocialLinkImage.astro";
 import "/src/styles/threejs/scrollArrow.css";
 import "/src/styles/threejs/threeJS.css";
 import ThreeJsLoadingScreen from "../components/ThreeJsLoadingScreen.astro";
@@ -23,12 +24,13 @@ import ThreeJsLoadingScreen from "../components/ThreeJsLoadingScreen.astro";
 						target="_blank"
 						class="hideAlways">
 					</a><a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways">CV</a>
-					<span style="vertical-align: 5px">|&nbsp;</span><a href="https://github.com/NikkelM" target="_blank"
-						><img src="/icons/github.webp" style="vertical-align: -4px; height: 50px; width: 50px" alt="" /></a
-					>
-					<span style="vertical-align: 5px">|&nbsp;</span><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"
-						><img src="/icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px" alt="" /></a
-					>
+					<span style="vertical-align: 5px">|&nbsp;</span><SocialLinkImage href="https://github.com/NikkelM" label="GitHub profile" imgSrc="/icons/github.webp" style="vertical-align: -5px;" />
+					<span style="vertical-align: 5px">|&nbsp;</span><SocialLinkImage
+						href="https://www.linkedin.com/in/nikkel-mollenhauer/"
+						label="LinkedIn profile"
+						imgSrc="/icons/linkedin.webp"
+						style="vertical-align: -5px;"
+					/>
 					<span style="vertical-align: 5px">|&nbsp;</span><a class="contactLink hideAlways pointer">Contact</a>
 				</p>
 			</header>
@@ -47,13 +49,11 @@ import ThreeJsLoadingScreen from "../components/ThreeJsLoadingScreen.astro";
 
 			<blockquote class="right">
 				<p class="right-align">
-					Visit me on
-					<a href="https://github.com/NikkelM" target="_blank"><img src="/icons/github.webp" alt="" style="height: 50px; width: 50px" /></a><a
+					<a href="https://github.com/NikkelM" target="_blank" class="hideAlways">Visit me on </a><SocialLinkImage
 						href="https://github.com/NikkelM"
-						target="_blank"
-						class="hideAlways">
-					</a>
-					<a href="https://github.com/NikkelM" target="_blank" class="hideAlways">GitHub</a>
+						label="GitHub profile"
+						imgSrc="/icons/github.webp"
+					/><a href="https://github.com/NikkelM" target="_blank" class="hideAlways"> GitHub</a>
 				</p>
 			</blockquote>
 
@@ -88,14 +88,12 @@ import ThreeJsLoadingScreen from "../components/ThreeJsLoadingScreen.astro";
 
 			<blockquote class="left">
 				<p class="left-align">
-					Connect with me <br />
-					on
-					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"><img src="/icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px" alt="" /></a><a
+					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hideAlways">Connect with me <br />on </a><SocialLinkImage
 						href="https://www.linkedin.com/in/nikkel-mollenhauer/"
-						target="_blank"
-						class="hideAlways">
-					</a>
-					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hideAlways">LinkedIn</a>
+						label="LinkedIn profile"
+						imgSrc="/icons/linkedin.webp"
+						style="vertical-align: -5px;"
+					/><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hideAlways"> LinkedIn</a>
 				</p>
 			</blockquote>
 

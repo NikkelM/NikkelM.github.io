@@ -1,0 +1,12 @@
+---
+interface Props {
+	href: string;
+	imgSrc: string;
+	label: string;
+	style?: string;
+}
+
+const { href, imgSrc, label, style = "" } = Astro.props;
+---
+
+<a href={href} class="navLink" target="_blank" aria-label={label}><img src={imgSrc} alt={label} style=`${style} height: 50px; width: 50px;` /></a>

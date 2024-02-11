@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SocialLinkImage from "../components/SocialLinkImage.astro";
 import "/src/styles/commonTextPages.css";
 ---
 
@@ -11,17 +12,21 @@ import "/src/styles/commonTextPages.css";
 			<h1>Nikkel Mollenhauer</h1>
 			<p>Site Reliability Engineer @Microsoft Dublin</p>
 			<p>
-				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span class="material-icons-outlined f48">file_download</span></a>{
-					/* Do not add a line break here */
-				}
+				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span class="material-icons-outlined f48">file_download</span></a>
 				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways" aria-label="Download CV"> </a>
 				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways">CV</a>
-				<span style="vertical-align: 5px">|&nbsp;</span><a href="https://github.com/NikkelM" target="_blank" aria-label="GitHub profile"
-					><img src="/icons/github.webp" style="vertical-align: -4px; height: 50px; width: 50px" alt="" /></a
-				>
-				<span style="vertical-align: 5px">|&nbsp;</span><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" aria-label="LinkedIn profile"
-					><img src="/icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px" alt="" /></a
-				>
+				<span style="vertical-align: 5px">|&nbsp;</span><SocialLinkImage
+					href="https://github.com/NikkelM"
+					label="GitHub profile"
+					imgSrc="/icons/github.webp"
+					style="vertical-align: -5px;"
+				/>
+				<span style="vertical-align: 5px">|&nbsp;</span><SocialLinkImage
+					href="https://www.linkedin.com/in/nikkel-mollenhauer/"
+					label="LinkedIn profile"
+					imgSrc="/icons/linkedin.webp"
+					style="vertical-align: -5px;"
+				/>
 				<span style="vertical-align: 5px">|&nbsp;</span><a class="contactLink hideAlways pointer">Contact</a>
 			</p>
 		</header>
