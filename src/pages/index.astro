@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "/src/styles/commonTextPages.css";
 ---
 
-<Layout title="NikkelM - Home" description="Personal website of NikkelM" stylesheets={["/css/commonTextPages.css"]}>
+<Layout title="NikkelM - Home" description="Personal website of NikkelM">
 	<link rel="canonical" href="https://nikkelm.dev" slot="customHead" />
 
 	<body>
@@ -10,8 +11,9 @@ import Layout from "../layouts/Layout.astro";
 			<h1>Nikkel Mollenhauer</h1>
 			<p>Site Reliability Engineer @Microsoft Dublin</p>
 			<p>
-				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span class="material-icons-outlined f48">file_download</span></a
-				><!-- Do not add a line break here -->
+				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span class="material-icons-outlined f48">file_download</span></a>{
+					/* Do not add a line break here */
+				}
 				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways" aria-label="Download CV"> </a>
 				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways">CV</a>
 				<span style="vertical-align: 5px">|</span><a href="https://github.com/NikkelM" target="_blank" aria-label="GitHub profile"
@@ -122,6 +124,6 @@ import Layout from "../layouts/Layout.astro";
 			</p>
 		</section>
 
-		<script type="module" src="/src/js/commonTextPages.js"></script>
+		<script src="/src/js/commonTextPages.js"></script>
 	</body>
 </Layout>

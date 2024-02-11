@@ -1,19 +1,20 @@
 ---
+import "/src/styles/common.css";
+
 interface Props {
 	title: string;
 	description: string;
-	stylesheets: string[];
 	isTextPage?: boolean;
 }
 
-const { title, description, stylesheets, isTextPage = true } = Astro.props;
+const { title, description, isTextPage = true } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<!-- Favicons -->
+		{/* Favicons */}
 		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
 		<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
@@ -23,7 +24,7 @@ const { title, description, stylesheets, isTextPage = true } = Astro.props;
 		<link rel="icon" type="image/x-icon" href="/favicon/favicon_light.ico" media="(prefers-color-scheme: dark)" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon_light-32x32.png" media="(prefers-color-scheme: dark)" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon_light-16x16.png" media="(prefers-color-scheme: dark)" />
-		<!-- Favicons end -->
+		{/* Favicons end */}
 		<meta name="theme-color" content="#222" />
 		<link rel="manifest" href="/site.webmanifest" />
 		<link rel="preconnect" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin />
@@ -34,8 +35,6 @@ const { title, description, stylesheets, isTextPage = true } = Astro.props;
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
-		<link rel="stylesheet" type="text/css" href="/css/common.css" />
-		{stylesheets.map((stylesheet) => <link rel="stylesheet" type="text/css" href={stylesheet} />)}
 		<slot name="customHead" />
 		<title>{title}</title>
 	</head>
@@ -104,7 +103,7 @@ const { title, description, stylesheets, isTextPage = true } = Astro.props;
 		)
 	}
 
-	<!-- The default slot that everything else goes into -->
+	{/* The default slot that everything else goes into */}
 	<slot />
 
 	{

@@ -1,12 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "/src/styles/threejs/scrollArrow.css";
+import "/src/styles/threejs/threeJS.css";
+import ThreeJsLoadingScreen from "../components/ThreeJsLoadingScreen.astro";
 ---
 
-<Layout title="ThreeJS Demo - NikkelM" description="ThreeJS demo built by NikkelM" stylesheets={["/css/threejs/scrollArrow.css", "/css/threejs/threeJS.css"]} isTextPage={false}>
-	<section id="loading-screen">
-		<link rel="stylesheet" type="text/css" href="/css/threejs/loadingScreen.css" />
-		<div id="loader"></div>
-	</section>
+<Layout title="ThreeJS Demo - NikkelM" description="ThreeJS demo built by NikkelM" isTextPage={false}>
+	<ThreeJsLoadingScreen />
 
 	<body style="overflow: hidden">
 		<canvas id="bg"></canvas>
@@ -127,6 +127,6 @@ import Layout from "../layouts/Layout.astro";
 			</footer>
 		</main>
 
-		<script type="module" src="/src/js/threejs/threejs.js"></script>
+		<script src="/src/js/threejs/threejs.js"></script>
 	</body>
 </Layout>
