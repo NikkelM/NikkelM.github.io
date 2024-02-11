@@ -15,12 +15,7 @@ import "/src/styles/commonTextPages.css";
 				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span class="material-icons-outlined f48">file_download</span></a>
 				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways" aria-label="Download CV"> </a>
 				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways">CV</a>
-				<span style="vertical-align: 5px">|&nbsp;</span><SocialLinkImage
-					href="https://github.com/NikkelM"
-					label="GitHub profile"
-					imgSrc="/icons/github.webp"
-					style="vertical-align: -5px;"
-				/>
+				<span style="vertical-align: 5px">|&nbsp;</span><SocialLinkImage href="https://github.com/NikkelM" label="GitHub profile" imgSrc="/icons/github.webp" style="vertical-align: -5px;" />
 				<span style="vertical-align: 5px">|&nbsp;</span><SocialLinkImage
 					href="https://www.linkedin.com/in/nikkel-mollenhauer/"
 					label="LinkedIn profile"
@@ -62,18 +57,47 @@ import "/src/styles/commonTextPages.css";
 				<a class="hideAlways" href="https://chromewebstore.google.com/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf" target="_blank">Random YouTube Video</a>
 			</h3>
 			<p>
-				Random YouTube Video is a browser extension which allows users to truly shuffle from all videos uploaded on a channel - without the need for playlists. The extension adds a 'Shuffle' button to
-				channel and video pages, and allows for thorough customization through its popup.
+				Random YouTube Video is a browser extension that allows users to truly randomly shuffle videos from any YouTube channel. The extension adds a 'Shuffle' button to channel, video and shorts
+				pages. It allows for thorough customization through its popup, such as ignoring shorts or setting custom shuffle filters for each channel.
 				<br />
-				I built this extension using JavaScript, bundled with webpack. In the backend it uses the YouTube Data API to fetch video data, and stores and shares this data using a Firebase Realtime Database.
-				User preferences are stored and shared across devices using the built-in chrome storage API's. It's functionality is tested using a thorough test suite implemented using mocha and expect.js, which
-				tests a wide range of possible data states using an easily scalable permutation approach.
+				The extension is built using JavaScript, bundled with webpack. It's backend uses the YouTube Data API to fetch video data and stores and shares this data using a Firebase Realtime Database. User
+				preferences are stored and shared across devices using the built-in chrome storage APIs. It's functionality is tested using a thorough test suite implemented with mocha and expect.js, which tests
+				a wide range of possible data states using a scalable permutation approach.
 				<br />
 				You can get the extension for
 				<a href="https://chromewebstore.google.com/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf" target="_blank">Chrome</a>,
 				<a href="https://microsoftedge.microsoft.com/addons/detail/random-youtube-video/fccfflipicelkilpmgniblpoflkbhdbe" target="_blank">Edge</a>
 				and <a href="https://addons.mozilla.org/en-GB/firefox/addon/random-youtube-video/" target="_blank">Firefox</a>. The extension is compatible with all Chromium-based browsers through the Chrome
 				Web Store version.
+			</p>
+
+			<hr class="divider very-short" />
+
+			<h3>
+				<a class="hideAlways" href="https://github.com/marketplace/todo-pr-checker" target="_blank">Todo PR Checker</a>
+			</h3>
+			<p>
+				Todo PR Checker is a native GitHub app that checks Pull Request changes for <code>TODO</code> style action items and reports on them live in a comment with embedded code links. The app provides
+				automated CI checks on each Pull Request update, with live updates and clear feedback when open action items are found. It supports a wide range of programming languages and offers powerful customization
+				options such as excluding files using glob patterns or adding support for new languages and action items. The app is built using Ruby, deployed automatically after a new release by leveraging Google
+				Cloud Build and hosted on Google Cloud Run.
+				<br />
+				You can get the app on the
+				<a href="https://github.com/marketplace/todo-pr-checker" target="_blank">GitHub Marketplace</a>.
+			</p>
+
+			<hr class="divider very-short" />
+
+			<h3>
+				<a class="hideAlways" href="https://github.com/NikkelM/Game-Pass-API" target="_blank">Game Pass API</a>
+			</h3>
+			<p>
+				The Game Pass API CLI tool provides a quick and easy way to get a list of all games currently available on Xbox Game Pass on any given platform (Console, PC or through EA Play) in a given
+				region. Using a configuration file, the type and format of many properties can be customized, from simply getting the game's names all the way to fetching store prices at the moment of the
+				request.
+				<br />
+				You can get the tool on
+				<a href="https://github.com/NikkelM/Game-Pass-API" target="_blank">GitHub</a>.
 			</p>
 
 			<hr class="divider very-short" />
@@ -102,8 +126,9 @@ import "/src/styles/commonTextPages.css";
 				</i>
 			</h4>
 			<p>
-				I've also created a number of Notion integrations you can try out for yourself! The one I find most useful is the 'JSON to Notion' integration, which allows you to import JSON files to your
-				Notion database. Using a configuration file, you can specify which properties of your JSON file should be imported, and define other transformations as necessary. You can find the project on
+				I've also created a number of Notion integrations you can try out for yourself! The one I find most useful is the "JSON to Notion" integration, which allows you to import JSON files to your
+				Notion database. Using a configuration file, you can specify which properties of your JSON file should be imported to which database field, and define other transformations as necessary. You
+				can find the project on
 				<a href="https://github.com/NikkelM/JSON-to-Notion" target="_blank">GitHub</a>.
 			</p>
 			<h4>
@@ -112,8 +137,8 @@ import "/src/styles/commonTextPages.css";
 				</i>
 			</h4>
 			<p>
-				Another Notion integration connects your Notion database to the Steam API. All you need is to add a Steam app ID field to your database, define which app properties you would like to have
-				fetched, and the integration will automatically update your database entries. As always, you can find the tool on
+				Another Notion integration that connects your Notion database to Steam. All you need to do is add a Steam app ID field to your database, define which app properties you would like fetch, and
+				the integration will automatically update your database entries. As always, you can find the tool on
 				<a href="https://github.com/NikkelM/Notion-Steam-API-Integration" target="_blank">GitHub</a>.
 			</p>
 
