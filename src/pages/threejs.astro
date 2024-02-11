@@ -3,11 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import SocialLinkImage from "../components/SocialLinkImage.astro";
 import "/src/styles/threejs/scrollArrow.css";
 import "/src/styles/threejs/threeJS.css";
-import ThreeJsLoadingScreen from "../components/ThreeJsLoadingScreen.astro";
+import LoadingScreen from "../components/threejs/LoadingScreen.astro";
+import Section from "../components/threejs/Section.astro";
 ---
 
 <Layout title="ThreeJS Demo - NikkelM" description="ThreeJS demo built by NikkelM" isTextPage={false}>
-	<ThreeJsLoadingScreen />
+	<LoadingScreen />
 
 	<body style="overflow: hidden">
 		<canvas id="bg"></canvas>
@@ -37,19 +38,18 @@ import ThreeJsLoadingScreen from "../components/ThreeJsLoadingScreen.astro";
 
 			<div class="scrollArrow" id="scrollArrow"></div>
 
-			<section class="right" style="margin-top: 280px">
-				<h2>ThreeJS demo</h2>
+			<Section title="ThreeJS demo" align="right" style="margin-top: 280px">
 				<p>
 					I built this page in early April 2022, after I had gained some first web development experience during my studies. To challenge myself I decided to play around with
 					<a href="https://threejs.org/" class="hide">three.js</a> to build this page. The website is hosted using <a href="https://pages.github.com/" target="_blank" class="hide">GitHub pages</a>,
 					and its source code can be found in <a href="https://github.com/NikkelM/NikkelM.github.io" target="_blank">this repository</a>. Take a look at the sections below to find out more about how
 					the different parts of this page work.
 				</p>
-			</section>
+			</Section>
 
 			<blockquote class="right">
 				<p class="right-align">
-					<a href="https://github.com/NikkelM" target="_blank" class="hideAlways">Visit me on </a><SocialLinkImage
+					<a href="https://github.com/NikkelM" target="_blank" class="hideAlways">Visit me on</a><SocialLinkImage
 						href="https://github.com/NikkelM"
 						label="GitHub profile"
 						imgSrc="/icons/github.webp"
@@ -57,8 +57,7 @@ import ThreeJsLoadingScreen from "../components/ThreeJsLoadingScreen.astro";
 				</p>
 			</blockquote>
 
-			<section class="left">
-				<h2>Animations</h2>
+			<Section title="Animations" align="left">
 				<p>
 					There are two animation styles on this page: Continuous and keyframed animations. And when I say that there are two animation styles, there really is only one: All animations depend on the
 					'scroll percentage' of the page, meaning that they will cycle until you scroll up or down, at which point the scale and position of the elements may change. For each rendered frame, a set of
@@ -84,11 +83,11 @@ import ThreeJsLoadingScreen from "../components/ThreeJsLoadingScreen.astro";
 					back up the page at any point. For continuous animations, the position on the page does not matter anyways, and for keyframed animations, the animation rule is executed depending on the
 					scroll percentage - not based on where the scroll event came from, so the same animation frame will be rendered when scrolling up or down.
 				</p>
-			</section>
+			</Section>
 
 			<blockquote class="left">
 				<p class="left-align">
-					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hideAlways">Connect with me <br />on </a><SocialLinkImage
+					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hideAlways">Connect with me <br />on</a><SocialLinkImage
 						href="https://www.linkedin.com/in/nikkel-mollenhauer/"
 						label="LinkedIn profile"
 						imgSrc="/icons/linkedin.webp"
@@ -97,8 +96,7 @@ import ThreeJsLoadingScreen from "../components/ThreeJsLoadingScreen.astro";
 				</p>
 			</blockquote>
 
-			<section class="right">
-				<h2>Randomness</h2>
+			<Section title="Randomness" align="right">
 				<p>
 					Nothing in life would be fun without a little bit of randomness - and the same is true for this page. In my case, I wanted the placement and blinking of the stars to be random, so that the
 					background would look slightly different each time. So when the scene is built, a set number of random stars is generated with randomized coordinates, evenly spread out across the skybox.
@@ -117,7 +115,7 @@ import ThreeJsLoadingScreen from "../components/ThreeJsLoadingScreen.astro";
 					to smooth the experience. Sometimes, the easiest solution is the best, which is why I settled on simply overlaying a fullscreen div with some rotating bars while the 3D-scene is built in the
 					background. After the scene has loaded it calls a function that removes the loading screen.
 				</p>
-			</section>
+			</Section>
 
 			<footer>
 				<p>Nikkel Mollenhauer</p>

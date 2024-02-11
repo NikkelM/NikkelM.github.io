@@ -1,0 +1,14 @@
+---
+interface Props {
+	title: string;
+	align: 'left' | 'right';
+	style?: string;
+}
+
+const { title, align, style } = Astro.props;
+---
+
+<section class={align} style={style}>
+	<h2>{title}</h2>
+	<slot />
+</section>
