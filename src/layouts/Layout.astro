@@ -3,10 +3,10 @@ interface Props {
 	title: string;
 	description: string;
 	stylesheets: string[];
-	layoutedFooter?: boolean;
+	isTextPage?: boolean;
 }
-// TODO: Change the LayoutedFooter variable to isTextPage, with more of the default values being set in the layout
-const { title, description, stylesheets, layoutedFooter } = Astro.props;
+
+const { title, description, stylesheets, isTextPage = true } = Astro.props;
 ---
 
 <!doctype html>
@@ -90,12 +90,24 @@ const { title, description, stylesheets, layoutedFooter } = Astro.props;
 		</form>
 	</div>
 
+	{
+		isTextPage ? (
+			<>
+				<div id="loadingOverlay" />
+				<span id="openNavBarButton" class="hasBackground">
+					&#9776;
+				</span>
+			</>
+		) : (
+			""
+		)
+	}
+
 	<!-- The default slot that everything else goes into -->
 	<slot />
 
-	<!-- Show the footer if layoutedFooter is true -->
 	{
-		layoutedFooter ? (
+		isTextPage ? (
 			<>
 				<div id="preFooterMargin" style="margin-bottom: 100px" />
 				<footer>
@@ -112,4 +124,6 @@ const { title, description, stylesheets, layoutedFooter } = Astro.props;
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9K4WW3ECLR"></script>
 	<script src="https://web3forms.com/client/script.js" async defer></script>
+
+
 </html>
