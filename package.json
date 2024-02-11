@@ -1,19 +1,22 @@
 {
-	"name": "nikkelm-personal-website",
-	"private": true,
-	"version": "1.0.0",
-	"scripts": {
-		"start": "vite",
-		"build": "vite build",
-		"preview": "vite preview",
-		"deploy": "vite build && gh-pages -d dist"
-	},
-	"devDependencies": {
-		"gh-pages": "^3.2.3",
-		"vite": "^4.4.5"
-	},
-	"dependencies": {
-		"js-cookie": "^3.0.5",
-		"three": "^0.139.2"
-	}
+  "name": "nikkelm-personal-website",
+  "type": "module",
+  "private": true,
+  "version": "2.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  },
+  "dependencies": {
+    "astro": "^4.3.5",
+    "js-cookie": "^3.0.5",
+    "three": "^0.139.2"
+  }
 }

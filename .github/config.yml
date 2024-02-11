@@ -1,0 +1,4 @@
+todo-pr-checker:
+  add_languages: [["astro", "//", "<!--", "-->"]]
+  enable_multiline_comments: true
+  ignore_files: ["dev/"]

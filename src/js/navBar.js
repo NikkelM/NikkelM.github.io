@@ -10,8 +10,8 @@ let shouldContinueStartAnimations = true;
 
 // Open the navigation bar when the menu button is clicked
 function openNavBar() {
-	// Set a cookie to remember the navBar was opened
-	Cookies.set('navBarOpened', 'true', { expires: 1 });
+	// Set a cookie to remember the navBar was opened	this session
+	Cookies.set('navBarOpened', 'true');
 	navBar.style.width = '250px';
 }
 
@@ -39,6 +39,7 @@ openNavBarButton.addEventListener('click', function (event) {
 		shouldContinueStartAnimations = false;
 		navBarContents.style.display = 'block';
 		openNavBarButton.classList.remove('wiggle');
+		openNavBarButton.style.removeProperty('z-index');
 	}
 
 	openNavBar();
@@ -60,6 +61,8 @@ window.addEventListener('load', function () {
 	// Only play the animations if the navigation bar has not been opened before in this session
 	if (!Cookies.get('navBarOpened')) {
 		openNavBarButton.classList.add('wiggle');
+		openNavBarButton.classList.remove('hasBackground');
+		openNavBarButton.style.zIndex = '998';
 
 		// After 100ms, peek the menu bar, but hide its contents
 		setTimeout(function () {
@@ -79,9 +82,11 @@ window.addEventListener('load', function () {
 			navBar.style.width = '0';
 		}, 1500);
 
-		// After the menu bar is closed, make its contents visible again
+		// After the menu bar is closed, make its contents visible again, and add the background color for the button
 		setTimeout(function () {
 			navBarContents.style.display = 'block';
+			openNavBarButton.classList.add('hasBackground');
+			openNavBarButton.style.removeProperty('z-index');
 		}, 1700);
 	}
 });

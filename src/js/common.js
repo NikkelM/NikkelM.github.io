@@ -25,7 +25,7 @@ function initContactForm() {
 	}
 
 	let contactForm = document.getElementById("contactForm");
-	// stopPropagation to stop the whole contact form from disappearing if the form is clicked
+	// stopPropagation to stop the contact form from disappearing if the form is clicked
 	contactForm.addEventListener('click', function (e) {
 		e.stopPropagation();
 	});
@@ -107,26 +107,21 @@ function checkCookieConsent() {
 	const acceptCookiesButton = document.getElementById('acceptCookiesButton');
 	const declineCookiesButton = document.getElementById('declineCookiesButton');
 
-	// Check if the user has already accepted or declined cookies
 	if (Cookies.get('cookieConsent') === undefined) {
-		// Show the cookie consent form
 		cookieConsent.style.display = 'block';
 
-		// Add an event listener to the accept button
 		acceptCookiesButton.addEventListener('click', function () {
 			Cookies.set('cookieConsent', 'true', { expires: 365 });
 			cookieConsent.style.display = 'none';
 			cookiesAllowed();
 		});
 
-		// Add an event listener to the decline button
 		declineCookiesButton.addEventListener('click', function () {
 			// As per GDPR, we may ask the user again in 1 year
 			Cookies.set('cookieConsent', 'false', { expires: 365 });
 			cookieConsent.style.display = 'none';
 		});
 
-		// If the user has already accepted cookies
 	} else if (Cookies.get('cookieConsent') === 'true') {
 		cookiesAllowed();
 	}
