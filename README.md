@@ -1,4 +1,4 @@
-# NikkelM.github.io
+# NikkelM.dev
 
 This repository contains the source code for my personal website hosted with GitHub pages.
 

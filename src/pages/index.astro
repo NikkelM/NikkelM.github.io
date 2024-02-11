@@ -1,0 +1,139 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeaderSocial from "../components/HeaderSocial.astro";
+import ProjectOverview from "../components/ProjectOverview.astro";
+import "/src/styles/commonTextPages.css";
+---
+
+<Layout title="NikkelM - Home" description="Personal website of NikkelM">
+	<link rel="canonical" href="https://nikkelm.dev" slot="customHead" />
+
+	<body>
+		<header>
+			<h1>Nikkel Mollenhauer</h1>
+			<p>Site Reliability Engineer @Microsoft Dublin</p>
+			<p>
+				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span class="material-icons-outlined f48">file_download</span></a>
+				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways" aria-label="Download CV"> </a>
+				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways">CV</a>
+				<HeaderSocial type="GitHub" />
+				<HeaderSocial type="LinkedIn" />
+				<span style="vertical-align: 5px">|&nbsp;</span><a class="contactLink hideAlways pointer">Contact</a>
+			</p>
+		</header>
+
+		<br />
+		<section>
+			<h2>About me</h2>
+			<p>
+				As a software engineer, I strive to always challenge myself and learn. As a part of this, I am passionate about creating tools, apps and solutions that I myself would find useful, and sharing
+				them with others. Many of my projects are born out of curiosity and the desire to tackle a problem in new ways, pushing myself to learn new technologies.
+				<br />
+				If you are interested in learning more about my experience and skills, you can find me on
+				<a href="https://github.com/NikkelM" target="_blank">GitHub</a>
+				and
+				<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank">LinkedIn</a>, download my
+				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank">CV</a>, or directly <a class="contactLink show pointer">get in contact</a> with me.
+			</p>
+		</section>
+
+		<hr class="divider" />
+
+		<section>
+			<h2>Projects</h2>
+			<p>
+				Below you can find some of my favourite projects, some of which I am still actively working on. All of the projects below and many more can be found on my
+				<a href="https://github.com/NikkelM" target="_blank">GitHub</a> profile.
+			</p>
+
+			<ProjectOverview title="Random YouTube Video" link="https://chromewebstore.google.com/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf">
+				<p>
+					Random YouTube Video is a browser extension that allows users to truly randomly shuffle videos from any YouTube channel. The extension adds a 'Shuffle' button to channel, video and shorts
+					pages. It allows for thorough customization through its popup, such as ignoring shorts or setting custom shuffle filters for each channel.
+					<br />
+					The extension is built using JavaScript, bundled with webpack. It's backend uses the YouTube Data API to fetch video data and stores and shares this data using a Firebase Realtime Database. User
+					preferences are stored and shared across devices using the built-in chrome storage APIs. It's functionality is tested using a thorough test suite implemented with mocha and expect.js, which tests
+					a wide range of possible data states using a scalable permutation approach.
+					<br />
+					You can get the extension for
+					<a href="https://chromewebstore.google.com/detail/random-youtube-video/kijgnjhogkjodpakfmhgleobifempckf" target="_blank">Chrome</a>,
+					<a href="https://microsoftedge.microsoft.com/addons/detail/random-youtube-video/fccfflipicelkilpmgniblpoflkbhdbe" target="_blank">Edge</a>
+					and <a href="https://addons.mozilla.org/en-GB/firefox/addon/random-youtube-video/" target="_blank">Firefox</a>. The extension is compatible with all Chromium-based browsers through the
+					Chrome Web Store version.
+				</p>
+			</ProjectOverview>
+
+			<ProjectOverview title="Todo PR Checker" link="https://github.com/marketplace/todo-pr-checker">
+				<p>
+					Todo PR Checker is a native GitHub app that checks Pull Request changes for <code>TODO</code> style action items and reports on them live in a comment with embedded code links. The app provides
+					automated CI checks on each Pull Request update, with live updates and clear feedback when open action items are found.
+					<br />
+					It supports a wide range of programming languages and offers powerful customization options such as excluding files using glob patterns or adding support for new languages and action items. The
+					app is built using Ruby, deployed automatically after a new release by leveraging Google Cloud Build and hosted on Google Cloud Run.
+					<br />
+					You can get the app on the
+					<a href="https://github.com/marketplace/todo-pr-checker" target="_blank">GitHub Marketplace</a>.
+				</p>
+			</ProjectOverview>
+
+			<ProjectOverview title="Game Pass API" link="https://github.com/NikkelM/Game-Pass-API">
+				<p>
+					The Game Pass API CLI tool provides a quick and easy way to get a list of all games currently available on Xbox Game Pass on any given platform (Console, PC or through EA Play) in a given
+					region. Using a configuration file, the type and format of many properties can be customized, from simply getting the game's names all the way to fetching store prices at the moment of the
+					request.
+					<br />
+					You can get the tool on
+					<a href="https://github.com/NikkelM/Game-Pass-API" target="_blank">GitHub</a>.
+				</p>
+			</ProjectOverview>
+
+			<ProjectOverview title="Outlook Mail Notes" link="https://github.com/NikkelM/Outlook-Mail-Notes">
+				<p>
+					Outlook Mail Notes is an Outlook Add-In which allows you to add notes to e-mails, conversations and senders. The Add-In will automatically add a relevant category to the message, so you
+					don't loose track of which messages have notes attached. The Add-In is written in TypeScript and uses the OfficeJS API to interact with a user's mailbox. To ensure compatibility with older
+					Outlook versions, babel is used to convert syntax to be usable with Internet Explorer. The project is bundled and deployed using webpack and GitHub pages.
+					<br />
+					You can add the Add-In to your Outlook client using the following manifest URL:
+					<a href="https://nikkelm.dev/Outlook-Mail-Notes/manifest.xml" target="_blank" class="hide">https://nikkelm.dev/Outlook-Mail-Notes/manifest.xml</a>.
+					<br />
+					You can also find more detailed installation instructions on the project's
+					<a href="https://github.com/NikkelM/Outlook-Mail-Notes" target="_blank">GitHub page</a>.
+				</p>
+			</ProjectOverview>
+
+			<ProjectOverview title="Notion integrations">
+				<h4>
+					<i>
+						<a class="hideAlways" href="https://github.com/NikkelM/JSON-to-Notion" target="_blank">JSON to Notion</a>
+					</i>
+				</h4>
+				<p>
+					I've also created a number of Notion integrations you can try out for yourself! The one I find most useful is the "JSON to Notion" integration, which allows you to import JSON files to your
+					Notion database. Using a configuration file, you can specify which properties of your JSON file should be imported to which database field, and define other transformations as necessary. You
+					can find the project on
+					<a href="https://github.com/NikkelM/JSON-to-Notion" target="_blank">GitHub</a>.
+				</p>
+				<h4>
+					<i>
+						<a class="hideAlways" href="https://github.com/NikkelM/Notion-Steam-API-Integration" target="_blank">Steam API integration</a>
+					</i>
+				</h4>
+				<p>
+					Another Notion integration that connects your Notion database to Steam. All you need to do is add a Steam app ID field to your database, define which app properties you would like fetch, and
+					the integration will automatically update your database entries. As always, you can find the tool on
+					<a href="https://github.com/NikkelM/Notion-Steam-API-Integration" target="_blank">GitHub</a>.
+				</p>
+			</ProjectOverview>
+
+			<ProjectOverview title="Three.js" link="/threejs.html">
+				<p>
+					Three.js is a JavaScript library that allows for the creation and display of 3D computer graphics in a web browser. In April 2022, I built a very small demo page using the library, which you
+					can find linked in the menu or here:
+					<a href="/threejs.html">ThreeJS demo</a>.
+				</p>
+			</ProjectOverview>
+		</section>
+
+		<script src="/src/js/commonTextPages.js"></script>
+	</body>
+</Layout>

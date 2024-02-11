@@ -1,0 +1,25 @@
+---
+// TODO: Import layouts, components, stylesheets
+import Layout from "/src/layouts/Layout.astro";
+import "/src/styles/commonTextPages.css";
+---
+<!-- TODO: Add new page to the navBar in the Layout template -->
+<!-- TODO: Add title and description -->
+<Layout title="NikkelM" description="NikkelM">
+	<body>
+		<header>
+			<h1>404 - Page Not Found</h1>
+			<p>This page does not exist.</p>
+		</header>
+		<br />
+		<br />
+		<section class="center">
+			<p>If you think that this should not have happened, please reach out to me via the <a class="contactLink pointer show">contact form</a>.</p>
+			<br />
+			<p><a href="/" class="pointer">Go back Home</a></p>
+		</section>
+
+		<!-- TODO: Import the needed js -->
+		<script src="/src/js/commonTextPages.js"></script>
+	</body>
+</Layout>
