@@ -58,6 +58,10 @@ nav .navLink {
 	transition: 0.3s;
 }
 
+nav .navLinkSocial {
+	padding: 8px 8px 8px 32px;
+}
+
 nav .navBarBottom {
 	text-align: center;
 	align-items: center;
