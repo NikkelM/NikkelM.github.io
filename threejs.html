@@ -1,175 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<!-- Favicons -->
-		<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-43a2d5cf.png" />
-		<link rel="icon" type="image/x-icon" href="/assets/favicon-1e8ad542.ico" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32-37fc0e7f.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16-4147316c.png" />
-		<link rel="mask-icon" href="/assets/safari-pinned-tab-7c5cacd0.svg" color="#5bbad5" />
-		<meta name="msapplication-TileColor" content="#2b5797" />
-		<link rel="icon" type="image/x-icon" href="/assets/favicon_light-f31510e3.ico" media="(prefers-color-scheme: dark)" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_light-32x32-2b983e86.png" media="(prefers-color-scheme: dark)" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_light-16x16-83ef27e8.png" media="(prefers-color-scheme: dark)" />
-		<!-- Favicons end -->
-		<meta name="theme-color" content="#222" />
-		<link rel="manifest" href="/site.webmanifest" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="ThreeJS demo built by NikkelM" />
-		<link rel="preconnect" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin />
-		<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" as="style" crossorigin />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin />
-		<link rel="preconnect" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin />
-		<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style" crossorigin />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin />
-		
-		
-		
-		<title>ThreeJS Demo - NikkelM</title>
-		<script type="module" crossorigin src="/assets/threejs-c2d61b8e.js"></script>
-		<link rel="modulepreload" crossorigin href="/assets/common-d54b3e2b.js">
-		<link rel="stylesheet" href="/assets/common-582d9d16.css">
-		<link rel="stylesheet" href="/assets/threejs-94712597.css">
-	</head>
-
-	<section id="loading-screen">
-		
-		<div id="loader"></div>
-	</section>
-
-	<nav id="navBar">
-		<div id="navBarContents">
-			<div id="navBarContentsTop" class="navBarTop">
-				<a href="javascript:void(0)" class="closeButton">&times;</a>
-				<a href="/index.html" class="navLink">Home</a>
-				<a href="javascript:void(0)" class="navLink">Three.js Demo</a>
-			</div>
-			<div id="navBarContentsBottom" class="navBarBottom">
-				<a href="https://github.com/NikkelM" class="navLink" style="display: inline" target="_blank" aria-label=""><img src="/icons/github.webp" alt="" style="height: 50px; width: 50px" /></a>
-				<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" class="navLink" style="display: inline" target="_blank"
-					><img src="/icons/linkedin.webp" alt="" style="height: 50px; width: 50px"
-				/></a>
-			</div>
-		</div>
-	</nav>
-
-	<div id="cookieConsent" class="cookieConsent" style="display: none">
-		<p>This website uses cookies to provide a better user experience.</p>
-		<div class="cookieButtonContainer">
-			<button type="button" id="acceptCookiesButton">Accept</button>
-			<button type="button" id="declineCookiesButton">Decline optional</button>
-		</div>
-	</div>
-
-	<div id="contactFormDiv">
-		<span class="closeButton">&times;</span>
-		<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-			<input type="hidden" name="from_name" value="nikkelm.dev-threejs" />
-
-			<label for="name">Name</label><br />
-			<input id="name" type="text" required="" name="name" autocomplete="name" /><br />
-			<label for="email">E-Mail</label><br />
-			<input id="email" type="email" required="" name="email" autocomplete="email" /><br />
-			<label for="options">Topic</label><br />
-			<select id="options" name="topic">
-				<option value="Just getting into contact">Just getting into contact</option>
-				<option value="Random YouTube Video">Random YouTube Video</option>
-				<option value="Outlook Mail Notes">Outlook Mail Notes</option>
-				<option value="Notion integration">Notion integration</option>
-				<option value="Another project">Another project</option>
-			</select><br />
-			<label for="message">Message</label><br />
-			<textarea id="message" rows="5" required="" name="message"></textarea><br /><br />
-			<button type="submit">Submit</button>
-			<p id="result"></p>
-		</form>
-	</div>
-
-	<body style="overflow: hidden">
-		<canvas id="bg"></canvas>
-
-		<main>
-			<span id="openNavBarButton">&#9776;</span>
-
-			<header>
-				<h1>NikkelM</h1>
-				<p>ThreeJS demo - April 2022</p>
-				<p>
-					<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span class="material-icons-outlined f48">file_download</span></a
-					><a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways"> </a
-					><a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways">CV</a> <span style="vertical-align: 5px">| </span
-					><a href="https://github.com/NikkelM" target="_blank"><img src="/icons/github.webp" style="vertical-align: -4px; height: 50px; width: 50px" alt="" /></a>
-					<span style="vertical-align: 5px">| </span
-					><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"><img src="/icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px" alt="" /></a>
-					<span style="vertical-align: 5px">| </span><a class="contactLink hideAlways pointer">Contact</a>
-				</p>
-			</header>
-
-			<div class="scrollArrow" id="scrollArrow"></div>
-
-			<section class="right" style="margin-top: 280px">
-				<h2>ThreeJS demo</h2>
-				<p>
-					I built this page in early April 2022, after I had gained some first web development experience during my studies. To challenge myself I decided to play around with
-					<a href="https://threejs.org/" class="hide">three.js</a> to build this page. The website is hosted using <a href="https://pages.github.com/" target="_blank" class="hide">GitHub pages</a>,
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"><link rel="icon" type="image/x-icon" href="/favicon/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5"><meta name="msapplication-TileColor" content="#2b5797"><link rel="icon" type="image/x-icon" href="/favicon/favicon_light.ico" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon_light-32x32.png" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon_light-16x16.png" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#222"><link rel="manifest" href="/site.webmanifest"><link rel="preconnect" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin><link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" as="style" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin><link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" crossorigin><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="ThreeJS demo built by NikkelM"><title>ThreeJS Demo - NikkelM</title><link rel="stylesheet" href="/_astro/index.DNQx8-Rf.css" />
+<style>.scrollArrow,.scrollArrow:before{position:fixed;left:50%}#scrollArrow.hide{display:none}.scrollArrow{width:40px;height:40px;top:88%;margin:-20px 0 0 -20px;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-left:none;border-top:none;border-right:2px #fff solid;border-bottom:2px #fff solid}.scrollArrow:before{content:"";width:20px;height:20px;top:50%;margin:-15px 0 0 -15px;border-left:none;border-top:none;border-right:1px #fff solid;border-bottom:1px #fff solid;animation-duration:2s;animation-iteration-count:infinite;animation-name:scrollArrow}@keyframes scrollArrow{0%{opacity:1}to{opacity:0;transform:translate(8px,8px)}}:root{--dark-bg-tp: rgba(15, 15, 15, .5);--margin_bottom: 250px;color-scheme:dark;scrollbar-width:none;-ms-overflow-style:none;scrollbar-color:transparent}::-webkit-scrollbar{display:none}canvas{position:fixed;top:0;left:0}footer{left:-1%;width:101.5%;height:100px;background:var(--dark-bg-tp)}main{color:#fff;z-index:2;position:absolute;width:99%;padding:90px 0;display:grid;grid-template-columns:repeat(12,1fr)}header{background:var(--dark-bg-tp);grid-column:2 / span 5;font-size:2rem;padding:2rem;margin-bottom:var(--margin_bottom)}h1,h2,h3,h4,blockquote{overflow-wrap:break-word;text-align:left;margin-block-start:.4rem;margin-block-end:.4rem;font-weight:100;font-style:normal}section{overflow-wrap:break-word;grid-column:4 / span 6;padding:1.75rem;text-align:left;background:var(--dark-bg-tp);font-size:1.25rem;line-height:1.5;margin-bottom:var(--margin_bottom)}blockquote{margin:0;padding:0;grid-column:2 / span 9;margin-bottom:var(--margin_bottom)}blockquote p{color:#fff;background-color:transparent;font-size:4rem;display:block;line-height:.9}.left{grid-column:2 / span 6}.center{grid-column:4 / span 8}.right{grid-column:6 / span 6}.left-align{text-align:left}.center-align{text-align:center}.right-align{text-align:right}#openNavBarButton{margin-left:32px;margin-top:36px}@media (max-device-width: 768px){:root{--margin_bottom: 150px;font-weight:200}main{width:96%;display:block}header{font-size:1.5rem;padding:1rem}section{padding:1rem}blockquote p{font-size:3rem;line-height:1}#openNavBarButton{margin-left:0;margin-top:-80px}}#loading-screen{position:absolute;z-index:10;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:1;transition:.15s opacity}#loading-screen.fade-out{opacity:0}#loader{display:block;position:relative;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;border:3px solid transparent;border-top-color:#9370db;-webkit-animation:spin 2s linear infinite;animation:spin 2s linear infinite}#loader:before{content:"";position:absolute;inset:5px;border-radius:50%;border:3px solid transparent;border-top-color:#ba55d3;-webkit-animation:spin 3s linear infinite;animation:spin 3s linear infinite}#loader:after{content:"";position:absolute;inset:15px;border-radius:50%;border:3px solid transparent;border-top-color:#f0f;-webkit-animation:spin 1.5s linear infinite;animation:spin 1.5s linear infinite}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spin{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0)}to{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}}
+</style><script type="module" src="/_astro/hoisted.C5aV8C8v.js"></script></head> <nav id="navBar"> <div id="navBarContents"> <div id="navBarContentsTop" class="navBarTop"> <a href="javascript:void(0)" class="closeButton">&times;</a> <a href="/" class="navLink">Home</a> <a href="javascript:void(0)" class="navLink">Three.js Demo</a> </div> <div id="navBarContentsBottom" class="navBarBottom"> <span class="navLinkSocial"><a href="https://github.com/NikkelM" style="display: inline;" target="_blank" aria-label="GitHub profile"><img src="/icons/github.webp" alt="GitHub profile" style=" height: 50px; width: 50px;"></a></span><span class="navLinkSocial"></span><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" style="display: inline;" target="_blank" aria-label="LinkedIn profile"><img src="/icons/linkedin.webp" alt="LinkedIn profile" style=" height: 50px; width: 50px;"></a> </div> </div> </nav> <div id="cookieConsent" class="cookieConsent" style="display: none"> <p>This website uses cookies to provide a better user experience.</p> <div class="cookieButtonContainer"> <button type="button" id="acceptCookiesButton">Accept</button> <button type="button" id="declineCookiesButton">Decline optional</button> </div> </div> <div id="contactFormDiv"> <span class="closeButton">&times;</span> <form id="contactForm" action="https://api.web3forms.com/submit" method="POST"> <input type="hidden" name="from_name" value="ThreeJS Demo - NikkelM"> <label for="name">Name</label><br> <input id="name" type="text" required="" name="name" autocomplete="name"><br> <label for="email">E-Mail</label><br> <input id="email" type="email" required="" name="email" autocomplete="email"><br> <label for="options">Topic</label><br> <select id="options" name="topic"> <option value="Just getting into contact">Just getting into contact</option> <option value="/threejs.html">Regarding this page</option> <option value="Random YouTube Video">Random YouTube Video</option> <option value="Todo PR Checker">Todo PR Checker</option> <option value="Another project">Another project</option></select><br> <label for="message">Message</label><br> <textarea id="message" rows="5" required="" name="message"></textarea><br><br> <button type="submit">Submit</button> <p id="result"></p> </form> </div>    <section id="loading-screen"> <div id="loader"></div> </section> <canvas id="bg"></canvas> <main> <span id="openNavBarButton">&#9776;</span> <header> <h1>NikkelM</h1> <p>ThreeJS demo - April 2022</p> <p> <a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span class="material-icons-outlined f48">file_download</span></a><a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways"></a><a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways">CV</a> <span style="vertical-align: 5px">|&nbsp;</span><a href="https://github.com/NikkelM" style="" target="_blank" aria-label="GitHub profile"><img src="/icons/github.webp" alt="GitHub profile" style="vertical-align: -5px; height: 50px; width: 50px;"></a> <span style="vertical-align: 5px">|&nbsp;</span><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" style="" target="_blank" aria-label="LinkedIn profile"><img src="/icons/linkedin.webp" alt="LinkedIn profile" style="vertical-align: -5px; height: 50px; width: 50px;"></a> <span style="vertical-align: 5px">|&nbsp;</span><a class="contactLink hideAlways pointer">Contact</a> </p> </header> <div class="scrollArrow" id="scrollArrow"></div> <section class="right" style="margin-top: 280px"> <h2>ThreeJS demo</h2>  <p>
+I built this page in early April 2022, after I had gained some first web development experience during my studies. To challenge myself I decided to play around with
+<a href="https://threejs.org/" class="hide">three.js</a> to build this page. The website is hosted using <a href="https://pages.github.com/" target="_blank" class="hide">GitHub pages</a>,
 					and its source code can be found in <a href="https://github.com/NikkelM/NikkelM.github.io" target="_blank">this repository</a>. Take a look at the sections below to find out more about how
 					the different parts of this page work.
-				</p>
-			</section>
-
-			<blockquote class="right">
-				<p class="right-align">
-					Visit me on
-					<a href="https://github.com/NikkelM" target="_blank"><img src="/icons/github.webp" alt="" style="height: 50px; width: 50px" /></a
-					><a href="https://github.com/NikkelM" target="_blank" class="hideAlways"> </a>
-					<a href="https://github.com/NikkelM" target="_blank" class="hideAlways">GitHub</a>
-				</p>
-			</blockquote>
-
-			<section class="left">
-				<h2>Animations</h2>
-				<p>
-					There are two animation styles on this page: Continuous and keyframed animations. And when I say that there are two animation styles, there really is only one: All animations depend on the
+</p>  </section> <blockquote class="right"> <p class="right-align"> <a href="https://github.com/NikkelM" target="_blank" class="hideAlways">Visit me on&nbsp;</a><a href="https://github.com/NikkelM" style="" target="_blank" aria-label="GitHub profile"><img src="/icons/github.webp" alt="GitHub profile" style=" height: 50px; width: 50px;"></a><a href="https://github.com/NikkelM" target="_blank" class="hideAlways">&nbsp;GitHub</a> </p> </blockquote> <section class="left"> <h2>Animations</h2>  <p>
+There are two animation styles on this page: Continuous and keyframed animations. And when I say that there are two animation styles, there really is only one: All animations depend on the
 					'scroll percentage' of the page, meaning that they will cycle until you scroll up or down, at which point the scale and position of the elements may change. For each rendered frame, a set of
 					animation rules are evaluated. All of these rules have 'start' and 'end' properties that define whether or not this animation should be played at the current scroll percentage.
-				</p>
-				<h3>Continuous animations</h3>
-				<p>
-					For continuous animations, the rule simply states that the animation should start at 0% and end at 100% - so it is always played. Continuous animations include the rotation of the skybox,
+</p> <h3>Continuous animations</h3> <p>
+For continuous animations, the rule simply states that the animation should start at 0% and end at 100% - so it is always played. Continuous animations include the rotation of the skybox,
 					the blinking of the stars and the rotation of the cube and globe. Most importantly, these animations do not depend on the current scroll percentage - the skybox will always rotate at the
 					same speed, no matter where on the page you are.
-				</p>
-				<h3>Keyframed animations</h3>
-				<p>
-					This is different for keyframed animations, which always depend on the current scroll percentage. For example, the cube will run a specific animation between 0% and 25% scrolled: It will
+</p> <h3>Keyframed animations</h3> <p>
+This is different for keyframed animations, which always depend on the current scroll percentage. For example, the cube will run a specific animation between 0% and 25% scrolled: It will
 					rotate around its y- and z-axis, and move toward the top right of the screen. The animation rule defines start and end values for each of these properties, and calculates the current value
 					based on the current scroll percentage - the keyframe. Continuous and keyframed animations can also easily be combined using this technique, as all animation rules are evaluated for every
 					frame, and the difference in scale and position is applied after all rules were evaluated. This can for example create the effect of the faster rotating globe whenever it moves from one side
 					of the screen to the other - the continuous rotation is applied first, and then an additional keyframed animation is applied on top of that.
-				</p>
-				<h3>Moving in reverse</h3>
-				<p>
-					By defining all keyframed animations at the same time, and looping through the rules with each frame, there is zero overhead for creating animation that can reverse themselves when scrolling
+</p> <h3>Moving in reverse</h3> <p>
+By defining all keyframed animations at the same time, and looping through the rules with each frame, there is zero overhead for creating animation that can reverse themselves when scrolling
 					back up the page at any point. For continuous animations, the position on the page does not matter anyways, and for keyframed animations, the animation rule is executed depending on the
 					scroll percentage - not based on where the scroll event came from, so the same animation frame will be rendered when scrolling up or down.
-				</p>
-			</section>
-
-			<blockquote class="left">
-				<p class="left-align">
-					Connect with me <br />
-					on
-					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank"><img src="/icons/linkedin.webp" style="vertical-align: -5px; height: 50px; width: 50px" alt="" /></a
-					><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hideAlways"> </a>
-					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hideAlways">LinkedIn</a>
-				</p>
-			</blockquote>
-
-			<section class="right">
-				<h2>Randomness</h2>
-				<p>
-					Nothing in life would be fun without a little bit of randomness - and the same is true for this page. In my case, I wanted the placement and blinking of the stars to be random, so that the
+</p>  </section> <blockquote class="left"> <p class="left-align"> <a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hideAlways">Connect with me <br>on&nbsp;</a><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" style="" target="_blank" aria-label="LinkedIn profile"><img src="/icons/linkedin.webp" alt="LinkedIn profile" style="vertical-align: -5px; height: 50px; width: 50px;"></a><a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" class="hideAlways">&nbsp;LinkedIn</a> </p> </blockquote> <section class="right"> <h2>Randomness</h2>  <p>
+Nothing in life would be fun without a little bit of randomness - and the same is true for this page. In my case, I wanted the placement and blinking of the stars to be random, so that the
 					background would look slightly different each time. So when the scene is built, a set number of random stars is generated with randomized coordinates, evenly spread out across the skybox.
 					Each star is also given a distance from the camera, which makes some stars appear larger than others. When it came to making the stars blink, I at first encountered some problems: All of the
 					stars blinked at the same speed, which repeated itself over the same interval, which looked very unnatural, even when randomizing their starting opacities. As a solution, all stars are now
@@ -178,24 +33,9 @@
 					between the stars. So whenever a star is animated, its base opacity and this fluctuating modifier are combined, this new value in turn also influences the opacity of all other stars with the
 					same material. This results in the stars not only blinking, but also 'flickering' at different speeds, as their materials base opacity get changed by more or less depending on the stars
 					position in the animation queue.
-				</p>
-				<h3>Loading...</h3>
-				<p>
-					As you can probably imagine, loading in the different textures, building the models and placing everything just right takes a bit longer than the time it takes for the HTML to load. And
+</p> <h3>Loading...</h3> <p>
+As you can probably imagine, loading in the different textures, building the models and placing everything just right takes a bit longer than the time it takes for the HTML to load. And
 					while this delay is under half a second on most devices (and connection speeds), it is still very much noticeable. So I had to find a way to hide this 'popping in' of the different elements
 					to smooth the experience. Sometimes, the easiest solution is the best, which is why I settled on simply overlaying a fullscreen div with some rotating bars while the 3D-scene is built in the
 					background. After the scene has loaded it calls a function that removes the loading screen.
-				</p>
-			</section>
-
-			<footer>
-				<p>Nikkel Mollenhauer</p>
-				<p><a class="contactLink pointer show">Contact</a></p>
-			</footer>
-		</main>
-
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-9K4WW3ECLR"></script>
-		<script src="https://web3forms.com/client/script.js" async defer></script>
-		
-	</body>
-</html>
+</p>  </section> <footer> <p>Nikkel Mollenhauer</p> <p><a class="contactLink pointer show">Contact</a></p> </footer> </main>    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9K4WW3ECLR"></script> <script src="https://web3forms.com/client/script.js" async defer></script> </html> 
