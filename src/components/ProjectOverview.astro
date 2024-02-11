@@ -1,0 +1,22 @@
+---
+interface Props {
+	title: string;
+	link?: string;
+}
+
+const { title, link } = Astro.props;
+---
+
+<hr class="divider very-short" />
+<h3>
+	{
+		link ? (
+			<a class="hideAlways" href={link} target="_blank">
+				{title}
+			</a>
+		) : (
+			<span>{title}</span>
+		)
+	}
+</h3>
+<slot />
