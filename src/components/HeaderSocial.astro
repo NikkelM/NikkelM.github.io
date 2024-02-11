@@ -1,0 +1,27 @@
+---
+import SocialLinkImage from "../components/SocialLinkImage.astro";
+
+interface Props {
+	type: "GitHub" | "LinkedIn";
+}
+
+const { type } = Astro.props;
+---
+
+{
+	type === "GitHub" ? (
+		<>
+			<>
+				<span style="vertical-align: 5px">|&nbsp;</span>
+				<SocialLinkImage href="https://github.com/NikkelM" label="GitHub profile" imgSrc="/icons/github.webp" imgStyle="vertical-align: -5px;" />
+			</>
+		</>
+	) : (
+		<>
+			<>
+				<span style="vertical-align: 5px">|&nbsp;</span>
+				<SocialLinkImage href="https://www.linkedin.com/in/nikkel-mollenhauer/" label="LinkedIn profile" imgSrc="/icons/linkedin.webp" imgStyle="vertical-align: -5px;" />
+			</>
+		</>
+	)
+}

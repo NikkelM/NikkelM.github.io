@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import SocialLinkImage from "../components/SocialLinkImage.astro";
+import HeaderSocial from "../components/HeaderSocial.astro";
 import ProjectOverview from "../components/ProjectOverview.astro";
 import "/src/styles/commonTextPages.css";
 ---
@@ -16,13 +16,8 @@ import "/src/styles/commonTextPages.css";
 				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank"><span class="material-icons-outlined f48">file_download</span></a>
 				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways" aria-label="Download CV"> </a>
 				<a href="https://github.com/NikkelM/resume/releases/latest/download/mollenhauer_resume.pdf" target="_blank" class="hideAlways">CV</a>
-				<span style="vertical-align: 5px">|&nbsp;</span><SocialLinkImage href="https://github.com/NikkelM" label="GitHub profile" imgSrc="/icons/github.webp" style="vertical-align: -5px;" />
-				<span style="vertical-align: 5px">|&nbsp;</span><SocialLinkImage
-					href="https://www.linkedin.com/in/nikkel-mollenhauer/"
-					label="LinkedIn profile"
-					imgSrc="/icons/linkedin.webp"
-					style="vertical-align: -5px;"
-				/>
+				<HeaderSocial type="GitHub" />
+				<HeaderSocial type="LinkedIn" />
 				<span style="vertical-align: 5px">|&nbsp;</span><a class="contactLink hideAlways pointer">Contact</a>
 			</p>
 		</header>
@@ -72,9 +67,10 @@ import "/src/styles/commonTextPages.css";
 			<ProjectOverview title="Todo PR Checker" link="https://github.com/marketplace/todo-pr-checker">
 				<p>
 					Todo PR Checker is a native GitHub app that checks Pull Request changes for <code>TODO</code> style action items and reports on them live in a comment with embedded code links. The app provides
-					automated CI checks on each Pull Request update, with live updates and clear feedback when open action items are found. It supports a wide range of programming languages and offers powerful customization
-					options such as excluding files using glob patterns or adding support for new languages and action items. The app is built using Ruby, deployed automatically after a new release by leveraging
-					Google Cloud Build and hosted on Google Cloud Run.
+					automated CI checks on each Pull Request update, with live updates and clear feedback when open action items are found.
+					<br />
+					It supports a wide range of programming languages and offers powerful customization options such as excluding files using glob patterns or adding support for new languages and action items. The
+					app is built using Ruby, deployed automatically after a new release by leveraging Google Cloud Build and hosted on Google Cloud Run.
 					<br />
 					You can get the app on the
 					<a href="https://github.com/marketplace/todo-pr-checker" target="_blank">GitHub Marketplace</a>.

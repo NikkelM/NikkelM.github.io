@@ -3,10 +3,11 @@ interface Props {
 	href: string;
 	imgSrc: string;
 	label: string;
-	style?: string;
+	aStyle?: string;
+	imgStyle?: string;
 }
 
-const { href, imgSrc, label, style = "" } = Astro.props;
+const { href, imgSrc, label, aStyle, imgStyle = "" } = Astro.props;
 ---
 
-<a href={href} class="navLink" target="_blank" aria-label={label}><img src={imgSrc} alt={label} style=`${style} height: 50px; width: 50px;` /></a>
+<a href={href} style={aStyle} class="navLink" target="_blank" aria-label={label}><img src={imgSrc} alt={label} style=`${imgStyle} height: 50px; width: 50px;` /></a>

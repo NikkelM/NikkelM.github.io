@@ -48,8 +48,12 @@ const { title, description, isTextPage = true } = Astro.props;
 				<a href={Astro.url.pathname === "/threejs.html" ? "javascript:void(0)" : "/threejs.html"} class="navLink">Three.js Demo</a>
 			</div>
 			<div id="navBarContentsBottom" class="navBarBottom">
-				<SocialLinkImage href="https://github.com/NikkelM" label="GitHub profile" imgSrc="/icons/github.webp" />
-				<SocialLinkImage href="https://www.linkedin.com/in/nikkel-mollenhauer/" label="LinkedIn profile" imgSrc="/icons/linkedin.webp" />
+				<SocialLinkImage href="https://github.com/NikkelM" label="GitHub profile" imgSrc="/icons/github.webp" aStyle="display: inline;" /><SocialLinkImage
+					href="https://www.linkedin.com/in/nikkel-mollenhauer/"
+					label="LinkedIn profile"
+					imgSrc="/icons/linkedin.webp"
+					aStyle="display: inline;"
+				/>
 			</div>
 		</div>
 	</nav>
@@ -121,4 +125,6 @@ const { title, description, isTextPage = true } = Astro.props;
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9K4WW3ECLR"></script>
 	<script src="https://web3forms.com/client/script.js" async defer></script>
+
+
 </html>
