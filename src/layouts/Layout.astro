@@ -44,7 +44,7 @@ const { title, description, isTextPage = true } = Astro.props;
 		<div id="navBarContents">
 			<div id="navBarContentsTop" class="navBarTop">
 				<a href="javascript:void(0)" class="closeButton">&times;</a>
-				<a href={Astro.url.pathname === "/index.html" || Astro.url.pathname === "/" ? "javascript:void(0)" : "/index.html"} class="navLink">Home</a>
+				<a href={Astro.url.pathname === "/index.html" || Astro.url.pathname === "/" ? "javascript:void(0)" : "/"} class="navLink">Home</a>
 				<a href={Astro.url.pathname === "/threejs.html" ? "javascript:void(0)" : "/threejs.html"} class="navLink">Three.js Demo</a>
 			</div>
 			<div id="navBarContentsBottom" class="navBarBottom">
