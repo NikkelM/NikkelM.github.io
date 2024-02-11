@@ -73,11 +73,10 @@ const { title, description, isTextPage = true } = Astro.props;
 			<input id="email" type="email" required="" name="email" autocomplete="email" /><br />
 			<label for="options">Topic</label><br />
 			<select id="options" name="topic">
-				{Astro.url.pathname === "/404.html" ? <option value="Regarding the Website">Regarding the website</option> : ""}
 				<option value="Just getting into contact">Just getting into contact</option>
+				<option value={Astro.url.pathname}>Regarding this page</option>
 				<option value="Random YouTube Video">Random YouTube Video</option>
-				<option value="Outlook Mail Notes">Outlook Mail Notes</option>
-				<option value="Notion integration">Notion integration</option>
+				<option value="Todo PR Checker">Todo PR Checker</option>
 				<option value="Another project">Another project</option></select
 			><br />
 			<label for="message">Message</label><br />
@@ -121,5 +120,6 @@ const { title, description, isTextPage = true } = Astro.props;
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9K4WW3ECLR"></script>
 	<script src="https://web3forms.com/client/script.js" async defer></script>
+
 
 </html>
