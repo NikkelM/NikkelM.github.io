@@ -64,7 +64,7 @@ const { title, description, isTextPage = true } = Astro.props;
 
 	<div id="contactFormDiv">
 		<span class="closeButton">&times;</span>
-		<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+		<form id="contactForm">
 			<input type="hidden" name="from_name" value={title} />
 
 			<label for="name">Name</label><br />
