@@ -29,15 +29,32 @@ function initContactForm() {
 	contactForm.addEventListener('click', function (e) {
 		e.stopPropagation();
 	});
-	
-	contactForm.addEventListener('submit', async function(event) {
-		event.preventDefault();
 
+	contactForm.addEventListener('submit', async function (event) {
+		event.preventDefault();
 		const result = document.getElementById('result');
+
+		// Select all elements with the notforyou class (honeypot fields)
+		const honeypotFields = document.querySelectorAll('.notforyou');
+
+		// Check if any honeypot fields are filled
+		if (Array.from(honeypotFields).some(field => field.value)) {
+			// If any honeypot fields are filled, it's likely a bot. Don't submit the form.
+			console.log("You stepped in the honeypot!");
+			result.innerText = "You stepped in the honeypot!";
+			return;
+		}
+
 		result.innerText = "Submitting...";
 		result.style.display = "block";
-				
+
 		const formData = new FormData(this);
+		// Rename the form data keys to remove the hashes
+		formData.set('name', formData.get('nameijkls'));
+		formData.delete('nameijkls');
+		formData.set('email', formData.get('emailgthum'));
+		formData.delete('emailgthum');
+
 		await fetch('https://formkeep.com/f/59830f272a04', {
 			method: 'POST',
 			body: formData,
