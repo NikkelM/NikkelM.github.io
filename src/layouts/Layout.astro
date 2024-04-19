@@ -48,8 +48,12 @@ const { title, description, isTextPage = true } = Astro.props;
 				<a href={Astro.url.pathname === "/threejs.html" ? "javascript:void(0)" : "/threejs.html"} class="navLink">Three.js Demo</a>
 			</div>
 			<div id="navBarContentsBottom" class="navBarBottom">
-				<span class="navLinkSocial"><SocialLinkImage href="https://github.com/NikkelM" label="GitHub profile" imgSrc="/icons/github.webp" aStyle="display: inline;" /></span><span class="navLinkSocial"
-				></span><SocialLinkImage href="https://www.linkedin.com/in/nikkel-mollenhauer/" label="LinkedIn profile" imgSrc="/icons/linkedin.webp" aStyle="display: inline;" />
+				<span class="navLinkSocial"><SocialLinkImage href="https://github.com/NikkelM" label="GitHub profile" imgSrc="/icons/github.webp" aStyle="display: inline;" /></span><span class="navLinkSocial"></span><SocialLinkImage
+					href="https://www.linkedin.com/in/nikkel-mollenhauer/"
+					label="LinkedIn profile"
+					imgSrc="/icons/linkedin.webp"
+					aStyle="display: inline;"
+				/>
 			</div>
 		</div>
 	</nav>
@@ -67,10 +71,10 @@ const { title, description, isTextPage = true } = Astro.props;
 		<form id="contactForm">
 			<input type="hidden" name="from_name" value={title} />
 
-			<label for="name">Name</label><br />
-			<input id="name" type="text" required="" name="name" autocomplete="name" /><br />
-			<label for="email">E-Mail</label><br />
-			<input id="email" type="email" required="" name="email" autocomplete="email" /><br />
+			<label for="nameijkls">Name</label><br />
+			<input id="nameijkls" type="text" required="" name="nameijkls" autocomplete="name" /><br />
+			<label for="emailgthum">E-Mail</label><br />
+			<input id="emailgthum" type="email" required="" name="emailgthum" autocomplete="email" /><br />
 			<label for="options">Topic</label><br />
 			<select id="options" name="topic">
 				<option value="Just getting into contact">Just getting into contact</option>
@@ -81,6 +85,11 @@ const { title, description, isTextPage = true } = Astro.props;
 			><br />
 			<label for="message">Message</label><br />
 			<textarea id="message" rows="5" required="" name="message"></textarea><br /><br />
+			<!-- Not for you -->
+			<label class="notforyou" for="name"></label>
+			<input class="notforyou" autocomplete="off" type="text" id="name" name="name" placeholder="Your name here" />
+			<label class="notforyou" for="email"></label>
+			<input class="notforyou" autocomplete="off" type="email" id="email" name="email" placeholder="Your e-mail here" />
 			<button type="submit">Submit</button>
 			<p id="result"></p>
 		</form>
