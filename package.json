@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "astro": "^5.18.1",
-    "js-cookie": "^3.0.5",
+    "js-cookie": "^3.0.7",
     "three": "^0.139.2"
   }
 }
