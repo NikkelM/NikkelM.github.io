@@ -1,0 +1,154 @@
+/* Standalone holding page styling, mirroring the new nikkelm.dev theme
+   (dark ink base, warm amber accent, IBM Plex, hairline borders, dotted grid). */
+:root {
+	--bg: #0f1115;
+	--surface: #161a20;
+	--fg: #e8e9ec;
+	--muted: #9aa1ab;
+	--line: #272c34;
+	--accent: #e8a33d;
+	--accent-contrast: #14161a;
+	--font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+	--font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 17px;
+	color-scheme: dark;
+}
+
+body {
+	min-height: 100vh;
+	background-color: var(--bg);
+	background-image: radial-gradient(var(--line) 1px, transparent 1px);
+	background-size: 28px 28px;
+	color: var(--fg);
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+}
+
+::selection {
+	background-color: var(--accent);
+	color: var(--accent-contrast);
+}
+
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	max-width: 64rem;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+.site-head {
+	border-bottom: 1px solid var(--line);
+	padding: 1rem 0;
+}
+
+.wordmark {
+	font-family: var(--font-mono);
+	font-size: 0.95rem;
+	letter-spacing: -0.01em;
+	color: var(--fg);
+	text-decoration: none;
+}
+
+.wordmark .dev {
+	color: var(--accent);
+}
+
+.hero {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1.5rem;
+	max-width: 42rem;
+	padding: 5rem 0;
+}
+
+.status {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	font-family: var(--font-mono);
+	font-size: 0.8rem;
+	color: var(--accent);
+}
+
+.status .box {
+	width: 0.5rem;
+	height: 0.5rem;
+	background-color: var(--accent);
+}
+
+.hero h1 {
+	font-size: clamp(2.25rem, 6vw, 3.5rem);
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.05;
+}
+
+.lede {
+	font-size: 1.125rem;
+	line-height: 1.7;
+	color: var(--muted);
+}
+
+.lede a {
+	color: var(--fg);
+	text-decoration: underline;
+	text-decoration-color: var(--line);
+	text-underline-offset: 4px;
+}
+
+.lede a:hover {
+	color: var(--accent);
+	text-decoration-color: var(--accent);
+}
+
+.links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.25rem;
+	font-size: 0.95rem;
+}
+
+.links a {
+	color: var(--muted);
+	text-decoration: none;
+	transition: color 0.15s ease;
+}
+
+.links a:first-child {
+	color: var(--fg);
+}
+
+.links a:hover {
+	color: var(--accent);
+}
+
+.site-foot {
+	border-top: 1px solid var(--line);
+	padding: 1.5rem 0;
+	font-size: 0.85rem;
+	color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.links a {
+		transition: none;
+	}
+}
