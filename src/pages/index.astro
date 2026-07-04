@@ -2,6 +2,15 @@
 import "../styles/holding.css";
 
 const year = new Date().getFullYear();
+
+const topics = ["Just getting in touch", "Zagreus' Journey / Hades II mods", "Random YouTube Video", "Another project", "Work opportunity"];
+
+// Cloudflare Turnstile public site key. Production uses the real key; local dev
+// falls back to the always-pass TEST key (the real key is bound to nikkelm.dev
+// and won't render on localhost).
+const turnstileSiteKey =
+	import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ??
+	(import.meta.env.DEV ? "1x00000000000000000000AA" : "0x4AAAAAADvkQl7CYQJupAzD");
 ---
 
 <!doctype html>
@@ -9,7 +18,7 @@ const year = new Date().getFullYear();
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Nikkel Mollenhauer - Coming soon</title>
+		<title>Nikkel Mollenhauer - Under Construction</title>
 		<meta
 			name="description"
 			content="nikkelm.dev is being rebuilt. A new home for the projects, writing and work of Nikkel Mollenhauer, a software and site reliability engineer, is on the way."
@@ -18,7 +27,7 @@ const year = new Date().getFullYear();
 
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="nikkelm.dev" />
-		<meta property="og:title" content="Nikkel Mollenhauer - Coming soon" />
+		<meta property="og:title" content="Nikkel Mollenhauer - Under Construction" />
 		<meta property="og:description" content="nikkelm.dev is being rebuilt." />
 		<meta property="og:url" content="https://nikkelm.dev/" />
 
@@ -44,8 +53,8 @@ const year = new Date().getFullYear();
 			</header>
 
 			<main class="hero">
-				<p class="status"><span class="box"></span> under construction</p>
-				<h1>Coming soon.</h1>
+				<p class="status"><span class="box"></span> coming soon</p>
+				<h1>Under Construction.</h1>
 				<p class="lede">
 					I'm modernizing nikkelm.dev - so come back a little later.<br>
 					In the meantime, find me elsewhere:
@@ -54,9 +63,83 @@ const year = new Date().getFullYear();
 					<a href="https://github.com/NikkelM" target="_blank" rel="noopener">GitHub</a>
 					<a href="https://www.linkedin.com/in/nikkel-mollenhauer/" target="_blank" rel="noopener">LinkedIn</a>
 				</div>
+
+				<br>
+				<section class="contact">
+					<h2 class="contact-title">Or send me a message</h2>
+					<form id="contact-form" action="/api/contact" method="POST" class="contact-form">
+						<div class="field">
+							<label for="name">Name</label>
+							<input id="name" name="name" type="text" required autocomplete="name" />
+						</div>
+						<div class="field">
+							<label for="email">E-mail</label>
+							<input id="email" name="email" type="email" required autocomplete="email" />
+						</div>
+						<div class="field">
+							<label for="topic">Topic</label>
+							<select id="topic" name="topic">
+								{topics.map((topic) => <option value={topic}>{topic}</option>)}
+							</select>
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea id="message" name="message" rows="5" required></textarea>
+						</div>
+						<!-- Honeypot, hidden from real users; the Worker treats a filled _gotcha as a bot -->
+						<div class="honeypot" aria-hidden="true">
+							<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+						</div>
+						<div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="dark"></div>
+						<button type="submit" class="submit">Send message</button>
+						<p id="contact-result" class="form-result" aria-live="polite"></p>
+					</form>
+				</section>
 			</main>
 
 			<footer class="site-foot">&copy; {year} Nikkel Mollenhauer</footer>
 		</div>
+
+		<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+		<script>
+			// Posts the form to the live Cloudflare Worker (/api/contact), which
+			// verifies Turnstile, stores the submission in D1 and emails it on. This
+			// page is static (no view transitions), so a one-shot handler is enough.
+			const form = document.getElementById("contact-form") as HTMLFormElement;
+			const result = document.getElementById("contact-result") as HTMLElement;
+			const button = form?.querySelector("button[type=submit]") as HTMLButtonElement;
+
+			form?.addEventListener("submit", async (event) => {
+				event.preventDefault();
+
+				// Honeypot: silently pretend success so bots don't learn they were caught.
+				if ((form.elements.namedItem("_gotcha") as HTMLInputElement)?.value) {
+					result.textContent = "Thanks - your message has been sent.";
+					form.reset();
+					return;
+				}
+
+				button.disabled = true;
+				result.textContent = "Sending…";
+				try {
+					const response = await fetch(form.action, {
+						method: "POST",
+						headers: { Accept: "application/json" },
+						body: new FormData(form),
+					});
+					if (response.ok) {
+						result.textContent = "Thanks - your message has been sent.";
+						form.reset();
+					} else {
+						result.textContent = "Something went wrong. Please try again.";
+					}
+				} catch {
+					result.textContent = "Something went wrong. Please try again.";
+				} finally {
+					button.disabled = false;
+					(window as any).turnstile?.reset();
+				}
+			});
+		</script>
 	</body>
 </html>
